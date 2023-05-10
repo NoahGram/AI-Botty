@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" minHeight="600.0" minWidth="800.0" spacing="20.0" style="-fx-background-color: #444444;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.ChatController">
+    <AnchorPane maxHeight="75.0" minHeight="75.0" prefHeight="200.0" prefWidth="200.0"
+                style="-fx-background-color: #222222;">
+        <VBox.margin>
+            <Insets top="-3.0"/>
+        </VBox.margin>
+        <Text fill="WHITE" layoutX="342.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              styleClass="logo" text="AI-Assistent">
+            <font>
+                <Font name="Calibri" size="24.0"/>
+            </font>
+        </Text>
+    </AnchorPane>
+    <AnchorPane prefHeight="500.0" prefWidth="800.0">
+        <Text fill="WHITE" layoutX="275.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chatscherm">
+           <font>
+               <Font size="48.0"/>
+           </font>
+        </Text>
+    </AnchorPane>
+
+</VBox>

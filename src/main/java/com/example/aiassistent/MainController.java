@@ -2,13 +2,9 @@ package com.example.aiassistent;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 
 public class MainController {
-    @FXML
-    private Label welcomeText;
+    public Text logo;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
 }

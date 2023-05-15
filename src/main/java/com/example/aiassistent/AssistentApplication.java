@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class AssistentApplication extends Application {
     private static Stage primaryStage;
@@ -14,8 +15,11 @@ public class AssistentApplication extends Application {
     private static Scene registerScene;
     private static Scene chatScene;
 
+
+
     @Override
     public void start(Stage primaryStage) throws IOException {
+
         this.primaryStage = primaryStage;
 
         // Load the FXML files for the scenes
@@ -37,6 +41,9 @@ public class AssistentApplication extends Application {
         primaryStage.setTitle("AI-Assistent");
         primaryStage.setScene(loginScene);
         primaryStage.show();
+
+
+
     }
 
     // Methods to switch between scenes

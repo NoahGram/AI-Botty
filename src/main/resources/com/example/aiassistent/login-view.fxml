@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -10,22 +11,27 @@
         <VBox.margin>
             <Insets top="-3.0" />
         </VBox.margin>
-        <Text fill="WHITE" layoutX="342.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo" text="AI-Assistent">
+        <Text fill="WHITE" layoutX="354.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo" text="ChadGPT">
             <font>
-                <Font name="Calibri" size="24.0" />
+                <Font name="Consolas" size="36.0" />
             </font>
         </Text>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="306.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/chat-4-48.png" />
+         </image>
+      </ImageView>
     </AnchorPane>
     <AnchorPane prefHeight="500.0" prefWidth="800.0" styleClass="container" stylesheets="@style.css">
-        <Text fill="WHITE" layoutX="307.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inloggen">
+        <Text fill="WHITE" layoutX="331.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inloggen">
             <font>
-                <Font size="48.0" />
+                <Font size="36.0" />
             </font>
         </Text>
-        <Button id="registerButton" layoutX="326.0" layoutY="394.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#registerButtonEvent" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: white;" text="Registreren" />
-        <Button fx:id="loginbutton" layoutX="326.0" layoutY="339.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#loginButtonEvent" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: white;" text="Inloggen" />
-      <TextField id="logininput" fx:id="usernamefield" layoutX="302.0" layoutY="169.0" minWidth="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Gebruikersnaam" style="-fx-background-color: white;" styleClass="inputField" />
-      <TextField id="passwordinput" fx:id="passwordfield" layoutX="302.0" layoutY="237.0" prefHeight="40.0" prefWidth="200.0" promptText="Wachtwoord" style="-fx-background-color: white;" styleClass="inputField" />
+        <Button id="registerButton" layoutX="302.0" layoutY="365.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#registerButtonEvent" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #776cc9; -fx-border-radius: 5px; -fx-cursor: hand;" text="Registreren" textFill="WHITE" />
+        <Button fx:id="loginbutton" layoutX="302.0" layoutY="308.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#loginButtonEvent" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #776cc9; -fx-border-radius: 5px; -fx-cursor: hand;" text="Inloggen" textFill="WHITE" />
+      <TextField id="logininput" fx:id="usernamefield" layoutX="302.0" layoutY="169.0" minWidth="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Gebruikersnaam" style="-fx-background-color: #4b4a54;" styleClass="inputField" />
+      <TextField id="passwordinput" fx:id="passwordfield" layoutX="302.0" layoutY="237.0" prefHeight="40.0" prefWidth="200.0" promptText="Wachtwoord" style="-fx-background-color: #4b4a54;" styleClass="inputField" />
     </AnchorPane>
 
 </VBox>

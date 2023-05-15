@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a971beb-e9d0-4432-a111-cf857ed703bf" name="Changes" comment="add: login scene, register scene and chat scene">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AssistentApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/chat-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/register-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +28,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2PbyUI0ShTnl6jDP7nCrldtx2RN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -42,13 +44,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/William/IdeaProjects/project/ai-assistent/src/main/resources/com/example/aiassistent/images",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.0",
+    "last_opened_file_path": "C:/Users/Will/AppData/Local/SceneBuilder/SceneBuilder.exe",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2724138",
     "settings.editor.selected.configurable": "preferences.JavaFX"
   }
@@ -62,7 +68,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="AssistentApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="AssistentApplication" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.example.aiassistent.AssistentApplication" />
       <module name="ai-assistent" />
       <method v="2">

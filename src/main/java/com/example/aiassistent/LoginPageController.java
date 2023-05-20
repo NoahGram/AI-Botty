@@ -12,38 +12,47 @@ public class LoginPageController {
     public Button loginbutton;
     public TextField usernamefield;
     public TextField passwordfield;
-    public TextField errorField;
+    //public TextField errorField;
 
-    private HashMap<String, String> userMap = new HashMap<>();
+    public HashMap<String, String> userMap = new HashMap<>();
 
     public LoginPageController() {
         // Initialize the userMap with some sample data
-        userMap.put("alice", "password1");
-        userMap.put("bob", "password2");
-        userMap.put("charlie", "password3");
+        userMap.put("noah", "password1");
+        userMap.put("tim", "password2");
+        userMap.put("anita", "password3");
     }
 
     @FXML
-    private void loginButtonEvent(ActionEvent event) {
+    public void loginButtonEvent(ActionEvent event) {
         String username = usernamefield.getText();
         String password = passwordfield.getText();
         if (userMap.containsKey(username) && userMap.get(username).equals(password)) {
             AssistentApplication.showChatScene();
         } else {
-            errorField.setText("Invalid username or password.");
+            //errorField.setText("Invalid username or password.");
         }
     }
 
     @FXML
-    private void registerButtonEvent(ActionEvent event) {
+    public void registerButtonEvent(ActionEvent event) {
         String username = usernamefield.getText();
         String password = passwordfield.getText();
         if (userMap.containsKey(username)) {
-            errorField.setText("Username already taken.");
+            //errorField.setText("Username already taken.");
         } else {
             userMap.put(username, password);
             AssistentApplication.showChatScene();
         }
+    }
+
+    @FXML
+    private void loginPage(ActionEvent event) {
+        AssistentApplication.showLoginScene();
+    }
+    @FXML
+    private void registerPage(ActionEvent event) {
+        AssistentApplication.showRegisterScene();
     }
 
 }

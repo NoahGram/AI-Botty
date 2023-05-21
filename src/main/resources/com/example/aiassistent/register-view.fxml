@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" minHeight="600.0" minWidth="800.0" spacing="20.0" style="-fx-background-color: #313338;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.LoginPageController">
+<VBox alignment="CENTER" minHeight="600.0" minWidth="800.0" spacing="20.0" style="-fx-background-color: #313338;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.RegisterPageController">
     <AnchorPane maxHeight="75.0" minHeight="75.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2B2D31;">
         <VBox.margin>
             <Insets top="-3.0" />

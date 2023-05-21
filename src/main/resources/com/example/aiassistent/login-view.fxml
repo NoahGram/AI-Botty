@@ -28,7 +28,7 @@
                 <Font size="36.0" />
             </font>
         </Text>
-        <Button id="registerButton" layoutX="302.0" layoutY="365.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#registerButtonEvent" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #776cc9; -fx-border-radius: 5px; -fx-cursor: hand;" text="Registreren" textFill="WHITE" />
+        <Button id="registerButton" layoutX="302.0" layoutY="365.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#registerPage" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #776cc9; -fx-border-radius: 5px; -fx-cursor: hand;" text="Registreren" textFill="WHITE" />
         <Button fx:id="loginbutton" layoutX="302.0" layoutY="308.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#loginButtonEvent" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #776cc9; -fx-border-radius: 5px; -fx-cursor: hand;" text="Inloggen" textFill="WHITE" />
       <TextField id="logininput" fx:id="usernamefield" layoutX="302.0" layoutY="169.0" minWidth="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Gebruikersnaam" style="-fx-background-color: #4b4a54;" styleClass="inputField" />
       <TextField id="passwordinput" fx:id="passwordfield" layoutX="302.0" layoutY="237.0" prefHeight="40.0" prefWidth="200.0" promptText="Wachtwoord" style="-fx-background-color: #4b4a54;" styleClass="inputField" />

@@ -34,7 +34,6 @@ public class UserAccountSingleton {
         }
 
         userMap.put(user.GetUsername(), user);
-
         return true;
     }
 

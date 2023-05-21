@@ -11,6 +11,8 @@ public class LoginPageController {
     public Button loginbutton;
     public TextField usernamefield;
     public TextField passwordfield;
+    public Button settingButton;
+
     //public TextField errorField;
 
     UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
@@ -30,6 +32,11 @@ public class LoginPageController {
     @FXML
     private void registerPage(ActionEvent event) {
         AssistentApplication.showRegisterScene();
+    }
+
+    @FXML
+    private void settingPage(ActionEvent event) {
+        AssistentApplication.showSettingScene();
     }
 }
 

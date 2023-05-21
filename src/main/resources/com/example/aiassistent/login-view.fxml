@@ -32,6 +32,7 @@
         <Button fx:id="loginbutton" layoutX="302.0" layoutY="308.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#loginButtonEvent" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #776cc9; -fx-border-radius: 5px; -fx-cursor: hand;" text="Inloggen" textFill="WHITE" />
       <TextField id="logininput" fx:id="usernamefield" layoutX="302.0" layoutY="169.0" minWidth="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Gebruikersnaam" style="-fx-background-color: #4b4a54;" styleClass="inputField" />
       <TextField id="passwordinput" fx:id="passwordfield" layoutX="302.0" layoutY="237.0" prefHeight="40.0" prefWidth="200.0" promptText="Wachtwoord" style="-fx-background-color: #4b4a54;" styleClass="inputField" />
+        <Button fx:id="settingButton" layoutX="302.0" layoutY="425.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#settingPage" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #776cc9; -fx-border-radius: 5px; -fx-cursor: hand;" text="Settings" textFill="WHITE" />
     </AnchorPane>
 
 </VBox>

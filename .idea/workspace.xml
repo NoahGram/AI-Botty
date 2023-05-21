@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a971beb-e9d0-4432-a111-cf857ed703bf" name="Changes" comment="add: login scene, register scene and chat scene">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/InstellingenController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/fonts/Gilroy-ExtraBold.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/fonts/PlusJakartaSans-VariableFont_wght.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/mail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/password.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/username.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/instellingen-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/settings.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AssistentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AssistentApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/LoginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserAccountSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserAccountSingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

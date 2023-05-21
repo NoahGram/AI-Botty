@@ -12,16 +12,15 @@ public class RegisterPageController {
     public TextField usernamefield;
     public TextField passwordfield;
 
-    UserLogin userLogin = UserLogin.getInstance();
-    HashMap<String, String> map = userLogin.getUserMap();
+    UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
 
     public void registerButtonEvent(ActionEvent event) {
         String username = usernamefield.getText();
         String password = passwordfield.getText();
-        if (map.containsKey(username)) {
+        if (userAccounts.UserExists(username)) {
             //errorField.setText("Username already taken.");
         } else {
-            map.put(username, password);
+            userAccounts.AddUser(new User(username, password, ""));
             AssistentApplication.showChatScene();
         }
     }

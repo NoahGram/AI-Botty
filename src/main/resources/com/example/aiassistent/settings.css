@@ -1,8 +1,8 @@
 @font-face {  src: url(fonts/PlusJakartaSans-VariableFont_wght.ttf);  }
 @font-face {  src: url(fonts/Gilroy-ExtraBold.otf);  }
 
-.text {
-    -fx-font-family: "Gilroy ExtraBold";
+.root * {
+    -fx-font-family: "Plus Jakarta Sans";
     -fx-font-size: 14;
 }
 
@@ -11,32 +11,6 @@
     -fx-font-size: 36;
 }
 
-#email {
-    -fx-font-family: "Plus Jakarta Sans";
-    -fx-font-size: 14;
-}
-
-#username {
-    -fx-font-family: "Plus Jakarta Sans";
-    -fx-font-size: 14;
-}
-
-#password {
-    -fx-font-family: "Plus Jakarta Sans";
-    -fx-font-size: 14;
-}
-
-#emailField {
-    -fx-font-family: "Plus Jakarta Sans";
-    -fx-font-size: 14;
-}
-
-#usernameField {
-    -fx-font-family: "Plus Jakarta Sans";
-    -fx-font-size: 14;
-}
-
-#passwordField {
-    -fx-font-family: "Plus Jakarta Sans";
-    -fx-font-size: 14;
+.text {
+    -fx-font-family: "Gilroy ExtraBold";
 }

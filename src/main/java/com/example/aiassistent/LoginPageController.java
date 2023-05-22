@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import org.w3c.dom.Text;
 
 import java.util.HashMap;
 
@@ -12,38 +11,32 @@ public class LoginPageController {
     public Button loginbutton;
     public TextField usernamefield;
     public TextField passwordfield;
-    public TextField errorField;
+    public Button settingButton;
 
-    private HashMap<String, String> userMap = new HashMap<>();
+    //public TextField errorField;
 
-    public LoginPageController() {
-        // Initialize the userMap with some sample data
-        userMap.put("alice", "password1");
-        userMap.put("bob", "password2");
-        userMap.put("charlie", "password3");
-    }
+    UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
 
     @FXML
-    private void loginButtonEvent(ActionEvent event) {
+    public void loginButtonEvent(ActionEvent event) {
         String username = usernamefield.getText();
         String password = passwordfield.getText();
-        if (userMap.containsKey(username) && userMap.get(username).equals(password)) {
+
+        if (userAccounts.UserPasswordCorrect(username, password)) {
             AssistentApplication.showChatScene();
         } else {
-            errorField.setText("Invalid username or password.");
+            //errorField.setText("Invalid username or password.");
         }
     }
 
     @FXML
-    private void registerButtonEvent(ActionEvent event) {
-        String username = usernamefield.getText();
-        String password = passwordfield.getText();
-        if (userMap.containsKey(username)) {
-            errorField.setText("Username already taken.");
-        } else {
-            userMap.put(username, password);
-            AssistentApplication.showChatScene();
-        }
+    private void registerPage(ActionEvent event) {
+        AssistentApplication.showRegisterScene();
+    }
+  
+    @FXML
+    private void settingPage(ActionEvent event) {
+        AssistentApplication.showSettingScene();
     }
 }
 

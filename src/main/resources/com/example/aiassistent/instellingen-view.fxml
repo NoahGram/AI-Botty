@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2B2D31;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.InstellingenController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" />
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+        <ColumnConstraints hgrow="SOMETIMES" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" />
+        <RowConstraints maxHeight="-Infinity" valignment="CENTER" vgrow="ALWAYS" />
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
+    <children>
+        <GridPane minHeight="400.0" minWidth="700.0" style="-fx-background-color: #313338; -fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="534.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="-Infinity" minHeight="1.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <Text fx:id="title" fill="#ffffffe5" strokeType="OUTSIDE" strokeWidth="0.0" text="Instellingen" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+                    <font>
+                        <Font name="Gilroy-ExtraBold" size="36.0" />
+                    </font>
+                    <GridPane.margin>
+                        <Insets bottom="20.0" left="20.0" top="20.0" />
+                    </GridPane.margin>
+                </Text>
+                <GridPane prefHeight="70.0" prefWidth="700.0" style="-fx-background-color: #3D3F46; -fx-background-radius: 5;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="185.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
+                    </rowConstraints>
+                    <children>
+                        <Text fill="#ffffffe5" strokeType="OUTSIDE" strokeWidth="0.0" text="Update uw e-mailadres" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Plus Jakarta Sans Regular" size="14.0" />
+                            </font>
+                        </Text>
+                        <ImageView fitHeight="45.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <image>
+                                <Image url="@images/mail.png" />
+                            </image>
+                            <GridPane.margin>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </GridPane.margin>
+                            <effect>
+                                <ColorAdjust brightness="0.9" />
+                            </effect>
+                        </ImageView>
+                        <JFXTextField fx:id="emailField" focusColor="#776cc9" promptText="Emailadres" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <GridPane.margin>
+                                <Insets bottom="15.0" left="30.0" right="15.0" top="15.0" />
+                            </GridPane.margin>
+                            <font>
+                                <Font name="Plus Jakarta Sans Regular" size="14.0" />
+                            </font>
+                            <effect>
+                                <ColorAdjust brightness="0.9" />
+                            </effect>
+                        </JFXTextField>
+                        <JFXButton fx:id="changeEmail" buttonType="RAISED" focusTraversable="false" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Gilroy-ExtraBold" size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                            </padding>
+                            <GridPane.margin>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                    </children>
+                    <effect>
+                        <DropShadow color="#0000001a" offsetY="5.0" />
+                    </effect>
+                    <GridPane.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                    </GridPane.margin>
+                </GridPane>
+                <GridPane prefHeight="70.0" prefWidth="700.0" style="-fx-background-color: #3D3F46; -fx-background-radius: 5;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="185.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Text fill="#ffffffe5" strokeType="OUTSIDE" strokeWidth="0.0" text="Update uw gebruikersnaam" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Plus Jakarta Sans Regular" size="14.0" />
+                            </font>
+                        </Text>
+                        <ImageView fitHeight="45.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <image>
+                                <Image url="@images/username.png" />
+                            </image>
+                            <GridPane.margin>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </GridPane.margin>
+                            <effect>
+                                <ColorAdjust brightness="0.9" />
+                            </effect>
+                        </ImageView>
+                        <JFXTextField fx:id="usernameField" focusColor="#776cc9" promptText="Gebruikersnaam" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <GridPane.margin>
+                                <Insets bottom="15.0" left="30.0" right="15.0" top="15.0" />
+                            </GridPane.margin>
+                            <font>
+                                <Font name="Plus Jakarta Sans Regular" size="14.0" />
+                            </font>
+                            <effect>
+                                <ColorAdjust brightness="0.9" />
+                            </effect>
+                        </JFXTextField>
+                        <JFXButton fx:id="changeUsername" buttonType="RAISED" focusTraversable="false" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Gilroy-ExtraBold" size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                            </padding>
+                            <GridPane.margin>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                    </children>
+                    <effect>
+                        <DropShadow color="#0000001a" offsetY="5.0" />
+                    </effect>
+                    <GridPane.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                    </GridPane.margin>
+                </GridPane>
+                <GridPane prefHeight="70.0" prefWidth="700.0" style="-fx-background-color: #3D3F46; -fx-background-radius: 5;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="185.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Text fill="#ffffffe5" strokeType="OUTSIDE" strokeWidth="0.0" text="Update uw wachtwoord" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Plus Jakarta Sans Regular" size="14.0" />
+                            </font>
+                        </Text>
+                        <ImageView fitHeight="45.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <image>
+                                <Image url="@images/password.png" />
+                            </image>
+                            <GridPane.margin>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </GridPane.margin>
+                            <effect>
+                                <ColorAdjust brightness="0.9" />
+                            </effect>
+                        </ImageView>
+                        <JFXPasswordField fx:id="passwordField" focusColor="#776cc9" promptText="Wachtwoord" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.vgrow="ALWAYS">
+                            <GridPane.margin>
+                                <Insets bottom="15.0" left="30.0" right="15.0" top="15.0" />
+                            </GridPane.margin>
+                            <font>
+                                <Font name="Plus Jakarta Sans Regular" size="14.0" />
+                            </font>
+                            <effect>
+                                <ColorAdjust brightness="0.9" />
+                            </effect>
+                        </JFXPasswordField>
+                        <JFXButton fx:id="changePassword" buttonType="RAISED" focusTraversable="false" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Gilroy-ExtraBold" size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                            </padding>
+                            <GridPane.margin>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                    </children>
+                    <effect>
+                        <DropShadow color="#0000001a" offsetY="5.0" />
+                    </effect>
+                    <GridPane.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </GridPane.margin>
+                </GridPane>
+                <JFXButton fx:id="back" buttonType="RAISED" focusTraversable="false" onAction="#settingPage" style="-fx-background-color: #e5e5e5;" text="Terug" textFill="#000000e5" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                    <font>
+                        <Font name="Gilroy-ExtraBold" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                    </padding>
+                    <GridPane.margin>
+                        <Insets bottom="30.0" left="20.0" top="20.0" />
+                    </GridPane.margin>
+                </JFXButton>
+            </children>
+        </GridPane>
+    </children>
+</GridPane>

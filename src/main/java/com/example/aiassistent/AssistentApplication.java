@@ -60,7 +60,7 @@ public class AssistentApplication extends Application {
     public static void showSettingScene() {
         primaryStage.setScene(settingsScene);
     }
-    public static  void showChatScene() {
+    public static void showChatScene() {
         primaryStage.setScene(chatScene);
     }
 

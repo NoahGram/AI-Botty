@@ -33,7 +33,7 @@ public class LoginPageController {
     private void registerPage(ActionEvent event) {
         AssistentApplication.showRegisterScene();
     }
-
+  
     @FXML
     private void settingPage(ActionEvent event) {
         AssistentApplication.showSettingScene();

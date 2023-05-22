@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
-<VBox alignment="CENTER" minHeight="600.0" minWidth="800.0" spacing="20.0" style="-fx-background-color: #444444;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.ChatController">
-    <AnchorPane maxHeight="75.0" minHeight="75.0" prefHeight="200.0" prefWidth="200.0"
-                style="-fx-background-color: #222222;">
+
+<VBox alignment="CENTER" minHeight="600.0" minWidth="800.0" spacing="20.0" style="-fx-background-color: #313338;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.ChatController">
+    <AnchorPane maxHeight="75.0" minHeight="75.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222222;">
         <VBox.margin>
-            <Insets top="-3.0"/>
+            <Insets top="-3.0" />
         </VBox.margin>
-        <Text fill="WHITE" layoutX="342.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              styleClass="logo" text="AI-Assistent">
+        <Text fill="WHITE" layoutX="354.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo" text="ChadGPT">
             <font>
-                <Font name="Calibri" size="24.0"/>
+                <Font name="Consolas" size="36.0" />
             </font>
         </Text>
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="306.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/chat-4-48.png" />
+            </image>
+        </ImageView>
+      <Text id="loggedInAs" fx:id="loggedInAs" fill="WHITE" layoutX="38.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingelogd als" />
     </AnchorPane>
     <AnchorPane prefHeight="500.0" prefWidth="800.0">
         <Text fill="WHITE" layoutX="275.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chatscherm">
@@ -26,6 +32,33 @@
            </font>
         </Text>
         <Button fx:id="backButton" layoutX="302.0" layoutY="308.0" minHeight="35.0" minWidth="150.0" mnemonicParsing="false" onAction="#backButtonEvent" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #776cc9; -fx-border-radius: 5px; -fx-cursor: hand;" text="Back" textFill="WHITE" />
+    <AnchorPane prefHeight="500.0" prefWidth="800.0" styleClass="container" stylesheets="@style.css">
+      <Pane fx:id="chatPane" layoutX="11.0" layoutY="-18.0" prefHeight="500.0" prefWidth="776.0">
+         <children>
+              <TextField id="logininput" fx:id="questionField" layoutX="44.0" layoutY="444.0" minWidth="100.0" prefHeight="41.2" prefWidth="604.0" promptText="Voer een vraag in..." style="-fx-background-color: #4b4a54;" styleClass="inputField" />
+              <Button fx:id="questionButton" layoutX="661.0" layoutY="444.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#questionButtonEvent" prefHeight="40.0" prefWidth="71.0" style="-fx-background-color: #776cc9; -fx-border-radius: 5px; -fx-cursor: hand; -fx-border-color: transparent;" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/send.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <TabPane layoutX="44.0" layoutY="18.0" minWidth="100.0" prefHeight="410.0" prefWidth="688.0" style="-fx-background-color: #313338;">
+              <tabs>
+                <Tab closable="false" text="Hoe kan ik ...">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+                <Tab text="Waar kan ik ...">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
     </AnchorPane>
-
 </VBox>

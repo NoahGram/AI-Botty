@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 
 public class ChatController {
     public Button backButton;
-
     @FXML
     private void backButtonEvent(ActionEvent event) {
         AssistentApplication.showLoginScene();

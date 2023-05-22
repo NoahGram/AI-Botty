@@ -1,21 +1,43 @@
 package com.example.aiassistent;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import org.w3c.dom.Text;
 
+import java.net.URL;
 import java.util.HashMap;
+import java.util.ResourceBundle;
 
 public class LoginPageController {
-    public Button loginbutton;
-    public TextField usernamefield;
-    public TextField passwordfield;
+
+    @FXML
+    public JFXButton loginbutton;
+
+    @FXML
+    public Button registerButton;
+
+    @FXML
     public Button settingButton;
+
+    @FXML
+    public JFXTextField usernamefield;
+
+    @FXML
+    public JFXPasswordField passwordfield;
 
     //public TextField errorField;
 
     UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
+
+    public void initialize(URL url, ResourceBundle rb) {
+        usernamefield.setStyle("-fx-text-inner-color: #BA55D3;");
+    }
 
     @FXML
     public void loginButtonEvent(ActionEvent event) {

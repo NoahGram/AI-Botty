@@ -3,6 +3,7 @@ import java.util.HashMap;
 
 public class UserAccountSingleton {
     private static UserAccountSingleton instance;
+    public static String currentUser;
     private HashMap<String, User> userMap = new HashMap<>();
 
     private UserAccountSingleton() {
@@ -47,5 +48,10 @@ public class UserAccountSingleton {
         return
             UserExists(username) &&
             GetUser(username).GetPassword().equals(password);
+    }
+
+    public static void logOut() {
+        currentUser = null;
+        AssistentApplication.showLoginScene();
     }
 }

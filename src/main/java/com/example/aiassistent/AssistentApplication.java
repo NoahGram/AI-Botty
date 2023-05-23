@@ -8,7 +8,9 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.Console;
 import java.io.IOException;
+import java.util.Objects;
 
 public class AssistentApplication extends Application {
     private static Stage primaryStage;
@@ -16,6 +18,9 @@ public class AssistentApplication extends Application {
     private static Scene registerScene;
     private static Scene chatScene;
     private static Scene settingsScene;
+
+    public static String currentTheme = "dark.css";
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -39,8 +44,11 @@ public class AssistentApplication extends Application {
         settingsScene = new Scene(settingsRoot, 800, 600);
 
         // Load CSS
-        settingsScene.getStylesheets().add(getClass().getResource("settings.css").toExternalForm());
-        loginScene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
+        loadCSS(loginScene, currentTheme);
+        loadCSS(registerScene, currentTheme);
+        loadCSS(chatScene, currentTheme);
+        loadCSS(settingsScene, currentTheme);
+
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/Gilroy-ExtraBold.otf"), 14);
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/PlusJakartaSans-VariableFont_wght.ttf"), 13);
 
@@ -50,19 +58,48 @@ public class AssistentApplication extends Application {
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
+
         primaryStage.show();
     }
 
-    // Methods to switch between scenes
+    // Method to load the css, clear the current css first
+    private static void loadCSS(Scene scene, String cssFile) {
+        scene.getStylesheets().clear(); // Clear the existing stylesheets
+        scene.getStylesheets().add(Objects.requireNonNull(AssistentApplication.class.getResource(cssFile)).toExternalForm());
+    }
+
+    // Change the theme for all scenes
+    public static void changeTheme() {
+        if (currentTheme.equals("light.css")) {
+            loadCSS(loginScene, "dark.css");
+            loadCSS(registerScene, "dark.css");
+            loadCSS(chatScene, "dark.css");
+            loadCSS(settingsScene, "dark.css");
+            currentTheme = "dark.css";
+            System.out.println("Current theme: " + currentTheme);
+        } else {
+            loadCSS(loginScene, "light.css");
+            loadCSS(registerScene, "light.css");
+            loadCSS(chatScene, "light.css");
+            loadCSS(settingsScene, "light.css");
+            currentTheme = "light.css";
+            System.out.println("Current theme: " + currentTheme);
+        }
+    }
+
+    // Switching between scenes
     public static void showLoginScene() {
         primaryStage.setScene(loginScene);
     }
+
     public static void showRegisterScene() {
         primaryStage.setScene(registerScene);
     }
+
     public static void showSettingScene() {
         primaryStage.setScene(settingsScene);
     }
+
     public static void showChatScene() {
         primaryStage.setScene(chatScene);
     }

@@ -10,4 +10,15 @@ public class ChatController {
     private void backButtonEvent(ActionEvent event) {
         AssistentApplication.showLoginScene();
     }
+
+    public void changeTheme(ActionEvent actionEvent) {
+        AssistentApplication.changeTheme();
+    }
+
+    public void openSettings(ActionEvent actionEvent) {
+    }
+
+    public void logOut(ActionEvent actionEvent) {
+        UserAccountSingleton.logOut();
+    }
 }

@@ -6,12 +6,14 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import javax.swing.*;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LoginPageController {
@@ -24,6 +26,10 @@ public class LoginPageController {
     @FXML public JFXPasswordField passwordfield;
     @FXML public Text invalid;
     @FXML public Button theme;
+    public Text title;
+    public GridPane menu;
+    public GridPane background;
+
     UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
 
     @FXML
@@ -32,6 +38,7 @@ public class LoginPageController {
         String password = passwordfield.getText();
 
         if (userAccounts.UserPasswordCorrect(username, password)) {
+            UserAccountSingleton.currentUser = username;
             AssistentApplication.showChatScene();
         } else {
             invalid.setText("De verstrekte inloggegevens zijn incorrect");
@@ -62,7 +69,7 @@ public class LoginPageController {
 
     @FXML
     private void changeTheme(ActionEvent event) {
-        theme.setOnAction(e -> theme.getScene().getStylesheets().set(0, getClass().getResource("loginLight.css").toExternalForm()));
+        AssistentApplication.changeTheme();
     }
 }
 

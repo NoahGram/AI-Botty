@@ -1,25 +1,42 @@
-@font-face {  src: url(fonts/PlusJakartaSans-VariableFont_wght.ttf);  }
-@font-face {  src: url(fonts/Gilroy-ExtraBold.otf);  }
+@font-face {
+    src: url(fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
 
-.root * {
+@font-face {
+    src: url(fonts/Gilroy-ExtraBold.otf);
+}
+
+.* {
     -fx-font-family: "Plus Jakarta Sans";
 }
 
 #title {
     -fx-font-family: "Gilroy ExtraBold";
-    -fx-font-size: 36;
+    -fx-fill: #ffffff;
+}
+
+#background {
+    -fx-background-color: #313338;
+    -fx-border-color: #313338;
+    -fx-border-width: 1.5;
+}
+
+#menu {
+    -fx-background-color:  #313338;
 }
 
 .text-field, .password-field {
     -fx-prompt-text-fill: #999999;
     -fx-text-fill: #e5e5e5;
     -fx-highlight-text-fill: #e5e5e5;
-    -fx-font-size: 14;
+    -fx-font-size: 12;
+    -fx-background-color: #3D3F46;
 }
 
 .text {
     -fx-font-family: "Gilroy ExtraBold";
     -fx-font-size: 14;
+    -fx-fill: #ffffff;
 }
 
 .button * {

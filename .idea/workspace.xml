@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb83f49e-471f-4050-8ba7-50cfe310719f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="eb83f49e-471f-4050-8ba7-50cfe310719f" name="Changes" comment="ui overhaul login and chat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AssistentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AssistentApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/LoginPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserAccountSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserAccountSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/chat-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/chat-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/loginLight.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/loginLight.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +60,18 @@
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="ui overhaul login and chat">
+      <created>1684869327979</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684869327979</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ui overhaul login and chat" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui overhaul login and chat" />
   </component>
 </project>

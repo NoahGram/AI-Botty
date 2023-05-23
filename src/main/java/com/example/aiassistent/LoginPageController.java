@@ -21,14 +21,12 @@ public class LoginPageController {
     @FXML public JFXButton loginbutton;
     @FXML public Button exitButton;
     @FXML public Button registerButton;
-    @FXML public Button settingButton;
     @FXML public JFXTextField usernamefield;
     @FXML public JFXPasswordField passwordfield;
     @FXML public Text invalid;
     @FXML public Button theme;
-    public Text title;
-    public GridPane menu;
-    public GridPane background;
+    @FXML
+    public static String currentUser = "";
 
     UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
 
@@ -38,9 +36,15 @@ public class LoginPageController {
         String password = passwordfield.getText();
 
         if (userAccounts.UserPasswordCorrect(username, password)) {
-            UserAccountSingleton.currentUser = username;
+            currentUser = username;
+            invalid.setText("");
+            usernamefield.setText("");
+            passwordfield.setText("");
             AssistentApplication.showChatScene();
         } else {
+            invalid.setText("");
+            usernamefield.setText("");
+            passwordfield.setText("");
             invalid.setText("De verstrekte inloggegevens zijn incorrect");
         }
     }
@@ -49,13 +53,10 @@ public class LoginPageController {
     private void registerPage(ActionEvent event) {
         AssistentApplication.showRegisterScene();
         invalid.setText("");
+        usernamefield.setText("");
+        passwordfield.setText("");
     }
 
-    @FXML
-    private void settingPage(ActionEvent event) {
-        AssistentApplication.showSettingScene();
-        invalid.setText("");
-    }
 
     @FXML
     private void exit(ActionEvent event) {

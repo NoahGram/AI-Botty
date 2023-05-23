@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -46,6 +47,7 @@ public class AssistentApplication extends Application {
         // Set the initial scene
         primaryStage.setTitle("AI-Assistent");
         primaryStage.setScene(loginScene);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
         primaryStage.show();

@@ -6,38 +6,25 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
-import org.w3c.dom.Text;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
 
+import javax.swing.*;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class LoginPageController {
 
-    @FXML
-    public JFXButton loginbutton;
-
-    @FXML
-    public Button registerButton;
-
-    @FXML
-    public Button settingButton;
-
-    @FXML
-    public JFXTextField usernamefield;
-
-    @FXML
-    public JFXPasswordField passwordfield;
-
-    //public TextField errorField;
-
+    @FXML public JFXButton loginbutton;
+    @FXML public Button exitButton;
+    @FXML public Button registerButton;
+    @FXML public Button settingButton;
+    @FXML public JFXTextField usernamefield;
+    @FXML public JFXPasswordField passwordfield;
+    @FXML public Text invalid;
+    @FXML public Button theme;
     UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
-
-    public void initialize(URL url, ResourceBundle rb) {
-        usernamefield.setStyle("-fx-text-inner-color: #BA55D3;");
-    }
 
     @FXML
     public void loginButtonEvent(ActionEvent event) {
@@ -47,18 +34,35 @@ public class LoginPageController {
         if (userAccounts.UserPasswordCorrect(username, password)) {
             AssistentApplication.showChatScene();
         } else {
-            //errorField.setText("Invalid username or password.");
+            invalid.setText("De verstrekte inloggegevens zijn incorrect");
         }
     }
 
     @FXML
     private void registerPage(ActionEvent event) {
         AssistentApplication.showRegisterScene();
+        invalid.setText("");
     }
-  
+
     @FXML
     private void settingPage(ActionEvent event) {
         AssistentApplication.showSettingScene();
+        invalid.setText("");
+    }
+
+    @FXML
+    private void exit(ActionEvent event) {
+        System.exit(0);
+    }
+
+    @FXML
+    private void onEnter(ActionEvent event) {
+        loginButtonEvent(event);
+    }
+
+    @FXML
+    private void changeTheme(ActionEvent event) {
+        theme.setOnAction(e -> theme.getScene().getStylesheets().set(0, getClass().getResource("loginLight.css").toExternalForm()));
     }
 }
 

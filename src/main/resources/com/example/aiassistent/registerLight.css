@@ -1,0 +1,57 @@
+@font-face {  src: url(fonts/PlusJakartaSans-VariableFont_wght.ttf);  }
+@font-face {  src: url(fonts/Gilroy-ExtraBold.otf);  }
+
+.root * {
+    -fx-font-family: "Plus Jakarta Sans";
+}
+
+.primary-color {
+    -fx-background-color: #E1E1E1;
+}
+
+.secondary-color {
+    -fx-background-color: #E1E1E1;
+}
+
+.accent-color {
+    -fx-background-color: #776cc9;
+}
+
+.input-color {
+    -fx-background-color: #EBEBEB;
+    -jfx-unfocus-color: WHITE;
+}
+
+.title {
+    -fx-fill: #363c40;
+    -fx-font-family: "Gilroy ExtraBold";
+    -fx-font-size: 36;
+}
+
+.terug {
+    -fx-font-family: "Plus Jakarta Sans";
+    -fx-text-fill: #7466cc;
+    -fx-background-color: #E1E1E1;
+    -fx-font-size: 14;
+}
+
+.text-field, .password-field {
+    -fx-prompt-text-fill: #999999;
+    -fx-text-fill: #363c40;
+    -fx-highlight-text-fill: #363c40;
+    -fx-font-size: 14;
+}
+
+.subtext {
+    -fx-fill: #363c40;
+}
+
+.jfx-button * {
+    -fx-font-family: "Gilroy ExtraBold";
+    -fx-fill: #f2f2f2;
+    -fx-font-size: 14;
+}
+
+.nav {
+    -fx-background-color: #313338;
+}

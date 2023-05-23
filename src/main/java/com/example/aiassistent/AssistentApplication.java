@@ -21,6 +21,9 @@ public class AssistentApplication extends Application {
 
     public static String currentTheme = "dark.css";
 
+    private double xOffset = 0;
+    private double yOffset = 0;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -58,6 +61,17 @@ public class AssistentApplication extends Application {
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
+
+        // Make the window draggable
+        loginRoot.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        loginRoot.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
 
         primaryStage.show();
     }

@@ -41,6 +41,7 @@ public class AssistentApplication extends Application {
         // Load CSS
         settingsScene.getStylesheets().add(getClass().getResource("settings.css").toExternalForm());
         loginScene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
+        registerScene.getStylesheets().add(getClass().getResource("registerDark.css").toExternalForm());
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/Gilroy-ExtraBold.otf"), 14);
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/PlusJakartaSans-VariableFont_wght.ttf"), 13);
 

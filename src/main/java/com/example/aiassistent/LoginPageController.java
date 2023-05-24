@@ -6,26 +6,18 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
-
-import javax.swing.*;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Objects;
-import java.util.ResourceBundle;
 
 public class LoginPageController {
 
-    @FXML public JFXButton loginbutton;
-    @FXML public Button exitButton;
-    @FXML public Button registerButton;
-    @FXML public JFXTextField usernamefield;
-    @FXML public JFXPasswordField passwordfield;
-    @FXML public Text invalid;
-    @FXML public Button theme;
-    @FXML
+     public JFXButton loginbutton;
+     public Button exitButton;
+     public Button registerButton;
+     public JFXTextField usernamefield;
+     public JFXPasswordField passwordfield;
+     public Text invalid;
+     public Button theme;
+
     public static String currentUser = "";
 
     UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
@@ -57,7 +49,6 @@ public class LoginPageController {
         usernamefield.setText("");
         passwordfield.setText("");
     }
-
 
     @FXML
     private void exit(ActionEvent event) {

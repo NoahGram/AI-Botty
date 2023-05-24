@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="primary-color" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.RegisterPageController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.RegisterPageController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" />
     </columnConstraints>
@@ -44,7 +44,7 @@
                 <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Text fx:id="title" fill="#363c40" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Maak uw account aan" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                <Text fx:id="title" fill="#363c40" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Maak je account aan" GridPane.halignment="LEFT" GridPane.valignment="TOP">
                     <font>
                         <Font name="Gilroy-ExtraBold" size="36.0" />
                     </font>
@@ -52,7 +52,7 @@
                         <Insets bottom="16.0" left="20.0" right="16.0" top="32.0" />
                     </GridPane.margin>
                 </Text>
-                <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#registerButtonEvent" style="-fx-background-color: #776cc9;" text="Registeren" textFill="#f2f2f2e5" GridPane.halignment="LEFT" GridPane.rowIndex="8" GridPane.valignment="TOP">
+                <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#registerButtonEvent" style="-fx-background-color: #776cc9; -fx-text-fill: #FFFFFF;" text="Registeren" textFill="#f2f2f2e5" GridPane.halignment="LEFT" GridPane.rowIndex="8" GridPane.valignment="TOP">
                     <padding>
                         <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                     </padding>
@@ -62,6 +62,9 @@
                     <font>
                         <Font name="Gilroy-ExtraBold" size="14.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </JFXButton>
                 <JFXTextField fx:id="emailField" focusColor="#776cc9" minHeight="40.0" onAction="#onEnter" promptText="Voer hier uw emailadres in" style="-fx-background-radius: 5; -fx-border-width: 1.2; -fx-border-color: #3D3F46;" GridPane.halignment="LEFT" GridPane.rowIndex="2">
                     <GridPane.margin>
@@ -105,7 +108,7 @@
                         <DropShadow color="#0000000d" offsetY="5.0" />
                     </effect>
                 </JFXPasswordField>
-                <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Emailadres" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Emailadres" GridPane.halignment="LEFT" GridPane.rowIndex="1">
                     <font>
                         <Font name="Plus Jakarta Sans Regular" size="11.0" />
                     </font>
@@ -113,7 +116,7 @@
                         <Insets left="20.0" />
                     </GridPane.margin>
                 </Text>
-                <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Wachtwoord" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Wachtwoord" GridPane.halignment="LEFT" GridPane.rowIndex="5">
                     <font>
                         <Font name="Plus Jakarta Sans Regular" size="11.0" />
                     </font>
@@ -121,7 +124,7 @@
                         <Insets left="20.0" />
                     </GridPane.margin>
                 </Text>
-                <Button contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#loginPage" style="-fx-background-color: transparent;" styleClass="nav" text="Keer terug" textFill="#776cc9e5" underline="true" GridPane.halignment="LEFT" GridPane.rowIndex="9" GridPane.valignment="TOP">
+                <Button contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#loginPage" style="-fx-background-color: transparent;" styleClass="nav" text="Keer terug" textFill="#8177c7e5" underline="true" GridPane.halignment="LEFT" GridPane.rowIndex="9" GridPane.valignment="TOP">
                     <GridPane.margin>
                         <Insets bottom="32.0" left="11.0" right="11.0" />
                     </GridPane.margin>
@@ -140,7 +143,7 @@
                         <Insets right="20.0" />
                     </GridPane.margin>
                 </Text>
-                <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Gebruikersnaam" GridPane.halignment="LEFT" GridPane.rowIndex="3">
+                <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Gebruikersnaam" GridPane.halignment="LEFT" GridPane.rowIndex="3">
                     <font>
                         <Font name="Plus Jakarta Sans Regular" size="11.0" />
                     </font>

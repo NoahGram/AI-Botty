@@ -10,6 +10,7 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 
 import java.net.URL;
@@ -45,10 +46,12 @@ public class ChatController {
         Button chatButton = new JFXButton("Chat " + (chatButtonsContainer.getChildren().size() + 1));
         chatButton.setPadding(new Insets(10));
         chatButton.getStyleClass().add("chatButton");
+        chatButton.setTextFill(Paint.valueOf("#ffffff"));
 
         Button removeButton = new Button("X");
         removeButton.getStyleClass().add("removeButton");
         removeButton.setBackground(Background.EMPTY);
+        removeButton.setTextFill(Paint.valueOf("#FFFFFF"));
         removeButton.setOnAction(event -> removeChatButton(chatButtonBox));
 
         StackPane stackPane = new StackPane();

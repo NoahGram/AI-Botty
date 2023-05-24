@@ -41,11 +41,12 @@ public class LoginPageController {
             usernamefield.setText("");
             passwordfield.setText("");
             AssistentApplication.showChatScene();
+        } else if (username.isEmpty() || password.isEmpty()) {
+            invalid.setText("Voer alstublieft alle velden in.");
         } else {
             invalid.setText("");
-            usernamefield.setText("");
             passwordfield.setText("");
-            invalid.setText("De verstrekte inloggegevens zijn incorrect");
+            invalid.setText("De verstrekte inloggegevens zijn incorrect.");
         }
     }
 

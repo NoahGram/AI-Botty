@@ -10,27 +10,31 @@
     -fx-font-family: "Plus Jakarta Sans";
 }
 
+.border {
+    -fx-background-color: #bcbccc;
+}
+
 .primary-color {
     -fx-background-color: #F2F3F5;
 }
 
 .nav {
+    -fx-font-family: "Gilroy ExtraBold";
+    -fx-font-size: 14;
     -fx-fill: #313338;
     -fx-text-fill: #313338;
 }
 
-#title {
+.title {
     -fx-font-family: "Gilroy ExtraBold";
     -fx-fill: #363C40;
 }
 
-#background {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #36373b;
-    -fx-border-width: 1;
+.background {
+    -fx-background-color: #F2F3F5;
 }
 
-#menu{
+#menu {
     -fx-background-color: #dadde2;
 }
 
@@ -61,18 +65,18 @@
     -fx-border-color: #ffffff;
 }
 
+.chatButtonsContainer {
+    -fx-background-color: #313338;
+    -fx-fill: #ffffff;
+    -fx-text-fill: #ffffff;
+}
+
 .text {
     -fx-font-family: "Gilroy ExtraBold";
     -fx-font-size: 14;
-    -fx-fill: #313338;
 }
 
-.jfx-button * {
+.subtext {
     -fx-font-family: "Gilroy ExtraBold";
-    -fx-fill: #ffffff;
     -fx-font-size: 14;
-}
-
-#chatButtonsContainer {
-    -fx-background-color: #ffffff;
 }

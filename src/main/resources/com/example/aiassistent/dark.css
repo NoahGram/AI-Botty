@@ -6,8 +6,12 @@
     src: url(fonts/Gilroy-ExtraBold.otf);
 }
 
-.* {
+. * {
     -fx-font-family: "Plus Jakarta Sans";
+}
+
+.primary-color {
+    -fx-background-color: #313338;
 }
 
 #title {
@@ -15,12 +19,15 @@
     -fx-fill: #ffffff;
 }
 
-#background {
-    -fx-background-color: #313338;
-    -fx-border-color: #36373b;
-    -fx-border-width: 1;
+.subtext {
+    -fx-fill: #e5e5e5;
 }
 
+.nav {
+    -fx-background-color: #313338;
+    -fx-font-size: 14;
+    -fx-font-family: "Gilroy ExtraBold";
+}
 
 #menu {
     -fx-background-color:  #313338;
@@ -42,6 +49,8 @@
     -fx-font-size: 12;
     -fx-background-color: #3D3F46;
     -fx-border-radius: 5;
+    -jfx-focus-color: #776cc9;
+    -jfx-unfocus-color: #4d4d4d;
 }
 
 .chatScreen {
@@ -56,15 +65,10 @@
     -fx-fill: #ffffff;
 }
 
-.button * {
-    -fx-font-family: "Plus Jakarta Sans";
-}
-
 .jfx-button * {
     -fx-font-family: "Gilroy ExtraBold";
 }
 
 #chatButtonsContainer {
     -fx-background-color: #313338;
-
 }

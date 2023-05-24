@@ -43,7 +43,7 @@ public class AssistentApplication extends Application {
         // Create the scenes
         loginScene = new Scene(loginRoot, 800, 600);
         registerScene = new Scene(registerRoot, 800, 600);
-        chatScene = new Scene(chatRoot, 800, 600);
+        chatScene = new Scene(chatRoot, 1200, 800);
         settingsScene = new Scene(settingsRoot, 800, 600);
 
         // Load CSS
@@ -56,9 +56,10 @@ public class AssistentApplication extends Application {
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/PlusJakartaSans-VariableFont_wght.ttf"), 13);
 
         // Set the initial scene
-        primaryStage.setTitle("AI-Assistent");
+        primaryStage.setTitle("AI-Assistant");
         primaryStage.setScene(loginScene);
         primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.setResizable(true);
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
 
@@ -73,10 +74,40 @@ public class AssistentApplication extends Application {
             primaryStage.setY(event.getScreenY() - yOffset);
         });
 
+        registerRoot.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        registerRoot.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
+
+        chatRoot.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        chatRoot.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
+
+        settingsRoot.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        settingsRoot.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
+
         primaryStage.show();
     }
 
-    // Method to load the css, clear the current css first
+    // Method to load the CSS, clear the current CSS first
     private static void loadCSS(Scene scene, String cssFile) {
         scene.getStylesheets().clear(); // Clear the existing stylesheets
         scene.getStylesheets().add(Objects.requireNonNull(AssistentApplication.class.getResource(cssFile)).toExternalForm());
@@ -110,7 +141,7 @@ public class AssistentApplication extends Application {
         primaryStage.setScene(registerScene);
     }
 
-    public static void showSettingScene() {
+    public static void showSettingsScene() {
         primaryStage.setScene(settingsScene);
     }
 

@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb83f49e-471f-4050-8ba7-50cfe310719f" name="Changes" comment="changed exit and logout icons">
+    <list default="true" id="eb83f49e-471f-4050-8ba7-50cfe310719f" name="Changes" comment="made window dragable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AssistentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AssistentApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserAccountSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserAccountSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/chat-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/chat-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/logoa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/light.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/loginLight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/register-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/register-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +45,7 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\William\Desktop\School\Proj2\AI-Botty\src\main\resources\com\example\aiassistent\images" />
       <recent name="C:\Users\William\Desktop\School\Proj2\AI-Botty\src\main\resources\com\example\aiassistent" />
+      <recent name="C:\Users\William\Desktop\School\Proj2\AI-Botty\src\main\resources\com" />
     </key>
   </component>
   <component name="RunManager">
@@ -70,12 +83,20 @@
       <option name="project" value="LOCAL" />
       <updated>1684871413522</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="made window dragable">
+      <created>1684871525139</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684871525139</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ui overhaul login and chat" />
     <MESSAGE value="changed exit and logout icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed exit and logout icons" />
+    <MESSAGE value="made window dragable" />
+    <option name="LAST_COMMIT_MESSAGE" value="made window dragable" />
   </component>
 </project>

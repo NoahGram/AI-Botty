@@ -17,12 +17,21 @@
 
 #background {
     -fx-background-color: #ffffff;
-    -fx-border-color: #313338;
-    -fx-border-width: 1.5;
+    -fx-border-color: #36373b;
+    -fx-border-width: 1;
 }
 
 #menu{
     -fx-background-color: #dadde2;
+}
+
+.chatButton {
+    -fx-background-color: #2B2D31;
+    -fx-border-radius: 5;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+    -fx-min-height: 38px;
+    -fx-min-width: 200px;
 }
 
 .text-field, .password-field {
@@ -32,7 +41,13 @@
     -fx-font-size: 12;
     -fx-background-color: #ffffff;
     -fx-border-color: #313338;
-    -fx-border-radius: 10;
+    -fx-border-radius: 5;
+}
+
+.chatScreen {
+    -fx-background-color: #ffffff;
+    -fx-background: #ffffff;
+    -fx-border-color: #ffffff;
 }
 
 .text {
@@ -43,7 +58,7 @@
 
 .button * {
     -fx-font-family: "Plus Jakarta Sans";
-    -fx-fill: #313338;
+    -fx-fill: #ffffff;
     -fx-font-size: 14;
 }
 
@@ -51,4 +66,8 @@
     -fx-font-family: "Gilroy ExtraBold";
     -fx-fill: #ffffff;
     -fx-font-size: 14;
+}
+
+#chatButtonsContainer {
+    -fx-background-color: #ffffff;
 }

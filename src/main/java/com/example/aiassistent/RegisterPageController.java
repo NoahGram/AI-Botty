@@ -27,6 +27,7 @@ public class RegisterPageController {
             invalid.setText("Voer alstublieft alle velden in.");
         } else {
             userAccounts.AddUser(new User(username, password, email));
+            System.out.printf("New registered user: %n Username - %s%n Email - %s%n Password - %s", username, email, password);
             AssistentApplication.showChatScene();
         }
     }
@@ -40,6 +41,9 @@ public class RegisterPageController {
     private void loginPage(ActionEvent event) {
         AssistentApplication.showLoginScene();
         invalid.setText("");
+        emailField.setText("");
+        usernamefield.setText("");
+        passwordfield.setText("");
     }
 
     @FXML

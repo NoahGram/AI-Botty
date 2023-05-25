@@ -6,8 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.Console;
 import java.io.IOException;
+import java.util.Objects;
 
 public class AssistentApplication extends Application {
     private static Stage primaryStage;
@@ -15,6 +18,12 @@ public class AssistentApplication extends Application {
     private static Scene registerScene;
     private static Scene chatScene;
     private static Scene settingsScene;
+
+    public static String currentTheme = "dark.css";
+
+    private double xOffset = 0;
+    private double yOffset = 0;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -34,33 +43,108 @@ public class AssistentApplication extends Application {
         // Create the scenes
         loginScene = new Scene(loginRoot, 800, 600);
         registerScene = new Scene(registerRoot, 800, 600);
-        chatScene = new Scene(chatRoot, 800, 600);
+        chatScene = new Scene(chatRoot, 1200, 800);
         settingsScene = new Scene(settingsRoot, 800, 600);
 
         // Load CSS
-        settingsScene.getStylesheets().add(getClass().getResource("settings.css").toExternalForm());
-        loginScene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
+        loadCSS(loginScene, currentTheme);
+        loadCSS(registerScene, currentTheme);
+        loadCSS(chatScene, currentTheme);
+        loadCSS(settingsScene, currentTheme);
+
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/Gilroy-ExtraBold.otf"), 14);
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/PlusJakartaSans-VariableFont_wght.ttf"), 13);
 
         // Set the initial scene
-        primaryStage.setTitle("AI-Assistent");
+        primaryStage.setTitle("AI-Assistant");
         primaryStage.setScene(loginScene);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.setResizable(true);
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
+
+        // Make the window draggable
+        loginRoot.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        loginRoot.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
+
+        registerRoot.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        registerRoot.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
+
+        chatRoot.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        chatRoot.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
+
+        settingsRoot.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        settingsRoot.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
+
         primaryStage.show();
     }
 
-    // Methods to switch between scenes
+    // Method to load the CSS, clear the current CSS first
+    private static void loadCSS(Scene scene, String cssFile) {
+        scene.getStylesheets().clear(); // Clear the existing stylesheets
+        scene.getStylesheets().add(Objects.requireNonNull(AssistentApplication.class.getResource(cssFile)).toExternalForm());
+    }
+
+    // Change the theme for all scenes
+    public static void changeTheme() {
+        if (currentTheme.equals("light.css")) {
+            loadCSS(loginScene, "dark.css");
+            loadCSS(registerScene, "dark.css");
+            loadCSS(chatScene, "dark.css");
+            loadCSS(settingsScene, "dark.css");
+            currentTheme = "dark.css";
+            System.out.println("Current theme: " + currentTheme);
+        } else {
+            loadCSS(loginScene, "light.css");
+            loadCSS(registerScene, "light.css");
+            loadCSS(chatScene, "light.css");
+            loadCSS(settingsScene, "light.css");
+            currentTheme = "light.css";
+            System.out.println("Current theme: " + currentTheme);
+        }
+    }
+
+    // Switching between scenes
     public static void showLoginScene() {
         primaryStage.setScene(loginScene);
     }
+
     public static void showRegisterScene() {
         primaryStage.setScene(registerScene);
     }
-    public static void showSettingScene() {
+
+    public static void showSettingsScene() {
         primaryStage.setScene(settingsScene);
     }
+
     public static void showChatScene() {
         primaryStage.setScene(chatScene);
     }

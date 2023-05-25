@@ -1,0 +1,82 @@
+@font-face {
+    src: url(fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    src: url(fonts/Gilroy-ExtraBold.otf);
+}
+
+. * {
+    -fx-font-family: "Plus Jakarta Sans";
+}
+
+.border {
+    -fx-background-color: #bcbccc;
+}
+
+.primary-color {
+    -fx-background-color: #F2F3F5;
+}
+
+.nav {
+    -fx-font-family: "Gilroy ExtraBold";
+    -fx-font-size: 14;
+    -fx-fill: #313338;
+    -fx-text-fill: #313338;
+}
+
+.title {
+    -fx-font-family: "Gilroy ExtraBold";
+    -fx-fill: #363C40;
+}
+
+.background {
+    -fx-background-color: #F2F3F5;
+}
+
+#menu {
+    -fx-background-color: #dadde2;
+}
+
+.chatButton {
+    -fx-background-color: #2B2D31;
+    -fx-border-radius: 5;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+    -fx-min-height: 38px;
+    -fx-min-width: 200px;
+}
+
+.text-field, .password-field {
+    -fx-prompt-text-fill: #999999;
+    -fx-text-fill: #313338;
+    -fx-highlight-text-fill: #e5e5e5;
+    -fx-font-size: 12;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #313338;
+    -fx-border-radius: 5;
+    -jfx-focus-color: transparent;
+    -jfx-unfocus-color: transparent;
+}
+
+.chatScreen {
+    -fx-background-color: #ffffff;
+    -fx-background: #ffffff;
+    -fx-border-color: #ffffff;
+}
+
+.chatButtonsContainer {
+    -fx-background-color: #313338;
+    -fx-fill: #ffffff;
+    -fx-text-fill: #ffffff;
+}
+
+.text {
+    -fx-font-family: "Gilroy ExtraBold";
+    -fx-font-size: 14;
+}
+
+.subtext {
+    -fx-font-family: "Gilroy ExtraBold";
+    -fx-font-size: 14;
+}

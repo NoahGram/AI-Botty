@@ -6,38 +6,21 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
-import org.w3c.dom.Text;
-
-import java.net.URL;
-import java.util.HashMap;
-import java.util.ResourceBundle;
+import javafx.scene.text.Text;
 
 public class LoginPageController {
 
-    @FXML
-    public JFXButton loginbutton;
+     public JFXButton loginbutton;
+     public Button exitButton;
+     public Button registerButton;
+     public JFXTextField usernamefield;
+     public JFXPasswordField passwordfield;
+     public Text invalid;
+     public Button theme;
 
-    @FXML
-    public Button registerButton;
-
-    @FXML
-    public Button settingButton;
-
-    @FXML
-    public JFXTextField usernamefield;
-
-    @FXML
-    public JFXPasswordField passwordfield;
-
-    //public TextField errorField;
+    public static String currentUser = "";
 
     UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
-
-    public void initialize(URL url, ResourceBundle rb) {
-        usernamefield.setStyle("-fx-text-inner-color: #BA55D3;");
-    }
 
     @FXML
     public void loginButtonEvent(ActionEvent event) {
@@ -45,20 +28,41 @@ public class LoginPageController {
         String password = passwordfield.getText();
 
         if (userAccounts.UserPasswordCorrect(username, password)) {
+            currentUser = username;
+            invalid.setText("");
+            usernamefield.setText("");
+            passwordfield.setText("");
             AssistentApplication.showChatScene();
+        } else if (username.isEmpty() || password.isEmpty()) {
+            invalid.setText("Voer alstublieft alle velden in.");
         } else {
-            //errorField.setText("Invalid username or password.");
+            invalid.setText("");
+            passwordfield.setText("");
+            invalid.setText("De verstrekte inloggegevens zijn incorrect.");
         }
     }
 
     @FXML
     private void registerPage(ActionEvent event) {
         AssistentApplication.showRegisterScene();
+        invalid.setText("");
+        usernamefield.setText("");
+        passwordfield.setText("");
     }
-  
+
     @FXML
-    private void settingPage(ActionEvent event) {
-        AssistentApplication.showSettingScene();
+    private void exit(ActionEvent event) {
+        System.exit(0);
+    }
+
+    @FXML
+    private void onEnter(ActionEvent event) {
+        loginButtonEvent(event);
+    }
+
+    @FXML
+    private void changeTheme(ActionEvent event) {
+        AssistentApplication.changeTheme();
     }
 }
 

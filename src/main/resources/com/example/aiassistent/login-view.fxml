@@ -7,6 +7,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -88,7 +89,7 @@
             <Insets bottom="4.0" left="4.0" right="4.0" top="31.0" />
          </GridPane.margin>
          <children>
-            <GridPane id="container" fx:id="menu" prefHeight="400.0" prefWidth="600.0" styleClass="background" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <GridPane id="container" fx:id="menu" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" styleClass="middleground" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <columnConstraints>
                   <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
                </columnConstraints>
@@ -131,7 +132,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXTextField fx:id="usernamefield" focusColor="#766bc700" minHeight="42.0" onAction="#onEnter" promptText="Voer hier uw gebruikersnaam in" style="-fx-border-radius: 5; -fx-border-width: 1.2; -fx-border-color: #3D3F46;" unFocusColor="#4d4d4d00" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+                  <JFXTextField fx:id="usernamefield" focusColor="#766bc700" minHeight="42.0" onAction="#onEnter" promptText="Voer hier uw gebruikersnaam in" unFocusColor="#4d4d4d00" GridPane.halignment="LEFT" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets bottom="12.0" left="20.0" right="20.0" />
                      </GridPane.margin>
@@ -141,8 +142,11 @@
                      <padding>
                         <Insets left="10.0" right="10.0" />
                      </padding>
+                     <effect>
+                        <DropShadow color="#0000000d" offsetY="5.0" />
+                     </effect>
                   </JFXTextField>
-                  <JFXPasswordField fx:id="passwordfield" focusColor="#766bc700" minHeight="42.0" onAction="#onEnter" promptText="Voer hier uw wachtwoord in" style="-fx-border-radius: 5; -fx-border-width: 1.2; -fx-border-color: #3D3F46;" unFocusColor="#4d4d4d00" GridPane.halignment="LEFT" GridPane.rowIndex="6">
+                  <JFXPasswordField fx:id="passwordfield" focusColor="#766bc700" minHeight="42.0" onAction="#onEnter" promptText="Voer hier uw wachtwoord in" unFocusColor="#4d4d4d00" GridPane.halignment="LEFT" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets bottom="32.0" left="20.0" right="20.0" />
                      </GridPane.margin>
@@ -152,13 +156,16 @@
                      <font>
                         <Font name="Plus Jakarta Sans Regular" size="14.0" />
                      </font>
+                     <effect>
+                        <DropShadow color="#0000000d" offsetY="5.0" />
+                     </effect>
                   </JFXPasswordField>
                   <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Gebruikersnaam" GridPane.halignment="LEFT" GridPane.rowIndex="3">
                      <font>
                         <Font name="Plus Jakarta Sans Regular" size="11.0" />
                      </font>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="5.0" left="20.0" />
                      </GridPane.margin>
                   </Text>
                   <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Wachtwoord" GridPane.halignment="LEFT" GridPane.rowIndex="5">
@@ -166,7 +173,7 @@
                         <Font name="Plus Jakarta Sans Regular" size="11.0" />
                      </font>
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="5.0" left="20.0" />
                      </GridPane.margin>
                   </Text>
                   <Button fx:id="registerButton" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#registerPage" style="-fx-background-color: transparent;" styleClass="subtext" text="Maak een account" textAlignment="CENTER" textFill="#000000e5" underline="true" GridPane.halignment="LEFT" GridPane.rowIndex="9" GridPane.valignment="BOTTOM">
@@ -180,17 +187,17 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Text fx:id="invalid" fill="#ff4d4de5" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+                  <Text fx:id="invalid" fill="#ff4d4de5" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="8" GridPane.valignment="TOP">
                      <font>
                         <Font name="Plus Jakarta Sans Regular" size="11.0" />
                      </font>
                      <GridPane.margin>
-                        <Insets bottom="10.0" left="20.0" />
+                        <Insets bottom="10.0" left="20.0" right="20.0" />
                      </GridPane.margin>
                   </Text>
                   <Text fill="#6f6f6f" strokeType="OUTSIDE" strokeWidth="0.0" text="WELKOM TERUG" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
                      <GridPane.margin>
-                        <Insets left="20.0" />
+                        <Insets left="20.0" top="32.0" />
                      </GridPane.margin>
                      <font>
                         <Font name="System Bold" size="14.0" />

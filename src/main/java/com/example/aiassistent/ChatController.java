@@ -14,9 +14,11 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class ChatController {
+    private List<Button> chatButtons = new ArrayList<>();
+    private Map<Button, VBox> chatConversations = new HashMap<>();
 
     public Button settings;
 
@@ -37,10 +39,21 @@ public class ChatController {
 
     @FXML
     private void initialize() {
-        // Add event handler to the "Nieuwe chat" button
         newChatButton.setOnAction(event -> addNewChatButton());
         addNewChatButton();
+
+        // Set the initial active chat
+        Button initialChatButton = chatButtons.get(0);
+        switchChat(initialChatButton);
     }
+
+    private void switchChat(Button chatButton) {
+        chatVBox.getChildren().clear();
+
+        VBox conversationBox = chatConversations.get(chatButton);
+        chatVBox.getChildren().add(conversationBox);
+    }
+
 
     @FXML
     private void askQuestion() {
@@ -52,22 +65,23 @@ public class ChatController {
 
     private void displayQuestion(String question) {
         Text questionText = new Text(question);
-        questionText.setStyle("-fx-font-size: 16; -fx-fill: #333333;"); // Apply CSS styles
-        VBox questionBox = new VBox(questionText);
-        questionBox.setPadding(new Insets(10)); // Add padding
-        chatVBox.getChildren().add(questionBox);
+        questionText.setStyle("-fx-font-size: 16; -fx-fill: #333333;");
+
+        VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);
+        activeConversationBox.getChildren().add(questionText);
     }
 
     private void displayAnswer(String answer) {
         Text answerText = new Text(answer);
-        answerText.setStyle("-fx-font-size: 14; -fx-fill: #666666;"); // Apply CSS styles
-        VBox answerBox = new VBox(answerText);
-        answerBox.setPadding(new Insets(10)); // Add padding
-        chatVBox.getChildren().add(answerBox);
+        answerText.setStyle("-fx-font-size: 14; -fx-fill: #666666;");
+
+        VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);
+        activeConversationBox.getChildren().add(answerText);
 
         // Add space between the question and answer blocks
-        HBox.setMargin(answerBox, new Insets(10, 0, 0, 0));
+        VBox.setMargin(answerText, new Insets(10, 0, 0, 0));
     }
+
 
 
     private String generateAnswer(String question) {
@@ -79,34 +93,45 @@ public class ChatController {
 
     @FXML
     private void addNewChatButton() {
-        HBox chatButtonBox = new HBox();
-        chatButtonBox.setSpacing(10);
-        chatButtonBox.setAlignment(Pos.CENTER_LEFT);
+        int chatNumber = chatButtons.size() + 1;
 
-        Button chatButton = new JFXButton("Chat " + (chatButtonsContainer.getChildren().size() + 1));
+        Button chatButton = new JFXButton("Chat " + chatNumber);
         chatButton.setPadding(new Insets(10));
         chatButton.getStyleClass().add("chatButton");
         chatButton.setTextFill(Paint.valueOf("#ffffff"));
 
-        Button removeButton = new Button("X");
-        removeButton.getStyleClass().add("removeButton");
-        removeButton.setBackground(Background.EMPTY);
-        removeButton.setTextFill(Paint.valueOf("#FFFFFF"));
-        removeButton.setOnAction(event -> removeChatButton(chatButtonBox));
+        // Create the remove button
+        Button removeButton = new JFXButton("Remove");
+        removeButton.setOnAction(event -> removeChatButton(chatButton));
 
-        StackPane stackPane = new StackPane();
-        stackPane.getChildren().addAll(chatButton, removeButton);
-        StackPane.setAlignment(removeButton, Pos.TOP_RIGHT);
-        StackPane.setMargin(removeButton, new Insets(10));
+        HBox chatButtonBox = new HBox(chatButton, removeButton);
+        chatButtonBox.setAlignment(Pos.CENTER);
+        chatButtonBox.setSpacing(10);
 
-        chatButtonBox.getChildren().add(stackPane);
+        VBox conversationBox = new VBox();
+        conversationBox.setPadding(new Insets(10));
+        conversationBox.setFillWidth(true);
+
+        chatButtons.add(chatButton);
+        chatConversations.put(chatButton, conversationBox);
+
+        chatButton.setOnAction(event -> switchChat(chatButton));
 
         chatButtonsContainer.getChildren().add(chatButtonBox);
     }
 
-    private void removeChatButton(HBox chatButtonBox) {
-        chatButtonsContainer.getChildren().remove(chatButtonBox);
+
+    private void removeChatButton(Button chatButton) {
+        VBox conversationBox = chatConversations.get(chatButton);
+        chatButtons.remove(chatButton);
+        chatConversations.remove(chatButton);
+
+        chatButtonsContainer.getChildren().removeIf(node -> node instanceof HBox &&
+                ((HBox) node).getChildren().contains(chatButton));
+
+        chatVBox.getChildren().remove(conversationBox);
     }
+
 
 
 

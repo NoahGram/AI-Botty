@@ -157,7 +157,7 @@
           <RowConstraints maxHeight="366.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <JFXTextField focusColor="#405aa800" maxWidth="715.0" prefHeight="38.0" prefWidth="715.0" promptText="Typ hier een vraag..." unFocusColor="#4d4d4d00" GridPane.rowIndex="1">
+            <JFXTextField focusColor="#405aa800" maxWidth="715.0" prefHeight="38.0" prefWidth="715.0" fx:id="questionField" promptText="Typ hier een vraag..." unFocusColor="#4d4d4d00" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" top="10.0" />
                </GridPane.margin>
@@ -165,7 +165,7 @@
                   <Insets left="10.0" />
                </padding>
             </JFXTextField>
-            <JFXButton id="newChatButton" fx:id="newChatButton1" minHeight="38.0" minWidth="200.0" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: #2B2D31;" styleClass="chatButtonsContainer" text="Stel vraag" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <JFXButton id="newChatButton" fx:id="askButton" onAction="#askQuestion" minHeight="38.0" minWidth="200.0" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: #2B2D31;" styleClass="chatButtonsContainer" text="Stel vraag" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

@@ -28,14 +28,54 @@ public class ChatController {
 
     @FXML
     private VBox chatButtonsContainer;
+    @FXML
+    private TextField questionField;
+
+    @FXML
+    private Button askButton;
+
 
     @FXML
     private void initialize() {
         // Add event handler to the "Nieuwe chat" button
         newChatButton.setOnAction(event -> addNewChatButton());
         addNewChatButton();
-
     }
+
+    @FXML
+    private void askQuestion() {
+        String question = questionField.getText();
+        displayQuestion(question);
+        String answer = generateAnswer(question);
+        displayAnswer(answer);
+    }
+
+    private void displayQuestion(String question) {
+        Text questionText = new Text(question);
+        questionText.setStyle("-fx-font-size: 16; -fx-fill: #333333;"); // Apply CSS styles
+        VBox questionBox = new VBox(questionText);
+        questionBox.setPadding(new Insets(10)); // Add padding
+        chatVBox.getChildren().add(questionBox);
+    }
+
+    private void displayAnswer(String answer) {
+        Text answerText = new Text(answer);
+        answerText.setStyle("-fx-font-size: 14; -fx-fill: #666666;"); // Apply CSS styles
+        VBox answerBox = new VBox(answerText);
+        answerBox.setPadding(new Insets(10)); // Add padding
+        chatVBox.getChildren().add(answerBox);
+
+        // Add space between the question and answer blocks
+        HBox.setMargin(answerBox, new Insets(10, 0, 0, 0));
+    }
+
+
+    private String generateAnswer(String question) {
+        // Generate a dummy answer based on the user's input
+        // Implement your own logic here
+        return "This is a dummy answer to the question: " + question;
+    }
+
 
     @FXML
     private void addNewChatButton() {

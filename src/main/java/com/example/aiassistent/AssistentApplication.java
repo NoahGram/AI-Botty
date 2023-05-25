@@ -43,7 +43,7 @@ public class AssistentApplication extends Application {
         // Create the scenes
         loginScene = new Scene(loginRoot, 800, 600);
         registerScene = new Scene(registerRoot, 800, 600);
-        chatScene = new Scene(chatRoot, 1200, 800);
+        chatScene = new Scene(chatRoot, 1920, 1080);
         settingsScene = new Scene(settingsRoot, 800, 600);
 
         // Load CSS
@@ -58,8 +58,8 @@ public class AssistentApplication extends Application {
         // Set the initial scene
         primaryStage.setTitle("AI-Assistant");
         primaryStage.setScene(loginScene);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.setResizable(true);
+//        primaryStage.initStyle(StageStyle.UNDECORATED);
+//        primaryStage.setResizable(true);
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
 
@@ -146,6 +146,7 @@ public class AssistentApplication extends Application {
     }
 
     public static void showChatScene() {
+        primaryStage.setMaximized(true);
         primaryStage.setScene(chatScene);
     }
 

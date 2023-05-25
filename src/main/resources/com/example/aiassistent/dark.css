@@ -16,8 +16,8 @@
 
 .background {
     -fx-background-color: #313338;
-    /*-fx-border-color: #36373b;
-    -fx-border-width: 1;*/
+    -fx-border-color: #36373b;
+    -fx-border-width: 1;
 }
 
 #title {

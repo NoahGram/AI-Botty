@@ -91,7 +91,6 @@ public class ChatController {
     }
 
 
-    @FXML
     private void addNewChatButton() {
         int chatNumber = chatButtons.size() + 1;
 
@@ -99,6 +98,8 @@ public class ChatController {
         chatButton.setPadding(new Insets(10));
         chatButton.getStyleClass().add("chatButton");
         chatButton.setTextFill(Paint.valueOf("#ffffff"));
+        chatButton.setMinWidth(100);
+        chatButton.setPrefWidth(200);
 
         // Create the remove button
         Button removeButton = new JFXButton("Remove");
@@ -107,6 +108,10 @@ public class ChatController {
         HBox chatButtonBox = new HBox(chatButton, removeButton);
         chatButtonBox.setAlignment(Pos.CENTER);
         chatButtonBox.setSpacing(10);
+
+        // Set margin for bottom only
+        Insets buttonMargin = new Insets(0, 0, 20, 3);
+        HBox.setMargin(chatButton, buttonMargin);
 
         VBox conversationBox = new VBox();
         conversationBox.setPadding(new Insets(10));
@@ -119,6 +124,8 @@ public class ChatController {
 
         chatButtonsContainer.getChildren().add(chatButtonBox);
     }
+
+
 
 
     private void removeChatButton(Button chatButton) {

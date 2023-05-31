@@ -35,6 +35,7 @@ public class ChatController {
 
     @FXML
     private Button askButton;
+    private IChatEngineStrategy chatEngine = new SimpleChatStrategy();
 
 
     @FXML
@@ -58,8 +59,9 @@ public class ChatController {
     @FXML
     private void askQuestion() {
         String question = questionField.getText();
+        String answer = chatEngine.AskQuestion(question);
+
         displayQuestion(question);
-        String answer = generateAnswer(question);
         displayAnswer(answer);
     }
 
@@ -82,13 +84,6 @@ public class ChatController {
         VBox.setMargin(answerText, new Insets(10, 0, 0, 0));
     }
 
-
-
-    private String generateAnswer(String question) {
-        // Generate a dummy answer based on the user's input
-        // Implement your own logic here
-        return "This is a dummy answer to the question: " + question;
-    }
 
 
     @FXML

@@ -21,9 +21,6 @@ public class AssistentApplication extends Application {
 
     public static String currentTheme = "dark.css";
 
-    private double xOffset = 0;
-    private double yOffset = 0;
-
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -58,51 +55,8 @@ public class AssistentApplication extends Application {
         // Set the initial scene
         primaryStage.setTitle("AI-Assistant");
         primaryStage.setScene(loginScene);
-//        primaryStage.initStyle(StageStyle.UNDECORATED);
-//        primaryStage.setResizable(true);
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
-
-        // Make the window draggable
-        loginRoot.setOnMousePressed(event -> {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        });
-
-        loginRoot.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX() - xOffset);
-            primaryStage.setY(event.getScreenY() - yOffset);
-        });
-
-        registerRoot.setOnMousePressed(event -> {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        });
-
-        registerRoot.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX() - xOffset);
-            primaryStage.setY(event.getScreenY() - yOffset);
-        });
-
-        chatRoot.setOnMousePressed(event -> {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        });
-
-        chatRoot.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX() - xOffset);
-            primaryStage.setY(event.getScreenY() - yOffset);
-        });
-
-        settingsRoot.setOnMousePressed(event -> {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        });
-
-        settingsRoot.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX() - xOffset);
-            primaryStage.setY(event.getScreenY() - yOffset);
-        });
 
         primaryStage.show();
     }

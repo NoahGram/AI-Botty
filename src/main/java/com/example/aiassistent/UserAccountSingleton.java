@@ -63,7 +63,7 @@ public class UserAccountSingleton {
         if (user != null) {
             User updatedUser = new User(newUsername, user.getPassword(), user.getEmail());
             userMap.remove(user.getUsername());
-            userMap.put(newUsername, updatedUser);
+            userMap.put(updatedUser.getUsername(), updatedUser);
             setCurrentUser(newUsername);
         }
     }

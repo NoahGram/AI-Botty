@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="border" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.LoginPageController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="border" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.LoginPageController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" />
   </columnConstraints>
@@ -42,23 +42,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <GridPane.margin>
-            <Insets right="30.0" />
+            <Insets right="10.0" />
          </GridPane.margin>
       </Button>
       <Button fx:id="exitButton" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT" GridPane.valignment="BASELINE">
          <font>
             <Font size="14.0" />
          </font>
-         <graphic>
-            <ImageView blendMode="DIFFERENCE" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/cross.png" />
-               </image>
-               <effect>
-                  <ColorAdjust brightness="0.9" />
-               </effect>
-            </ImageView>
-         </graphic>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

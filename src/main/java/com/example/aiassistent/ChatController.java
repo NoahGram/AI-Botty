@@ -57,10 +57,14 @@ public class ChatController {
 
     @FXML
     private void askQuestion() {
+        if(chatButtonsContainer.getChildren().isEmpty()) {
+            addNewChatButton();
+        }
         String question = questionField.getText();
         displayQuestion(question);
         String answer = generateAnswer(question);
         displayAnswer(answer);
+
     }
 
     private void displayQuestion(String question) {
@@ -94,18 +98,15 @@ public class ChatController {
     private void addNewChatButton() {
         int chatNumber = chatButtons.size() + 1;
 
-        Button chatButton = new JFXButton("Chat " + chatNumber);
+        Button chatButton = new JFXButton("Chat");
         chatButton.setPadding(new Insets(10));
         chatButton.getStyleClass().add("chatButton");
         chatButton.setTextFill(Paint.valueOf("#ffffff"));
         chatButton.setMinWidth(100);
         chatButton.setPrefWidth(200);
 
-        // Create the remove button
-        Button removeButton = new JFXButton("Remove");
-        removeButton.setOnAction(event -> removeChatButton(chatButton));
 
-        HBox chatButtonBox = new HBox(chatButton, removeButton);
+        HBox chatButtonBox = new HBox(chatButton);
         chatButtonBox.setAlignment(Pos.CENTER);
         chatButtonBox.setSpacing(10);
 
@@ -126,28 +127,12 @@ public class ChatController {
     }
 
 
-
-
-    private void removeChatButton(Button chatButton) {
-        VBox conversationBox = chatConversations.get(chatButton);
-        chatButtons.remove(chatButton);
-        chatConversations.remove(chatButton);
-
-        chatButtonsContainer.getChildren().removeIf(node -> node instanceof HBox &&
-                ((HBox) node).getChildren().contains(chatButton));
-
-        chatVBox.getChildren().remove(conversationBox);
-    }
-
-
-
-
-
     public void changeTheme(ActionEvent actionEvent) {
         AssistentApplication.changeTheme();
     }
 
     public void openSettings(ActionEvent actionEvent) {
+        AssistentApplication.showSettingsScene();
     }
 
     public void logOut(ActionEvent actionEvent) {

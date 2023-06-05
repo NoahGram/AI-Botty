@@ -151,7 +151,7 @@
                 <RowConstraints fillHeight="false" maxHeight="-Infinity" valignment="CENTER" />
             </rowConstraints>
             <children>
-                <ScrollPane id="chatScreen" fx:id="chatScreen" fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.0" styleClass="chatScreen" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                <ScrollPane id="chatScreen" fx:id="chatScreen" fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="1" styleClass="chatScreen" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                     <content>
                         <VBox fx:id="chatVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                             <padding>

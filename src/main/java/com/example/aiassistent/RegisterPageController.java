@@ -26,7 +26,7 @@ public class RegisterPageController {
         } else if (username.isEmpty() || password.isEmpty() || email.isEmpty()) {
             invalid.setText("Voer alstublieft alle velden in.");
         } else {
-            userAccounts.AddUser(new User(username, password, email));
+            userAccounts.addUser(new User(username, password, email));
             System.out.printf("New registered user: %n Username - %s%n Email - %s%n Password - %s", username, email, password);
             AssistentApplication.showChatScene();
         }

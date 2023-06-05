@@ -18,8 +18,6 @@ public class LoginPageController {
      public Text invalid;
      public Button theme;
 
-    public static String currentUser = "";
-
     UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
 
     @FXML
@@ -28,7 +26,7 @@ public class LoginPageController {
         String password = passwordfield.getText();
 
         if (userAccounts.UserPasswordCorrect(username, password)) {
-            currentUser = username;
+            userAccounts.setCurrentUser(username);
             invalid.setText("");
             usernamefield.setText("");
             passwordfield.setText("");

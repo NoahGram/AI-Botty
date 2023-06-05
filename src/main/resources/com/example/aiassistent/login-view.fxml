@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="border" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.LoginPageController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="border" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.LoginPageController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" />
   </columnConstraints>
@@ -49,6 +49,12 @@
          <font>
             <Font size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <GridPane.margin>
+            <Insets right="4.0" />
+         </GridPane.margin>
          <graphic>
             <ImageView blendMode="DIFFERENCE" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -59,12 +65,6 @@
                </effect>
             </ImageView>
          </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <GridPane.margin>
-            <Insets right="4.0" />
-         </GridPane.margin>
       </Button>
       <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="42  ·  AI-assistent" GridPane.halignment="LEFT" GridPane.valignment="BASELINE">
          <font>

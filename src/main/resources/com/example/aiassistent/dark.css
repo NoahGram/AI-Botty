@@ -52,6 +52,36 @@
     -fx-min-width: 200px;
 }
 
+.editButton {
+    -fx-background-image: url("images/edit.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 20 20;
+    -fx-border-radius: 5;
+}
+
+.removeButton {
+    -fx-background-image: url("images/cross-button.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 20 20;
+    -fx-border-radius: 5;
+}
+
+.confirmEditButton {
+    -fx-background-image: url("images/vinkje.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-position: center center;
+    -fx-border-radius: 5;
+}
+
+.cancelEditButton {
+    -fx-background-image: url("images/cross-button.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-position: center center;
+    -fx-border-radius: 5;
+}
+
 .text-field, .password-field {
     -fx-prompt-text-fill: #999999;
     -fx-text-fill: #e5e5e5;

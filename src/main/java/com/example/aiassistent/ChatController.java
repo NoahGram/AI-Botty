@@ -5,16 +5,21 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
+import javafx.stage.Popup;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.*;
+import java.util.List;
 
 public class ChatController {
     private List<Button> chatButtons = new ArrayList<>();
@@ -100,11 +105,13 @@ public class ChatController {
         chatButton.getStyleClass().add("chatButton");
         chatButton.setTextFill(Paint.valueOf("#ffffff"));
 
-        // Create the remove button
-        Button removeButton = new JFXButton("Remove");
-        removeButton.setOnAction(event -> removeChatButton(chatButton));
+        Button editButton = addNewEditButton(chatButton);
+        HBox.setMargin(editButton, new Insets(0, 0, 0, -210));
 
-        HBox chatButtonBox = new HBox(chatButton, removeButton);
+        Button removeButton = addNewRemoveButton(chatButton);
+        HBox.setMargin(removeButton, new Insets(0, 0, 0, -30));
+
+        HBox chatButtonBox = new HBox(chatButton, removeButton, editButton);
         chatButtonBox.setAlignment(Pos.CENTER);
         chatButtonBox.setSpacing(10);
 
@@ -120,6 +127,74 @@ public class ChatController {
         chatButtonsContainer.getChildren().add(chatButtonBox);
     }
 
+    private Button addNewEditButton(Button chatButton) {
+        // Create the remove button
+        Button editButton = new JFXButton("");
+        editButton.setOnAction(event -> editChatButton(chatButton));
+        editButton.setPadding(new Insets(10));
+        editButton.getStyleClass().add("editButton");
+        return editButton;
+    }
+
+    private Button addNewRemoveButton(Button chatButton) {
+        // Create the remove button
+        Button removeButton = new JFXButton("");
+        removeButton.setOnAction(event -> removeChatButton(chatButton));
+        removeButton.setPadding(new Insets(10));
+        removeButton.getStyleClass().add("removeButton");
+        return removeButton;
+    }
+
+    private void editChatButton(Button chatButton) {
+        String currentTitle = chatButton.getText();
+        HBox currentChatButtonBox = null;
+
+        for (Node hbox : chatButtonsContainer.getChildren()) {
+            if(hbox instanceof Parent) {
+                HBox chatButtonBox = (HBox) hbox;
+                for (Node element : chatButtonBox.getChildrenUnmodifiable()) {
+                    if (element == chatButton) {
+                        currentChatButtonBox = chatButtonBox;
+                    }
+                }
+            }
+        }
+
+        int chatButtonIndex = chatButtonsContainer.getChildren().indexOf(currentChatButtonBox);
+
+        HBox editTextInputField = addEditTextInputField(currentTitle);
+
+        chatButtonsContainer.getChildren().add(chatButtonIndex + 1, editTextInputField);
+    }
+
+    private HBox addEditTextInputField(String currentTitle) {
+        TextField textField = new TextField();
+        textField.setPromptText(currentTitle);
+        textField.setMaxWidth(200);
+        textField.setPrefColumnCount(10);
+
+        // Create the cancel button
+        Button confirmChatButtonEdit = new JFXButton("");
+        confirmChatButtonEdit.setOnAction(event -> editChatButtonTitle());
+        confirmChatButtonEdit.setPadding(new Insets(10));
+        confirmChatButtonEdit.getStyleClass().add("confirmEditButton");
+
+        // Create the remove button
+        Button cancelChatButtonEdit = new JFXButton("");
+        cancelChatButtonEdit.setOnAction(event -> cancelChatButtonEdit());
+        cancelChatButtonEdit.setPadding(new Insets(10));
+        cancelChatButtonEdit.getStyleClass().add("cancelEditButton");
+
+        return new HBox(textField, confirmChatButtonEdit, cancelChatButtonEdit);
+    }
+
+    private void editChatButtonTitle() {
+        // TODO: actually update the text in the button
+    }
+
+    private void cancelChatButtonEdit() {
+        // TODO: cancel the update action and remove the input field
+    }
 
     private void removeChatButton(Button chatButton) {
         VBox conversationBox = chatConversations.get(chatButton);

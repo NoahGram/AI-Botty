@@ -98,7 +98,7 @@ public class ChatController {
     private void addNewChatButton() {
         int chatNumber = chatButtons.size() + 1;
 
-        Button chatButton = new JFXButton("Chat");
+        Button chatButton = new JFXButton("Chat " + chatNumber);
         chatButton.setPadding(new Insets(10));
         chatButton.getStyleClass().add("chatButton");
         chatButton.setTextFill(Paint.valueOf("#ffffff"));

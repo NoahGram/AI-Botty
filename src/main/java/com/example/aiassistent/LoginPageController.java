@@ -17,8 +17,7 @@ public class LoginPageController {
      public JFXPasswordField passwordfield;
      public Text invalid;
      public Button theme;
-
-    UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
+     private UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
 
     @FXML
     public void loginButtonEvent(ActionEvent event) {

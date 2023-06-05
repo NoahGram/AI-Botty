@@ -6,9 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import java.io.Console;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -145,9 +143,10 @@ public class AssistentApplication extends Application {
         primaryStage.setScene(settingsScene);
     }
 
-    public static void showChatScene() {
+    public static ChatController showChatScene() {
         primaryStage.setMaximized(true);
         primaryStage.setScene(chatScene);
+        return null;
     }
 
     public static void main(String[] args) {

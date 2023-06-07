@@ -6,9 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import java.io.Console;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -26,7 +24,7 @@ public class AssistentApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        this.primaryStage = primaryStage;
+        AssistentApplication.primaryStage = primaryStage;
 
         // Load the FXML files for the scenes
         FXMLLoader loginLoader = new FXMLLoader(AssistentApplication.class.getResource("login-view.fxml"));
@@ -51,6 +49,7 @@ public class AssistentApplication extends Application {
         loadCSS(registerScene, currentTheme);
         loadCSS(chatScene, currentTheme);
         loadCSS(settingsScene, currentTheme);
+
 
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/Gilroy-ExtraBold.otf"), 14);
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/PlusJakartaSans-VariableFont_wght.ttf"), 13);
@@ -153,4 +152,5 @@ public class AssistentApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
+
 }

@@ -1,6 +1,5 @@
 package com.example.aiassistent;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -13,16 +12,10 @@ public class InstellingenController {
     private JFXTextField usernameField;
     @FXML
     private JFXPasswordField passwordField;
-    UserAccountSingleton userAccount = UserAccountSingleton.getInstance();
+    static UserAccountSingleton userAccount = UserAccountSingleton.getInstance();
 
     public InstellingenController() {
         AssistentApplication.showSettingsScene();
-        String currentUsername = userAccount.getCurrentUser();
-        User currentUser = userAccount.getUser(currentUsername);
-        if (currentUser != null) {
-            usernameField.setText(currentUser.getUsername());
-            emailField.setText(currentUser.getEmail());
-        }
     }
 
     @FXML
@@ -45,7 +38,7 @@ public class InstellingenController {
     @FXML
     private void editEmail(ActionEvent event) {
         if (!emailField.getText().isEmpty()) {
-            String username = userAccount.getCurrentUser();
+            String username = userAccount.getCurrentUser().getUsername();
             String newEmail = emailField.getText();
 
             userAccount.editEmail(username, newEmail);
@@ -57,7 +50,7 @@ public class InstellingenController {
     @FXML
     private void editPassword(ActionEvent event) {
         if (!passwordField.getText().isEmpty()) {
-            String username = userAccount.getCurrentUser();
+            String username = userAccount.getCurrentUser().getUsername();
             String newPassword = passwordField.getText();
 
             userAccount.editPassword(username, newPassword);

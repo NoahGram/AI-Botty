@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class UserAccountSingleton {
     private static UserAccountSingleton instance;
-    private String currentUser;
+    private User currentUser;
     private HashMap<String, User> userMap = new HashMap<>();
 
     private UserAccountSingleton() {
@@ -46,11 +46,11 @@ public class UserAccountSingleton {
         AssistentApplication.showLoginScene();
     }
 
-    public String getCurrentUser() {
+    public User getCurrentUser() {
         return currentUser;
     }
 
-    public void setCurrentUser(String user) {
+    public void setCurrentUser(User user) {
         currentUser = user;
     }
 
@@ -59,12 +59,12 @@ public class UserAccountSingleton {
     }
 
     public void editUsername(String newUsername) {
-        User user = getUser(getCurrentUser());
+        User user = getUser(getCurrentUser().getUsername());
         if (user != null) {
             User updatedUser = new User(newUsername, user.getPassword(), user.getEmail());
             userMap.remove(user.getUsername());
             userMap.put(newUsername, updatedUser);
-            setCurrentUser(newUsername);
+            setCurrentUser(updatedUser);
         }
     }
 

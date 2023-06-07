@@ -26,7 +26,7 @@ public class LoginPageController {
         String password = passwordfield.getText();
 
         if (userAccounts.UserPasswordCorrect(username, password)) {
-            userAccounts.setCurrentUser(username);
+            userAccounts.setCurrentUser(userAccounts.getUser(username));
             invalid.setText("");
             usernamefield.setText("");
             passwordfield.setText("");

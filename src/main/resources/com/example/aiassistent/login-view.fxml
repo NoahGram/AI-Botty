@@ -42,7 +42,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <GridPane.margin>
-            <Insets right="10.0" />
+            <Insets right="30.0" />
          </GridPane.margin>
       </Button>
       <Button fx:id="exitButton" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT" GridPane.valignment="BASELINE">
@@ -55,6 +55,16 @@
          <GridPane.margin>
             <Insets right="4.0" />
          </GridPane.margin>
+         <graphic>
+            <ImageView blendMode="DIFFERENCE" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/cross.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="0.9" />
+               </effect>
+            </ImageView>
+         </graphic>
       </Button>
       <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="42  ·  AI-assistent" GridPane.halignment="LEFT" GridPane.valignment="BASELINE">
          <font>

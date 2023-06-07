@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="border" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.example.aiassistent.RegisterPageController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="border" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.RegisterPageController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -24,12 +24,12 @@
     <RowConstraints valignment="BASELINE" vgrow="ALWAYS" />
   </rowConstraints>
    <children>
-      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="background" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+      <GridPane prefHeight="600.0" prefWidth="800.0" styleClass="background" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="ALWAYS" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints fillHeight="false" valignment="BASELINE" />
+            <RowConstraints fillHeight="false" valignment="BASELINE" vgrow="ALWAYS" />
          </rowConstraints>
          <children>
             <GridPane fx:id="menu" style="-fx-background-color: transparent;" styleClass="primary-color" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">

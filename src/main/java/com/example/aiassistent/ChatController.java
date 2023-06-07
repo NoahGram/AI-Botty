@@ -5,9 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+
+import javafx.scene.control.*;
+
 import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
@@ -20,20 +20,18 @@ public class ChatController {
     public Button theme;
     private List<Button> chatButtons = new ArrayList<>();
     private Map<Button, VBox> chatConversations = new HashMap<>();
-
     public Button settings;
-
     @FXML
     public JFXButton newChatButton;
     public ColumnConstraints tabs;
     public ScrollPane chatScreen;
     public VBox chatVBox;
-
     @FXML
     private VBox chatButtonsContainer;
     @FXML
     private TextField questionField;
-    
+
+    private IChatEngineStrategy chatEngine = new SimpleChatStrategy();
 
 
     @FXML
@@ -52,28 +50,24 @@ public class ChatController {
 
     private void switchChat(Button chatButton) {
         chatVBox.getChildren().clear();
-
         VBox conversationBox = chatConversations.get(chatButton);
         chatVBox.getChildren().add(conversationBox);
     }
 
-
     @FXML
     private void askQuestion() {
-        if(chatButtonsContainer.getChildren().isEmpty()) {
+        if (chatButtonsContainer.getChildren().isEmpty()) {
             addNewChatButton();
         }
         String question = questionField.getText();
         displayQuestion(question);
-        String answer = generateAnswer(question);
+        String answer = chatEngine.AskQuestion(question);
         displayAnswer(answer);
-
     }
 
     private void displayQuestion(String question) {
         Text questionText = new Text(question);
         questionText.setStyle("-fx-font-size: 16; -fx-fill: #333333;");
-
         VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);
         activeConversationBox.getChildren().add(questionText);
     }
@@ -81,7 +75,6 @@ public class ChatController {
     private void displayAnswer(String answer) {
         Text answerText = new Text(answer);
         answerText.setStyle("-fx-font-size: 14; -fx-fill: #666666;");
-
         VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);
         activeConversationBox.getChildren().add(answerText);
 
@@ -89,23 +82,14 @@ public class ChatController {
         VBox.setMargin(answerText, new Insets(10, 0, 0, 0));
     }
 
-
-
-    private String generateAnswer(String question) {
-        // Generate a dummy answer based on the user's input
-        // Implement your own logic here
-        return "This is a dummy answer to the question: " + question;
-    }
-
-
     private void addNewChatButton() {
         Button chatButton = new JFXButton("Chat");
+
         chatButton.setPadding(new Insets(10));
         chatButton.getStyleClass().add("chatButton");
         chatButton.setTextFill(Paint.valueOf("#ffffff"));
         chatButton.setMinWidth(100);
         chatButton.setPrefWidth(200);
-
 
         HBox chatButtonBox = new HBox(chatButton);
         chatButtonBox.setAlignment(Pos.CENTER);
@@ -121,12 +105,9 @@ public class ChatController {
 
         chatButtons.add(chatButton);
         chatConversations.put(chatButton, conversationBox);
-
         chatButton.setOnAction(event -> switchChat(chatButton));
-
         chatButtonsContainer.getChildren().add(chatButtonBox);
     }
-
 
     public void changeTheme(ActionEvent actionEvent) {
         AssistentApplication.changeTheme();

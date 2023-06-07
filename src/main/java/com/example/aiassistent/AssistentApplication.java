@@ -98,9 +98,10 @@ public class AssistentApplication extends Application {
         primaryStage.setScene(settingsScene);
     }
 
-    public static void showChatScene() {
+    public static ChatController showChatScene() {
         primaryStage.setMaximized(true);
         primaryStage.setScene(chatScene);
+        return null;
     }
 
     public static void main(String[] args) {

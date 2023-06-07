@@ -45,7 +45,7 @@
             <Insets right="10.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="exitButton" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT" GridPane.valignment="BASELINE">
+      <Button fx:id="exitButton" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT" GridPane.valignment="BASELINE">
          <font>
             <Font size="14.0" />
          </font>

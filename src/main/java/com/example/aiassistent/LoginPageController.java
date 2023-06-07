@@ -49,11 +49,6 @@ public class LoginPageController {
     }
 
     @FXML
-    private void exit(ActionEvent event) {
-        System.exit(0);
-    }
-
-    @FXML
     private void onEnter(ActionEvent event) {
         loginButtonEvent(event);
     }

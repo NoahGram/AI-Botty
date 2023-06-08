@@ -6,9 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import java.io.Console;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -21,12 +19,9 @@ public class AssistentApplication extends Application {
 
     public static String currentTheme = "dark.css";
 
-    private double xOffset = 0;
-    private double yOffset = 0;
-
     @Override
     public void start(Stage primaryStage) throws IOException {
-        this.primaryStage = primaryStage;
+        AssistentApplication.primaryStage = primaryStage;
 
         // Load the FXML files for the scenes
         FXMLLoader loginLoader = new FXMLLoader(AssistentApplication.class.getResource("login-view.fxml"));
@@ -52,57 +47,15 @@ public class AssistentApplication extends Application {
         loadCSS(chatScene, currentTheme);
         loadCSS(settingsScene, currentTheme);
 
+
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/Gilroy-ExtraBold.otf"), 14);
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/PlusJakartaSans-VariableFont_wght.ttf"), 13);
 
         // Set the initial scene
         primaryStage.setTitle("AI-Assistant");
         primaryStage.setScene(loginScene);
-//        primaryStage.initStyle(StageStyle.UNDECORATED);
-//        primaryStage.setResizable(true);
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
-
-        // Make the window draggable
-        loginRoot.setOnMousePressed(event -> {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        });
-
-        loginRoot.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX() - xOffset);
-            primaryStage.setY(event.getScreenY() - yOffset);
-        });
-
-        registerRoot.setOnMousePressed(event -> {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        });
-
-        registerRoot.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX() - xOffset);
-            primaryStage.setY(event.getScreenY() - yOffset);
-        });
-
-        chatRoot.setOnMousePressed(event -> {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        });
-
-        chatRoot.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX() - xOffset);
-            primaryStage.setY(event.getScreenY() - yOffset);
-        });
-
-        settingsRoot.setOnMousePressed(event -> {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        });
-
-        settingsRoot.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX() - xOffset);
-            primaryStage.setY(event.getScreenY() - yOffset);
-        });
 
         primaryStage.show();
     }
@@ -145,12 +98,14 @@ public class AssistentApplication extends Application {
         primaryStage.setScene(settingsScene);
     }
 
-    public static void showChatScene() {
+    public static ChatController showChatScene() {
         primaryStage.setMaximized(true);
         primaryStage.setScene(chatScene);
+        return null;
     }
 
     public static void main(String[] args) {
         launch();
     }
+
 }

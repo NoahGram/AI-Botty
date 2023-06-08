@@ -5,15 +5,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+
 import javafx.scene.control.*;
+
 import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
-
-import java.net.URL;
 import java.util.*;
 
 public class ChatController {
+    public JFXButton askButton;
+    public GridPane background;
+    public Button exitButton;
+    public Button theme;
     private List<Button> chatButtons = new ArrayList<>();
     private Map<Button, VBox> chatConversations = new HashMap<>();
     public Button settings;
@@ -26,12 +30,18 @@ public class ChatController {
     private VBox chatButtonsContainer;
     @FXML
     private TextField questionField;
+
     private IChatEngineStrategy chatEngine = new SimpleChatStrategy();
+
 
     @FXML
     private void initialize() {
+        askButton.setDisable(true);
         newChatButton.setOnAction(event -> addNewChatButton());
         addNewChatButton();
+
+        // Checks if questionField has text, if not disable the send question button, otherwise enable.
+        questionField.textProperty().addListener((observable, oldValue, newValue) -> askButton.setDisable(newValue.trim().isEmpty()));
 
         // Set the initial active chat
         Button initialChatButton = chatButtons.get(0);
@@ -73,9 +83,8 @@ public class ChatController {
     }
 
     private void addNewChatButton() {
-        int chatNumber = chatButtons.size() + 1;
+        Button chatButton = new JFXButton("Chat");
 
-        Button chatButton = new JFXButton("Chat " + chatNumber);
         chatButton.setPadding(new Insets(10));
         chatButton.getStyleClass().add("chatButton");
         chatButton.setTextFill(Paint.valueOf("#ffffff"));
@@ -87,7 +96,7 @@ public class ChatController {
         chatButtonBox.setSpacing(10);
 
         // Set margin for bottom only
-        Insets buttonMargin = new Insets(0, 0, 20, 3);
+        Insets buttonMargin = new Insets(0, 0, 20, 0);
         HBox.setMargin(chatButton, buttonMargin);
 
         VBox conversationBox = new VBox();

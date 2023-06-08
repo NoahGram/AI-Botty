@@ -28,7 +28,7 @@ public class RegisterPageController {
         } else {
             userAccounts.addUser(new User(username, password, email));
             System.out.printf("New registered user: %n Username - %s%n Email - %s%n Password - %s", username, email, password);
-            AssistentApplication.showChatScene();
+            AssistentApplication.showLoginScene();
         }
     }
 

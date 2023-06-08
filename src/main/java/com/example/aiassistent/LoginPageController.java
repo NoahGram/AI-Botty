@@ -25,7 +25,7 @@ public class LoginPageController {
         String password = passwordfield.getText();
 
         if (userAccounts.UserPasswordCorrect(username, password)) {
-            userAccounts.setCurrentUser(username);
+            userAccounts.setCurrentUser(userAccounts.getUser(username));
             invalid.setText("");
             usernamefield.setText("");
             passwordfield.setText("");
@@ -45,11 +45,6 @@ public class LoginPageController {
         invalid.setText("");
         usernamefield.setText("");
         passwordfield.setText("");
-    }
-
-    @FXML
-    private void exit(ActionEvent event) {
-        System.exit(0);
     }
 
     @FXML

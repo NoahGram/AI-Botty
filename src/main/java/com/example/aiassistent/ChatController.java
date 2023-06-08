@@ -6,8 +6,13 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 
+import javafx.scene.Node;
 import javafx.scene.control.*;
 
+import javafx.scene.effect.BlendMode;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
@@ -32,6 +37,7 @@ public class ChatController {
     private TextField questionField;
 
     private IChatEngineStrategy chatEngine = new SimpleChatStrategy();
+    private VBox activeConversationBox;
 
 
     @FXML
@@ -55,31 +61,52 @@ public class ChatController {
     }
 
     @FXML
-    private void askQuestion() {
+    private void askQuestionClick() {
+        submit();
+    }
+
+    public void askQuestionEnter(KeyEvent event) {
+        if (event.getCode() == KeyCode.ENTER) {
+            submit();
+        }
+    }
+
+    public void submit() {
         if (chatButtonsContainer.getChildren().isEmpty()) {
             addNewChatButton();
         }
         String question = questionField.getText();
         displayQuestion(question);
-        String answer = chatEngine.AskQuestion(question);
+        Object answer = chatEngine.askQuestion(question);
         displayAnswer(answer);
+        questionField.setText("");
     }
 
     private void displayQuestion(String question) {
-        Text questionText = new Text(question);
-        questionText.setStyle("-fx-font-size: 16; -fx-fill: #333333;");
-        VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);
+        Text questionText = new Text(UserAccountSingleton.getInstance().getCurrentUser().getUsername() + ": " + question);
+        questionText.setStyle("-fx-font-size: 16; -fx-fill: #ffffff; -fx-padding: 20;");
+        questionText.setBlendMode(BlendMode.DIFFERENCE);
+        activeConversationBox = (VBox) chatVBox.getChildren().get(0);
         activeConversationBox.getChildren().add(questionText);
     }
 
-    private void displayAnswer(String answer) {
-        Text answerText = new Text(answer);
-        answerText.setStyle("-fx-font-size: 14; -fx-fill: #666666;");
-        VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);
-        activeConversationBox.getChildren().add(answerText);
+    private void displayAnswer(Object answer) {
 
-        // Add space between the question and answer blocks
-        VBox.setMargin(answerText, new Insets(10, 0, 0, 0));
+        if (answer instanceof String) {
+            Text answerText = new Text("AI Assistent: " + (String) answer);
+            answerText.setBlendMode(BlendMode.DIFFERENCE);
+            answerText.setStyle("-fx-font-size: 16; -fx-fill: #ffffff; -fx-padding: 20;");
+            activeConversationBox.getChildren().add(answerText);
+        }
+
+        if (answer instanceof ImageView answerImage) {
+            Text aiName = new Text("AI Assistent: ");
+            aiName.setStyle("-fx-font-size: 16; -fx-fill: #ffffff; -fx-padding: 20;");
+            aiName.setBlendMode(BlendMode.DIFFERENCE);
+            VBox imageContainer = new VBox(answerImage);
+            activeConversationBox.getChildren().addAll(aiName, imageContainer);
+        }
+
     }
 
     private void addNewChatButton() {
@@ -119,6 +146,7 @@ public class ChatController {
 
     public void logOut(ActionEvent actionEvent) {
         chatButtonsContainer.getChildren().clear();
+        activeConversationBox.getChildren().clear();
         UserAccountSingleton.logOut();
     }
 }

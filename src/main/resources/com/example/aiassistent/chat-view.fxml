@@ -148,19 +148,22 @@
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints maxHeight="1.7976931348623157E308" vgrow="ALWAYS" />
-                <RowConstraints fillHeight="false" maxHeight="-Infinity" valignment="CENTER" />
+                <RowConstraints fillHeight="false" maxHeight="-Infinity" valignment="CENTER" vgrow="NEVER" />
             </rowConstraints>
             <children>
-                <ScrollPane id="chatScreen" fx:id="chatScreen" fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="1" styleClass="chatScreen" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                <ScrollPane id="chatScreen" fx:id="chatScreen" fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="1" styleClass="chatScreen" GridPane.halignment="CENTER">
                     <content>
-                        <VBox fx:id="chatVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                        <VBox fx:id="chatVBox" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                             <padding>
                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                             </padding>
                         </VBox>
                     </content>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
                 </ScrollPane>
-            <GridPane styleClass="questionarea" GridPane.rowIndex="1">
+            <GridPane alignment="TOP_CENTER" blendMode="DIFFERENCE" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="questionarea" GridPane.rowIndex="1">
               <columnConstraints>
                   <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" prefWidth="500.0" />
                 <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="233.33334350585938" prefWidth="850.0" />
@@ -173,15 +176,18 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                      <JFXTextField fx:id="questionField" focusColor="#ffffff00" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="50.0" promptText="Typ hier een vraag..." unFocusColor="#ffffff00" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                      <JFXTextField fx:id="questionField" focusColor="#ffffff00" maxWidth="1.7976931348623157E308" minHeight="50.0" onKeyPressed="#askQuestionEnter" prefHeight="50.0" promptText="Typ hier een vraag..." unFocusColor="#ffffff00" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                           <padding>
                               <Insets left="10.0" right="60.0" />
                           </padding>
                      <GridPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
                       </JFXTextField>
-                      <JFXButton id="askButton" fx:id="askButton" alignment="CENTER" maxWidth="60.0" minHeight="50.0" minWidth="0.0" onAction="#askQuestion" prefHeight="50.0" prefWidth="0.0" style="-fx-background-color: transparent;" styleClass="chatButtonsContainer" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                      <JFXButton id="askButton" fx:id="askButton" alignment="CENTER" maxWidth="60.0" minHeight="50.0" minWidth="0.0" onAction="#askQuestionClick" prefHeight="50.0" prefWidth="0.0" style="-fx-background-color: transparent;" styleClass="chatButtonsContainer" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                           <cursor>
                               <Cursor fx:constant="HAND" />
                           </cursor>

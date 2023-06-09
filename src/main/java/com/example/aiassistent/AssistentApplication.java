@@ -2,9 +2,11 @@ package com.example.aiassistent;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,69 +25,72 @@ public class AssistentApplication extends Application {
     public void start(Stage primaryStage) throws IOException {
         AssistentApplication.primaryStage = primaryStage;
 
-        // Load the FXML files for the scenes
-        FXMLLoader loginLoader = new FXMLLoader(AssistentApplication.class.getResource("login-view.fxml"));
-        FXMLLoader registerLoader = new FXMLLoader(AssistentApplication.class.getResource("register-view.fxml"));
-        FXMLLoader chatLoader = new FXMLLoader(AssistentApplication.class.getResource("chat-view.fxml"));
-        FXMLLoader settingsLoader = new FXMLLoader(AssistentApplication.class.getResource("instellingen-view.fxml"));
+        loadScenes();
+        loadFonts();
 
-        // Load the scene roots from the FXML files
-        Parent loginRoot = loginLoader.load();
-        Parent registerRoot = registerLoader.load();
-        Parent chatRoot = chatLoader.load();
-        Parent settingsRoot = settingsLoader.load();
+        setInitialScene();
 
-        // Create the scenes
-        loginScene = new Scene(loginRoot, 800, 600);
-        registerScene = new Scene(registerRoot, 800, 600);
-        chatScene = new Scene(chatRoot, 1920, 1080);
-        settingsScene = new Scene(settingsRoot, 800, 600);
+        primaryStage.show();
+    }
 
-        // Load CSS
+    private void loadScenes() throws IOException {
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        double screenHeight = screenBounds.getHeight();
+
+        double taskbarHeight = screenHeight - screenBounds.getHeight();
+
+        loginScene = loadScene("login-view.fxml", 800, 600);
+        registerScene = loadScene("register-view.fxml", 800, 600);
+        chatScene = loadScene("chat-view.fxml", 1920, 1080 - taskbarHeight);
+        settingsScene = loadScene("instellingen-view.fxml", 800, 600);
+
         loadCSS(loginScene, currentTheme);
         loadCSS(registerScene, currentTheme);
         loadCSS(chatScene, currentTheme);
         loadCSS(settingsScene, currentTheme);
 
+    }
 
+    private Scene loadScene(String fxmlFile, double width, double height) throws IOException {
+        FXMLLoader loader = new FXMLLoader(AssistentApplication.class.getResource(fxmlFile));
+        Parent root = loader.load();
+        return new Scene(root, width, height);
+    }
+
+    private void loadFonts() {
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/Gilroy-ExtraBold.otf"), 14);
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/PlusJakartaSans-VariableFont_wght.ttf"), 13);
+    }
 
-        // Set the initial scene
+    private static void loadCSS(Scene scene, String cssFile) {
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(Objects.requireNonNull(AssistentApplication.class.getResource(cssFile)).toExternalForm());
+    }
+
+    private void setInitialScene() {
         primaryStage.setTitle("AI-Assistant");
         primaryStage.setScene(loginScene);
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
-
-        primaryStage.show();
     }
 
-    // Method to load the CSS, clear the current CSS first
-    private static void loadCSS(Scene scene, String cssFile) {
-        scene.getStylesheets().clear(); // Clear the existing stylesheets
-        scene.getStylesheets().add(Objects.requireNonNull(AssistentApplication.class.getResource(cssFile)).toExternalForm());
-    }
-
-    // Change the theme for all scenes
     public static void changeTheme() {
         if (currentTheme.equals("light.css")) {
-            loadCSS(loginScene, "dark.css");
-            loadCSS(registerScene, "dark.css");
-            loadCSS(chatScene, "dark.css");
-            loadCSS(settingsScene, "dark.css");
-            currentTheme = "dark.css";
-            System.out.println("Current theme: " + currentTheme);
+            setTheme("dark.css");
         } else {
-            loadCSS(loginScene, "light.css");
-            loadCSS(registerScene, "light.css");
-            loadCSS(chatScene, "light.css");
-            loadCSS(settingsScene, "light.css");
-            currentTheme = "light.css";
-            System.out.println("Current theme: " + currentTheme);
+            setTheme("light.css");
         }
+        System.out.println("Current theme: " + currentTheme);
     }
 
-    // Switching between scenes
+    private static void setTheme(String theme) {
+        loadCSS(loginScene, theme);
+        loadCSS(registerScene, theme);
+        loadCSS(chatScene, theme);
+        loadCSS(settingsScene, theme);
+        currentTheme = theme;
+    }
+
     public static void showLoginScene() {
         primaryStage.setScene(loginScene);
     }
@@ -98,14 +103,9 @@ public class AssistentApplication extends Application {
         primaryStage.setScene(settingsScene);
     }
 
-    public static ChatController showChatScene() {
-        primaryStage.setMaximized(true);
-        primaryStage.setScene(chatScene);
-        return null;
-    }
+    public static void showChatScene() { primaryStage.setScene(chatScene);  primaryStage.setMaximized(true); }
 
     public static void main(String[] args) {
         launch();
     }
-
 }

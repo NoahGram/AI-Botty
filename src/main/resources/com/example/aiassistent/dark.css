@@ -14,7 +14,7 @@
 }
 
 .background {
-    -fx-background-color: #333540;
+    -fx-background-color: #313338;
 }
 
 .middleground {
@@ -83,7 +83,7 @@
     -fx-text-fill: rgba(0, 0, 15, 0.9);
 }
 
-/*
-.questionarea {
-    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, transparent, #2B2D31);
-}*/
+#answer-pane {
+    -fx-background-color: #3a3c42;
+}
+

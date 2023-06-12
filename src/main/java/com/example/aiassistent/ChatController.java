@@ -5,34 +5,43 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-
 import javafx.scene.control.*;
-
+import javafx.scene.effect.BlendMode;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import java.util.*;
+import javafx.application.Platform;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ChatController {
-    public JFXButton askButton;
-    public GridPane background;
-    public Button exitButton;
-    public Button theme;
-    private List<Button> chatButtons = new ArrayList<>();
-    private Map<Button, VBox> chatConversations = new HashMap<>();
-    public Button settings;
     @FXML
-    public JFXButton newChatButton;
-    public ColumnConstraints tabs;
-    public ScrollPane chatScreen;
-    public VBox chatVBox;
+    private JFXButton askButton;
+    @FXML
+    private List<Button> chatButtons = new ArrayList<>();
+    @FXML
+    private Map<Button, VBox> chatConversations = new HashMap<>();
+    @FXML
+    private JFXButton newChatButton;
+    @FXML
+    private ScrollPane chatScreen;
+    @FXML
+    private VBox chatVBox;
     @FXML
     private VBox chatButtonsContainer;
     @FXML
     private TextField questionField;
 
-    private IChatEngineStrategy chatEngine = new SimpleChatStrategy();
-
+    private final IQuestionAsker chatEngine = new OfflineChatStrategy();
+    private VBox activeConversationBox;
 
     @FXML
     private void initialize() {
@@ -40,10 +49,8 @@ public class ChatController {
         newChatButton.setOnAction(event -> addNewChatButton());
         addNewChatButton();
 
-        // Checks if questionField has text, if not disable the send question button, otherwise enable.
         questionField.textProperty().addListener((observable, oldValue, newValue) -> askButton.setDisable(newValue.trim().isEmpty()));
 
-        // Set the initial active chat
         Button initialChatButton = chatButtons.get(0);
         switchChat(initialChatButton);
     }
@@ -55,33 +62,127 @@ public class ChatController {
     }
 
     @FXML
-    private void askQuestion() {
+    private void askQuestionClick() {
+        submit();
+    }
+
+    @FXML
+    private void askQuestionEnter(KeyEvent event) {
+        if (event.getCode() == KeyCode.ENTER) {
+            submit();
+        }
+    }
+
+    private void submit() {
         if (chatButtonsContainer.getChildren().isEmpty()) {
             addNewChatButton();
         }
         String question = questionField.getText();
         displayQuestion(question);
-        String answer = chatEngine.AskQuestion(question);
+        Object answer = chatEngine.askQuestion(question);
         displayAnswer(answer);
+
+        questionField.setText("");
+
+        Platform.runLater(() -> chatScreen.setVvalue(1.0));
     }
 
     private void displayQuestion(String question) {
+        String username = UserAccountSingleton.getInstance().getCurrentUser().getUsername();
+        String firstLetter = username.substring(0, 1);
+
         Text questionText = new Text(question);
-        questionText.setStyle("-fx-font-size: 16; -fx-fill: #333333;");
-        VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);
-        activeConversationBox.getChildren().add(questionText);
+        questionText.setFill(Color.WHITE);
+        questionText.setStyle("-fx-font-size: 16; -fx-padding: 10px;");
+        questionText.setBlendMode(BlendMode.DIFFERENCE);
+
+        Rectangle square = new Rectangle(40, 40);
+        square.setFill(Color.rgb(43, 45, 49));
+        square.setArcWidth(10);
+        square.setArcHeight(10);
+
+        Text usernameText = new Text(firstLetter.toUpperCase());
+        usernameText.setFill(Color.WHITE);
+        usernameText.setStyle("-fx-font-size: 14; -fx-font-weight: bold;");
+
+        StackPane usernameContainer = new StackPane();
+        usernameContainer.getChildren().addAll(square, usernameText);
+
+        HBox hbox = new HBox(usernameContainer, questionText);
+        hbox.setSpacing(10);
+        hbox.setPadding(new Insets(40, 20, 20, 20));
+        hbox.setAlignment(Pos.CENTER_LEFT);
+
+        StackPane stackPane = new StackPane(hbox);
+        stackPane.setAlignment(Pos.CENTER_LEFT);
+        stackPane.setPadding(new Insets(10));
+        activeConversationBox = (VBox) chatVBox.getChildren().get(0);
+        activeConversationBox.getChildren().add(stackPane);
+
     }
 
-    private void displayAnswer(String answer) {
-        Text answerText = new Text(answer);
-        answerText.setStyle("-fx-font-size: 14; -fx-fill: #666666;");
-        VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);
-        activeConversationBox.getChildren().add(answerText);
+    private void displayAnswer(Object answer) {
+        StackPane stackPane = new StackPane();
+        stackPane.setId("answer-pane");
 
-        // Add space between the question and answer blocks
-        VBox.setMargin(answerText, new Insets(10, 0, 0, 0));
+        if (answer instanceof String) {
+            Text answerText = new Text((String) answer);
+
+            answerText.setFill(Color.WHITE);
+            answerText.setStyle("-fx-font-size: 16; -fx-padding: 10px;");
+            answerText.setBlendMode(BlendMode.DIFFERENCE);
+
+            Rectangle square = new Rectangle(40, 40);
+            square.setFill(Color.valueOf("#19C37D"));
+            square.setArcWidth(10);
+            square.setArcHeight(10);
+
+            Text aiText = new Text("AI");
+            aiText.setFill(Color.WHITE);
+            aiText.setStyle("-fx-font-size: 14; -fx-font-weight: bold;");
+
+            StackPane aiContainer = new StackPane();
+            aiContainer.getChildren().addAll(square, aiText);
+
+            HBox hbox = new HBox(aiContainer, answerText);
+            hbox.setAlignment(Pos.CENTER_LEFT); // Center the text next to the rectangle
+            hbox.setSpacing(10);
+            hbox.setPadding(new Insets(20));
+
+            StackPane.setMargin(aiText, new Insets(10));
+            stackPane.getChildren().addAll(hbox);
+
+        }
+
+
+        if (answer instanceof ImageView answerImage) {
+
+            Rectangle square = new Rectangle(40, 40);
+            square.setFill(Color.valueOf("#19C37D"));
+            square.setArcWidth(10);
+            square.setArcHeight(10);
+
+            Text aiText = new Text("AI");
+            aiText.setFill(Color.WHITE);
+            aiText.setStyle("-fx-font-size: 14; -fx-font-weight: bold;");
+
+            StackPane aiContainer = new StackPane();
+            aiContainer.getChildren().addAll(square, aiText);
+
+            HBox hbox = new HBox(aiContainer, answerImage);
+            hbox.setSpacing(10);
+            hbox.setPadding(new Insets(20));
+
+            StackPane.setMargin(aiText, new Insets(10));
+            stackPane.getChildren().addAll(hbox);
+        }
+
+        stackPane.setAlignment(Pos.CENTER_LEFT);
+        stackPane.setPadding(new Insets(10));
+        activeConversationBox.getChildren().add(stackPane);
     }
 
+    @FXML
     private void addNewChatButton() {
         Button chatButton = new JFXButton("Chat");
 
@@ -95,7 +196,6 @@ public class ChatController {
         chatButtonBox.setAlignment(Pos.CENTER);
         chatButtonBox.setSpacing(10);
 
-        // Set margin for bottom only
         Insets buttonMargin = new Insets(0, 0, 20, 0);
         HBox.setMargin(chatButton, buttonMargin);
 
@@ -109,16 +209,25 @@ public class ChatController {
         chatButtonsContainer.getChildren().add(chatButtonBox);
     }
 
-    public void changeTheme(ActionEvent actionEvent) {
+    @FXML
+    private void changeTheme(ActionEvent actionEvent) {
         AssistentApplication.changeTheme();
     }
 
-    public void openSettings(ActionEvent actionEvent) {
+    @FXML
+    private void openSettings(ActionEvent actionEvent) {
         AssistentApplication.showSettingsScene();
     }
 
-    public void logOut(ActionEvent actionEvent) {
-        chatButtonsContainer.getChildren().clear();
+    @FXML
+    private void logOut(ActionEvent actionEvent) {
+        if (!chatButtonsContainer.getChildren().isEmpty() || (activeConversationBox != null && !activeConversationBox.getChildren().isEmpty())) {
+            chatButtonsContainer.getChildren().clear();
+            if (activeConversationBox != null) {
+                activeConversationBox.getChildren().clear();
+            }
+        }
+
         UserAccountSingleton.logOut();
     }
 }

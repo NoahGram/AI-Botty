@@ -53,7 +53,7 @@
 }
 
 .editButton {
-    -fx-background-image: url("images/edit.png");
+    -fx-background-image: url("images/editpencil.png");
     -fx-background-repeat: stretch;
     -fx-background-size: 20 20;
     -fx-border-radius: 5;

@@ -1,0 +1,373 @@
+Index: src/main/resources/com/example/aiassistent/dark.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@font-face {\r\n    src: url(fonts/PlusJakartaSans-VariableFont_wght.ttf);\r\n}\r\n@font-face {\r\n    src: url(fonts/Gilroy-ExtraBold.otf);\r\n}\r\n\r\n. * {\r\n    -fx-font-family: \"Plus Jakarta Sans\";\r\n}\r\n\r\n.border {\r\n    -fx-background-color: #202225;\r\n}\r\n\r\n.background {\r\n    -fx-background-color: #313338;\r\n}\r\n\r\n.middleground {\r\n    -fx-background-color: #373840;\r\n}\r\n\r\n#title {\r\n    -fx-font-family: \"Gilroy ExtraBold\";\r\n    -fx-fill: #ffffff;\r\n}\r\n\r\n.subtext {\r\n    -fx-font-family: \"Gilroy ExtraBold\";\r\n    -fx-font-size: 14;\r\n    -fx-fill: rgba(230, 230, 230, 0.9);\r\n    -fx-text-fill: #e5e5e5;\r\n}\r\n\r\n.nav {\r\n    -fx-background-color: #313338;\r\n    -fx-font-size: 14;\r\n    -fx-font-family: \"Gilroy ExtraBold\";\r\n}\r\n\r\n#menu {\r\n    -fx-background-color:  #313338;\r\n}\r\n\r\n.chatButton {\r\n    -fx-background-color: #2B2D31;\r\n    -fx-border-radius: 5;\r\n    -fx-padding: 10px;\r\n    -fx-alignment: center;\r\n    -fx-min-height: 38px;\r\n    -fx-min-width: 200px;\r\n}\r\n\r\n.text-field, .password-field {\r\n    -fx-prompt-text-fill: #999999;\r\n    -fx-text-fill: #e5e5e5;\r\n    -fx-highlight-text-fill: #e5e5e5;\r\n    -fx-font-size: 12;\r\n    -fx-background-color: #43454d;\r\n    -fx-border-radius: 5;\r\n    -jfx-focus-color: #776cc9;\r\n    -jfx-unfocus-color: #4d4d4d;\r\n}\r\n\r\n.chatScreen {\r\n    -fx-background-color: #3D3F46;\r\n    -fx-background: #3D3F46;\r\n    -fx-border-color: #3D3F46;\r\n}\r\n\r\n.text {\r\n    -fx-font-family: \"Gilroy ExtraBold\";\r\n    -fx-font-size: 14;\r\n}\r\n\r\n.chatButtonsContainer {\r\n    -fx-background-color: #313338;\r\n    -fx-fill: #ffffff;\r\n    -fx-text-fill: #ffffff;\r\n}\r\n\r\n.terug {\r\n    -fx-background-color: rgba(255, 255, 255, 0.9);\r\n    -fx-text-fill: rgba(0, 0, 15, 0.9);\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/aiassistent/dark.css b/src/main/resources/com/example/aiassistent/dark.css
+--- a/src/main/resources/com/example/aiassistent/dark.css	(revision 468fc15ac73dbb3a41e7508c67b3da3083cd5476)
++++ b/src/main/resources/com/example/aiassistent/dark.css	(date 1685945249988)
+@@ -52,6 +52,36 @@
+     -fx-min-width: 200px;
+ }
+ 
++.editButton {
++    -fx-background-image: url("images/edit.png");
++    -fx-background-repeat: stretch;
++    -fx-background-size: 20 20;
++    -fx-border-radius: 5;
++}
++
++.removeButton {
++    -fx-background-image: url("images/cross-button.png");
++    -fx-background-repeat: stretch;
++    -fx-background-size: 20 20;
++    -fx-border-radius: 5;
++}
++
++.confirmEditButton {
++    -fx-background-image: url("images/vinkje.png");
++    -fx-background-repeat: no-repeat;
++    -fx-background-size: contain;
++    -fx-background-position: center center;
++    -fx-border-radius: 5;
++}
++
++.cancelEditButton {
++    -fx-background-image: url("images/cross-button.png");
++    -fx-background-repeat: no-repeat;
++    -fx-background-size: contain;
++    -fx-background-position: center center;
++    -fx-border-radius: 5;
++}
++
+ .text-field, .password-field {
+     -fx-prompt-text-fill: #999999;
+     -fx-text-fill: #e5e5e5;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 468fc15ac73dbb3a41e7508c67b3da3083cd5476)
++++ b/.idea/workspace.xml	(date 1685945384548)
+@@ -1,0 +1,170 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="92fb7af2-1e11-4903-804a-bff5c75373aa" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/edit.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/editIcon.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/vinkje.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/dark.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/cross.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/cross.png" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProjectId" id="2Qk2tiDfXJUDzhrvS4dRNE1wFb3" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "project.structure.last.edited": "SDKs",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0",
++    "settings.editor.selected.configurable": "preferences.pluginManager"
++  }
++}]]></component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\itsum\IdeaProjects\AI-Botty\src\main\resources\com\example\aiassistent\images" />
++    </key>
++  </component>
++  <component name="RunManager">
++    <configuration name="AssistentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="com.example.aiassistent.AssistentApplication" />
++      <module name="ai-assistent" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="com.example.aiassistent.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.AssistentApplication" />
++      </list>
++    </recent_temporary>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="92fb7af2-1e11-4903-804a-bff5c75373aa" name="Changes" comment="" />
++      <created>1685883477571</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1685883477571</updated>
++    </task>
++    <servers />
++  </component>
++</project>
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="92fb7af2-1e11-4903-804a-bff5c75373aa" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/cross-button.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/edit.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/editIcon.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/vinkje.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/dark.css" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="ui_overhaul" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProjectId" id="2Qk2tiDfXJUDzhrvS4dRNE1wFb3" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
++  }
++}</component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\itsum\IdeaProjects\AI-Botty\src\main\resources\com\example\aiassistent\images" />
++    </key>
++  </component>
++  <component name="RunManager">
++    <configuration name="AssistentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="com.example.aiassistent.AssistentApplication" />
++      <module name="ai-assistent" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="com.example.aiassistent.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.AssistentApplication" />
++      </list>
++    </recent_temporary>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="92fb7af2-1e11-4903-804a-bff5c75373aa" name="Changes" comment="" />
++      <created>1685883477571</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1685883477571</updated>
++    </task>
++    <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/main/java/com/example/aiassistent/ChatController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.aiassistent;\r\n\r\nimport com.jfoenix.controls.JFXButton;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.geometry.Insets;\r\nimport javafx.geometry.Pos;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.ContentDisplay;\r\nimport javafx.scene.control.ScrollPane;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.layout.*;\r\nimport javafx.scene.paint.Paint;\r\nimport javafx.scene.text.Text;\r\n\r\nimport java.net.URL;\r\nimport java.util.*;\r\n\r\npublic class ChatController {\r\n    private List<Button> chatButtons = new ArrayList<>();\r\n    private Map<Button, VBox> chatConversations = new HashMap<>();\r\n\r\n    public Button settings;\r\n\r\n    @FXML\r\n    public JFXButton newChatButton;\r\n    public ColumnConstraints tabs;\r\n    public ScrollPane chatScreen;\r\n    public VBox chatVBox;\r\n\r\n    @FXML\r\n    private VBox chatButtonsContainer;\r\n    @FXML\r\n    private TextField questionField;\r\n\r\n    @FXML\r\n    private Button askButton;\r\n\r\n\r\n    @FXML\r\n    private void initialize() {\r\n        newChatButton.setOnAction(event -> addNewChatButton());\r\n        addNewChatButton();\r\n\r\n        // Set the initial active chat\r\n        Button initialChatButton = chatButtons.get(0);\r\n        switchChat(initialChatButton);\r\n    }\r\n\r\n    private void switchChat(Button chatButton) {\r\n        chatVBox.getChildren().clear();\r\n\r\n        VBox conversationBox = chatConversations.get(chatButton);\r\n        chatVBox.getChildren().add(conversationBox);\r\n    }\r\n\r\n\r\n    @FXML\r\n    private void askQuestion() {\r\n        String question = questionField.getText();\r\n        displayQuestion(question);\r\n        String answer = generateAnswer(question);\r\n        displayAnswer(answer);\r\n    }\r\n\r\n    private void displayQuestion(String question) {\r\n        Text questionText = new Text(question);\r\n        questionText.setStyle(\"-fx-font-size: 16; -fx-fill: #333333;\");\r\n\r\n        VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);\r\n        activeConversationBox.getChildren().add(questionText);\r\n    }\r\n\r\n    private void displayAnswer(String answer) {\r\n        Text answerText = new Text(answer);\r\n        answerText.setStyle(\"-fx-font-size: 14; -fx-fill: #666666;\");\r\n\r\n        VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);\r\n        activeConversationBox.getChildren().add(answerText);\r\n\r\n        // Add space between the question and answer blocks\r\n        VBox.setMargin(answerText, new Insets(10, 0, 0, 0));\r\n    }\r\n\r\n\r\n\r\n    private String generateAnswer(String question) {\r\n        // Generate a dummy answer based on the user's input\r\n        // Implement your own logic here\r\n        return \"This is a dummy answer to the question: \" + question;\r\n    }\r\n\r\n\r\n    @FXML\r\n    private void addNewChatButton() {\r\n        int chatNumber = chatButtons.size() + 1;\r\n\r\n        Button chatButton = new JFXButton(\"Chat \" + chatNumber);\r\n        chatButton.setPadding(new Insets(10));\r\n        chatButton.getStyleClass().add(\"chatButton\");\r\n        chatButton.setTextFill(Paint.valueOf(\"#ffffff\"));\r\n\r\n        // Create the remove button\r\n        Button removeButton = new JFXButton(\"Remove\");\r\n        removeButton.setOnAction(event -> removeChatButton(chatButton));\r\n\r\n        HBox chatButtonBox = new HBox(chatButton, removeButton);\r\n        chatButtonBox.setAlignment(Pos.CENTER);\r\n        chatButtonBox.setSpacing(10);\r\n\r\n        VBox conversationBox = new VBox();\r\n        conversationBox.setPadding(new Insets(10));\r\n        conversationBox.setFillWidth(true);\r\n\r\n        chatButtons.add(chatButton);\r\n        chatConversations.put(chatButton, conversationBox);\r\n\r\n        chatButton.setOnAction(event -> switchChat(chatButton));\r\n\r\n        chatButtonsContainer.getChildren().add(chatButtonBox);\r\n    }\r\n\r\n\r\n    private void removeChatButton(Button chatButton) {\r\n        VBox conversationBox = chatConversations.get(chatButton);\r\n        chatButtons.remove(chatButton);\r\n        chatConversations.remove(chatButton);\r\n\r\n        chatButtonsContainer.getChildren().removeIf(node -> node instanceof HBox &&\r\n                ((HBox) node).getChildren().contains(chatButton));\r\n\r\n        chatVBox.getChildren().remove(conversationBox);\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    public void changeTheme(ActionEvent actionEvent) {\r\n        AssistentApplication.changeTheme();\r\n    }\r\n\r\n    public void openSettings(ActionEvent actionEvent) {\r\n    }\r\n\r\n    public void logOut(ActionEvent actionEvent) {\r\n        chatButtonsContainer.getChildren().clear();\r\n        UserAccountSingleton.logOut();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/aiassistent/ChatController.java b/src/main/java/com/example/aiassistent/ChatController.java
+--- a/src/main/java/com/example/aiassistent/ChatController.java	(revision 468fc15ac73dbb3a41e7508c67b3da3083cd5476)
++++ b/src/main/java/com/example/aiassistent/ChatController.java	(date 1685945250003)
+@@ -5,16 +5,21 @@
+ import javafx.fxml.FXML;
+ import javafx.geometry.Insets;
+ import javafx.geometry.Pos;
++import javafx.scene.Node;
++import javafx.scene.Parent;
+ import javafx.scene.control.Button;
+-import javafx.scene.control.ContentDisplay;
++import javafx.scene.control.Label;
+ import javafx.scene.control.ScrollPane;
+ import javafx.scene.control.TextField;
+ import javafx.scene.layout.*;
+ import javafx.scene.paint.Paint;
+ import javafx.scene.text.Text;
++import javafx.stage.Popup;
+ 
++import java.awt.*;
+ import java.net.URL;
+ import java.util.*;
++import java.util.List;
+ 
+ public class ChatController {
+     private List<Button> chatButtons = new ArrayList<>();
+@@ -100,11 +105,13 @@
+         chatButton.getStyleClass().add("chatButton");
+         chatButton.setTextFill(Paint.valueOf("#ffffff"));
+ 
+-        // Create the remove button
+-        Button removeButton = new JFXButton("Remove");
+-        removeButton.setOnAction(event -> removeChatButton(chatButton));
++        Button editButton = addNewEditButton(chatButton);
++        HBox.setMargin(editButton, new Insets(0, 0, 0, -210));
+ 
+-        HBox chatButtonBox = new HBox(chatButton, removeButton);
++        Button removeButton = addNewRemoveButton(chatButton);
++        HBox.setMargin(removeButton, new Insets(0, 0, 0, -30));
++
++        HBox chatButtonBox = new HBox(chatButton, removeButton, editButton);
+         chatButtonBox.setAlignment(Pos.CENTER);
+         chatButtonBox.setSpacing(10);
+ 
+@@ -120,6 +127,74 @@
+         chatButtonsContainer.getChildren().add(chatButtonBox);
+     }
+ 
++    private Button addNewEditButton(Button chatButton) {
++        // Create the remove button
++        Button editButton = new JFXButton("");
++        editButton.setOnAction(event -> editChatButton(chatButton));
++        editButton.setPadding(new Insets(10));
++        editButton.getStyleClass().add("editButton");
++        return editButton;
++    }
++
++    private Button addNewRemoveButton(Button chatButton) {
++        // Create the remove button
++        Button removeButton = new JFXButton("");
++        removeButton.setOnAction(event -> removeChatButton(chatButton));
++        removeButton.setPadding(new Insets(10));
++        removeButton.getStyleClass().add("removeButton");
++        return removeButton;
++    }
++
++    private void editChatButton(Button chatButton) {
++        String currentTitle = chatButton.getText();
++        HBox currentChatButtonBox = null;
++
++        for (Node hbox : chatButtonsContainer.getChildren()) {
++            if(hbox instanceof Parent) {
++                HBox chatButtonBox = (HBox) hbox;
++                for (Node element : chatButtonBox.getChildrenUnmodifiable()) {
++                    if (element == chatButton) {
++                        currentChatButtonBox = chatButtonBox;
++                    }
++                }
++            }
++        }
++
++        int chatButtonIndex = chatButtonsContainer.getChildren().indexOf(currentChatButtonBox);
++
++        HBox editTextInputField = addEditTextInputField(currentTitle);
++
++        chatButtonsContainer.getChildren().add(chatButtonIndex + 1, editTextInputField);
++    }
++
++    private HBox addEditTextInputField(String currentTitle) {
++        TextField textField = new TextField();
++        textField.setPromptText(currentTitle);
++        textField.setMaxWidth(200);
++        textField.setPrefColumnCount(10);
++
++        // Create the cancel button
++        Button confirmChatButtonEdit = new JFXButton("");
++        confirmChatButtonEdit.setOnAction(event -> editChatButtonTitle());
++        confirmChatButtonEdit.setPadding(new Insets(10));
++        confirmChatButtonEdit.getStyleClass().add("confirmEditButton");
++
++        // Create the remove button
++        Button cancelChatButtonEdit = new JFXButton("");
++        cancelChatButtonEdit.setOnAction(event -> cancelChatButtonEdit());
++        cancelChatButtonEdit.setPadding(new Insets(10));
++        cancelChatButtonEdit.getStyleClass().add("cancelEditButton");
++
++        return new HBox(textField, confirmChatButtonEdit, cancelChatButtonEdit);
++    }
++
++    private void editChatButtonTitle() {
++        // TODO: actually update the text in the button
++    }
++
++    private void cancelChatButtonEdit() {
++        // TODO: cancel the update action and remove the input field
++    }
+ 
+     private void removeChatButton(Button chatButton) {
+         VBox conversationBox = chatConversations.get(chatButton);
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_20\" default=\"true\" project-jdk-name=\"openjdk-20 (2)\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 468fc15ac73dbb3a41e7508c67b3da3083cd5476)
++++ b/.idea/misc.xml	(date 1685945250012)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="openjdk-20 (2)" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="openjdk-20" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file

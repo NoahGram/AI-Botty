@@ -5,25 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6123da3f-b637-488c-a628-338ef5d00637" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AnswerFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/IAnswerProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/IQuestionAsker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/InputValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/OfflineChatStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/PictureMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/TextMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/WordCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/en_flag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/nl_flag.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AssistentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AssistentApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatEngine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/InstellingenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/InstellingenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/LoginPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/RegisterPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/RegisterPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserAccountSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserAccountSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/chat-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/chat-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/light.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/instellingen-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/instellingen-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/register-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/register-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +56,14 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "chat__functionality__and__style"
+    "git-widget-placeholder": "chat__functionality__and__style",
+    "last_opened_file_path": "C:/Users/negee/Documents/GitHub/AI-Botty/src/main/resources/com/example/aiassistent/images"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\negee\Documents\GitHub\AI-Botty\src\main\resources\com\example\aiassistent\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\William\Desktop\School\Proj2\AI-Botty\src\main\resources\com\example\aiassistent" />
     </key>
@@ -75,7 +74,7 @@
   <component name="RunManager">
     <configuration name="AssistentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.aiassistent.AssistentApplication" />
-      <module name="ai-assistent" />
+      <module name="AI-Botty" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.aiassistent.*" />
@@ -106,5 +105,16 @@
       <updated>1686229801761</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

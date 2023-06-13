@@ -24,6 +24,9 @@ import java.util.Map;
 
 public class ChatController {
     @FXML
+    public Button EN;
+    public Button NL;
+    @FXML
     private JFXButton askButton;
     @FXML
     private List<Button> chatButtons = new ArrayList<>();
@@ -43,6 +46,19 @@ public class ChatController {
     private final IQuestionAsker chatEngine = new OfflineChatStrategy();
     private VBox activeConversationBox;
 
+    String version = "1.0.2023";
+
+    private String TXT1 = "Nieuwe chat";
+    private String TXT2 = "Typ hier jouw vraag...";
+    private String TXT3 = "Dit is een development build van ChadGPT. Huidige versie: " + version;
+
+    private String TXT1E = "New chat";
+    private String TXT2E = "Type your question here...";
+    private String TXT3E = "This is a development build of ChadGPT. Current version: " + version;
+
+    @FXML
+    public Text txt3Text;
+
     @FXML
     private void initialize() {
         askButton.setDisable(true);
@@ -53,6 +69,7 @@ public class ChatController {
 
         Button initialChatButton = chatButtons.get(0);
         switchChat(initialChatButton);
+        initializeTXT();
     }
 
     private void switchChat(Button chatButton) {
@@ -227,7 +244,32 @@ public class ChatController {
                 activeConversationBox.getChildren().clear();
             }
         }
-
         UserAccountSingleton.logOut();
+    }
+    @FXML
+    private void NL(ActionEvent event) {
+        AssistentApplication.isEngels = false;
+        AssistentApplication.setLang(AssistentApplication.isEngels);
+        System.out.println("NL knop");
+        initializeTXT();
+    }
+    @FXML
+    private void EN(ActionEvent event) {
+        AssistentApplication.isEngels = true;
+        AssistentApplication.setLang(AssistentApplication.isEngels);
+        System.out.println("EN button");
+        initializeTXT();
+    }
+    @FXML
+    private void initializeTXT() {
+        if(AssistentApplication.isEngels){
+            newChatButton.setText(TXT1E);
+            questionField.setPromptText(TXT2E);
+            txt3Text.setText(TXT3E);
+        }else{
+            newChatButton.setText(TXT1);
+            questionField.setPromptText(TXT2);
+            txt3Text.setText(TXT3);
+        }
     }
 }

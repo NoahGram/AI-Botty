@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.image.ImageView;
@@ -17,10 +19,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.application.Platform;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ChatController {
     @FXML
@@ -192,9 +191,12 @@ public class ChatController {
         chatButton.setMinWidth(100);
         chatButton.setPrefWidth(200);
 
-        HBox chatButtonBox = new HBox(chatButton);
-        chatButtonBox.setAlignment(Pos.CENTER);
-        chatButtonBox.setSpacing(10);
+        Button editButton = addNewEditButton(chatButton);
+        Button removeButton = addNewRemoveButton(chatButton);
+
+        StackPane chatButtonStack = new StackPane(chatButton, editButton, removeButton);
+        StackPane.setAlignment(removeButton, Pos.TOP_RIGHT);
+        StackPane.setAlignment(editButton, Pos.TOP_LEFT);
 
         Insets buttonMargin = new Insets(0, 0, 20, 0);
         HBox.setMargin(chatButton, buttonMargin);
@@ -206,7 +208,44 @@ public class ChatController {
         chatButtons.add(chatButton);
         chatConversations.put(chatButton, conversationBox);
         chatButton.setOnAction(event -> switchChat(chatButton));
-        chatButtonsContainer.getChildren().add(chatButtonBox);
+        chatButtonsContainer.getChildren().add(chatButtonStack);
+    }
+
+    private Button addNewEditButton(Button chatButton) {
+        // Create the remove button
+        Button editButton = new JFXButton("");
+        editButton.setOnAction(event -> editChatButton(chatButton));
+        editButton.setPadding(new Insets(10));
+        editButton.getStyleClass().add("editButton");
+        return editButton;
+    }
+
+    private Button addNewRemoveButton(Button chatButton) {
+        // Create the remove button
+        Button removeButton = new JFXButton("");
+        removeButton.setOnAction(event -> removeChatButton(chatButton));
+        removeButton.setPadding(new Insets(10));
+        removeButton.getStyleClass().add("removeButton");
+        return removeButton;
+    }
+
+    private void editChatButton(Button chatButton) {
+        TextInputDialog dialog = new TextInputDialog(chatButton.getText());
+        dialog.setTitle("Edit Chat Button");
+        dialog.setHeaderText(null);
+        dialog.setContentText("Enter the new title:");
+
+        Optional<String> result = dialog.showAndWait();
+        result.ifPresent(newTitle -> {
+            chatButton.setText(newTitle);
+        });
+    }
+
+    private void removeChatButton(Button chatButton) {
+        StackPane chatButtonStack = (StackPane) chatButton.getParent();
+        chatButtonsContainer.getChildren().remove(chatButtonStack);
+        chatButtons.remove(chatButton);
+        chatConversations.remove(chatButton);
     }
 
     @FXML

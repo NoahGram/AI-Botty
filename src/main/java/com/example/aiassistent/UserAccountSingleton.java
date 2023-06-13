@@ -14,6 +14,7 @@ public class UserAccountSingleton {
         addUser(new User("noah", "password1", "noah@outlook.com"));
         addUser(new User("tim", "password2", "tim@outlook.com"));
         addUser(new User("anita", "password3", "anita@outlook.com"));
+        addUser(new User("a", "a", "a"));
     }
 
     public static synchronized UserAccountSingleton getInstance() {

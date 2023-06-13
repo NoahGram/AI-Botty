@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.image.ImageView;
@@ -216,7 +217,21 @@ public class ChatController {
 
     @FXML
     private void openSettings(ActionEvent actionEvent) {
-        AssistentApplication.showSettingsScene();
+        Scene settingsScene = AssistentApplication.showSettingsScene();
+        toggleAdminPanels(settingsScene);
+    }
+
+    private void toggleAdminPanels(Scene settingsScene) {
+        // Hide the GridPane with ID "adminPanel"
+        GridPane adminPanel = (GridPane) settingsScene.lookup("#adminPanel");
+        assert adminPanel != null;
+
+        if (UserAccountSingleton.getInstance().getCurrentUser().getAdmin()) {
+            adminPanel.setVisible(true);
+            return;
+        }
+
+        adminPanel.setVisible(false);
     }
 
     @FXML

@@ -219,6 +219,7 @@ public class ChatController {
         chatConversations.put(chatButton, conversationBox);
         chatButton.setOnAction(event -> switchChat(chatButton));
         chatButtonsContainer.getChildren().add(chatButtonStack);
+        switchChat(chatButton);
     }
 
     @FXML
@@ -293,6 +294,7 @@ public class ChatController {
         chatButtonsContainer.getChildren().remove(chatButtonStack);
         chatButtons.remove(chatButton);
         chatConversations.remove(chatButton);
+        chatVBox.getChildren().clear();
     }
 
     @FXML

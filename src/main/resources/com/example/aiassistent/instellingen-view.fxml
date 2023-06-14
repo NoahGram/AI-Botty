@@ -48,7 +48,7 @@
                   <RowConstraints vgrow="ALWAYS" />
                </rowConstraints>
                <children>
-                  <Text fx:id="title" fill="#ffffffe5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Instellingen" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+                  <Text fx:id="title" fill="#ffffffe5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Instellingen" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
                      <font>
                         <Font name="Gilroy-ExtraBold" size="36.0" />
                      </font>
@@ -220,10 +220,10 @@
                   </GridPane>
                   <GridPane fx:id="adminPanel" prefHeight="70.0" prefWidth="700.0" style="-fx-background-radius: 5;" styleClass="middleground" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" />
                         <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="185.0" />
                         <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity" />
-                        <ColumnConstraints />
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
@@ -245,7 +245,7 @@
                               <ColorAdjust brightness="1.0" />
                            </effect>
                         </ImageView>
-                        <JFXButton fx:id="changeIcon" focusTraversable="false" onAction="#editIcon" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <JFXButton fx:id="changeIcon" focusTraversable="false" onAction="#editIcon" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <font>
                               <Font name="Gilroy-ExtraBold" size="14.0" />
                            </font>
@@ -253,7 +253,7 @@
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </padding>
                            <GridPane.margin>
-                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                              <Insets bottom="15.0" left="30.0" right="15.0" top="15.0" />
                            </GridPane.margin>
                         </JFXButton>
                      </children>

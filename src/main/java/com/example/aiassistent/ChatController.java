@@ -16,6 +16,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.application.Platform;
+import javafx.scene.text.TextFlow;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -108,17 +109,22 @@ public class ChatController {
         StackPane usernameContainer = new StackPane();
         usernameContainer.getChildren().addAll(square, usernameText);
 
-        HBox hbox = new HBox(usernameContainer, questionText);
+        HBox hbox = new HBox(usernameContainer);
+
+        TextFlow textFlow = new TextFlow(questionText);
+        VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);
+        textFlow.prefWidthProperty().bind(activeConversationBox.widthProperty().subtract(60)); // Set the preferred width to VBox width minus padding
+
+        hbox.getChildren().add(textFlow);
         hbox.setSpacing(10);
         hbox.setPadding(new Insets(40, 20, 20, 20));
-        hbox.setAlignment(Pos.CENTER_LEFT);
+        hbox.setAlignment(Pos.CENTER);
 
         StackPane stackPane = new StackPane(hbox);
         stackPane.setAlignment(Pos.CENTER_LEFT);
         stackPane.setPadding(new Insets(10));
-        activeConversationBox = (VBox) chatVBox.getChildren().get(0);
-        activeConversationBox.getChildren().add(stackPane);
 
+        activeConversationBox.getChildren().add(stackPane);
     }
 
     private void displayAnswer(Object answer) {
@@ -144,19 +150,22 @@ public class ChatController {
             StackPane aiContainer = new StackPane();
             aiContainer.getChildren().addAll(square, aiText);
 
-            HBox hbox = new HBox(aiContainer, answerText);
-            hbox.setAlignment(Pos.CENTER_LEFT); // Center the text next to the rectangle
+            HBox hbox = new HBox(aiContainer);
+
+            TextFlow textFlow = new TextFlow(answerText);
+            VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);
+            textFlow.prefWidthProperty().bind(activeConversationBox.widthProperty().subtract(60)); // Set the preferred width to VBox width minus padding
+
+            hbox.getChildren().add(textFlow);
+            hbox.setAlignment(Pos.CENTER); // Center the text next to the rectangle
             hbox.setSpacing(10);
             hbox.setPadding(new Insets(20));
 
             StackPane.setMargin(aiText, new Insets(10));
             stackPane.getChildren().addAll(hbox);
-
         }
 
-
         if (answer instanceof ImageView answerImage) {
-
             Rectangle square = new Rectangle(40, 40);
             square.setFill(Color.valueOf("#19C37D"));
             square.setArcWidth(10);
@@ -179,6 +188,8 @@ public class ChatController {
 
         stackPane.setAlignment(Pos.CENTER_LEFT);
         stackPane.setPadding(new Insets(10));
+
+        VBox activeConversationBox = (VBox) chatVBox.getChildren().get(0);
         activeConversationBox.getChildren().add(stackPane);
     }
 

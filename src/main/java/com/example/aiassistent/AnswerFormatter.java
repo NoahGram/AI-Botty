@@ -27,6 +27,9 @@ class AnswerFormatter implements IAnswerProvider {
                     "eet vervolgens het deel van het vruchtvlees op dat vrij is gekomen van de schil.";
             case "wie zijn de leden van het projectgroepje?" -> "Noah, Anita, William, Tim, Jimmy en Nout.";
             case "waar zijn wij trots op?" -> "Wij zijn trots op de grafische interface en de mogelijkheid om een afbeelding als antwoord te geven op een vraag. Ook het beantwoorden van vragen in het engels.";
+            case "niet functionele requirements?" -> "Onderhoudbaarheid: de code is gebasseerd op patterns en SOLID principles  " +
+                    "Betrouwbaarheid: de applicatie moet offline kunnen werken zodat wanneer er geen internet is er toch antwoord kan worden gegeven op vragen    " +
+                    "Efficientie: de assistent moet antwoord kunnen geven op vragen gesteld door de gebruiker.";
             default -> "Kan geen antwoord vinden op de vraag: " + question;
         };
     }

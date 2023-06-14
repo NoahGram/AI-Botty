@@ -74,7 +74,7 @@
             <Insets left="35.0" top="8.0" />
          </GridPane.margin>
       </Text>
-      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logo" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/logoa.png" />
          </image>

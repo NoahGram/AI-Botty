@@ -5,6 +5,11 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -73,24 +78,40 @@ public class InstellingenController {
     private void editIcon(ActionEvent event) throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.png"));
-        File sourceImageFile = fileChooser.showOpenDialog(null);
 
-        // Specify the target directory where you want to replace the image
-        String targetDirectoryPath = "src/main/resources/com/example/aiassistent/images";
-
-        // Specify the target file name
-        String targetFileName = "logoa.png";
-
-        // Create a File object for the target directory
-        File targetDirectory = new File(targetDirectoryPath);
+        // Create a File object for the source image file
+        File uploadedImageFile = fileChooser.showOpenDialog(null);
 
         // Create a File object for the target image file
-        File targetImageFile = new File(targetDirectory, targetFileName);
+        File oldImageFile = new File("src/main/resources/com/example/aiassistent/images", "logoa.png");
 
         // Copy the source image file to the target location
-        Files.copy(sourceImageFile.toPath(), targetImageFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(uploadedImageFile.toPath(), oldImageFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 
-        // TODO - File gets replaced but app is not aware, look into file cache invalidation or something
+        // Get the login XML file
+        FXMLLoader loginXML = new FXMLLoader(getClass().getResource("login-view.fxml"));
+
+        // Load the file
+        Parent loadedXML = loginXML.load();
+
+        // Set the loaded file as a scene
+        Scene scene = new Scene(loadedXML);
+
+        // Get the logo from the login scene
+        ImageView loginSceneLogo = (ImageView) loadedXML.lookup("#logo");
+
+        if(loginSceneLogo != null) {
+            // Create an Image object from the target image file
+            Image newLogo = new Image(uploadedImageFile.toURI().toString());
+
+            // Set the Image object as the image for the logo ImageView
+            loginSceneLogo.setImage(newLogo);
+
+            // Replaces the current login scene with the updated one and adds the css file that the current login scene uses
+            AssistentApplication.setLoginScene(scene);
+        } else {
+            System.out.println("Logo ImageView not found in the scene.");
+        }
     }
 
     public void back(ActionEvent actionEvent) {

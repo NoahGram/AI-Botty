@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
 public class LoginPageController {
@@ -17,6 +18,7 @@ public class LoginPageController {
      public JFXPasswordField passwordfield;
      public Text invalid;
      public Button theme;
+     public ImageView logo;
      private UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
 
     @FXML

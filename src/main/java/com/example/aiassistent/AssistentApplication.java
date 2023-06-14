@@ -104,6 +104,11 @@ public class AssistentApplication extends Application {
         return settingsScene;
     }
 
+    public static void setLoginScene(Scene newLoginScene) {
+        loginScene = newLoginScene;
+        loadCSS(loginScene, currentTheme);
+    }
+
     public static void showChatScene() { primaryStage.setScene(chatScene);  primaryStage.setMaximized(true); }
 
     public static void main(String[] args) {

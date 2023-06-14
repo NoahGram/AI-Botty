@@ -9,6 +9,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.effect.BlendMode;
+import javafx.scene.effect.ColorAdjust;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -18,7 +20,11 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.application.Platform;
+import javafx.scene.layout.HBox ;
+import javafx.scene.layout.StackPane;
+import javafx.geometry.Pos;
 
+import java.io.InputStream;
 import java.util.*;
 
 public class ChatController {
@@ -194,9 +200,13 @@ public class ChatController {
         Button editButton = addNewEditButton(chatButton);
         Button removeButton = addNewRemoveButton(chatButton);
 
-        StackPane chatButtonStack = new StackPane(chatButton, editButton, removeButton);
-        StackPane.setAlignment(removeButton, Pos.TOP_RIGHT);
-        StackPane.setAlignment(editButton, Pos.TOP_LEFT);
+        HBox buttonContainer = new HBox(removeButton, editButton);
+        buttonContainer.setAlignment(Pos.TOP_RIGHT);
+        buttonContainer.setSpacing(10);
+
+        StackPane chatButtonStack = new StackPane(chatButton, buttonContainer);
+        StackPane.setAlignment(chatButton, Pos.CENTER_LEFT);
+        StackPane.setAlignment(buttonContainer, Pos.TOP_RIGHT);
 
         Insets buttonMargin = new Insets(0, 0, 20, 0);
         HBox.setMargin(chatButton, buttonMargin);
@@ -211,29 +221,55 @@ public class ChatController {
         chatButtonsContainer.getChildren().add(chatButtonStack);
     }
 
+    @FXML
     private Button addNewEditButton(Button chatButton) {
-        // Create the remove button
+        // initialize objects
+        InputStream is = getClass().getResourceAsStream("images/stylus_edit.png");
+        Image img = new Image(is);
+        ColorAdjust colorAdjust = new ColorAdjust();
+        ImageView view = new ImageView(img);
+
+        // Change image visual properties
+        colorAdjust.setBrightness(0.9);
+        view.setFitHeight(20);
+        view.setFitWidth(20);
+        view.setBlendMode(BlendMode.DIFFERENCE);
+        view.setEffect(colorAdjust);
+
         Button editButton = new JFXButton("");
         editButton.setOnAction(event -> editChatButton(chatButton));
+        editButton.setGraphic(view);
         editButton.setPadding(new Insets(10));
         editButton.getStyleClass().add("editButton");
         return editButton;
     }
 
     private Button addNewRemoveButton(Button chatButton) {
+        // Declare initial objects for later use
+        InputStream is = getClass().getResourceAsStream("images/cross.png");
+        Image img = new Image(is);
+        ColorAdjust colorAdjust = new ColorAdjust();
+        ImageView view = new ImageView(img);
+
+        // Change image visual properties
+        colorAdjust.setBrightness(0.9);
+        view.setFitHeight(20);
+        view.setFitWidth(20);
+        view.setBlendMode(BlendMode.DIFFERENCE);
+        view.setEffect(colorAdjust);
         // Create the remove button
         Button removeButton = new JFXButton("");
         removeButton.setOnAction(event -> removeChatButton(chatButton));
         removeButton.setPadding(new Insets(10));
-        removeButton.getStyleClass().add("removeButton");
+        removeButton.setGraphic(view);
         return removeButton;
     }
 
     private void editChatButton(Button chatButton) {
         TextInputDialog dialog = new TextInputDialog(chatButton.getText());
-        dialog.setTitle("Edit Chat Button");
+        dialog.setTitle("Titel chat");
         dialog.setHeaderText(null);
-        dialog.setContentText("Enter the new title:");
+        dialog.setContentText("Voer nieuwe titel in: ");
 
         Optional<String> result = dialog.showAndWait();
         result.ifPresent(newTitle -> {

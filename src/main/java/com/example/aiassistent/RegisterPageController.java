@@ -1,17 +1,38 @@
 package com.example.aiassistent;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-public class RegisterPageController {
+public class RegisterPageController implements LanguageChangeListener {
     public TextField usernamefield;
     public TextField passwordfield;
     public TextField emailField;
     public Text invalid;
+    public Text title;
+    public JFXButton registerButton;
 
     UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
+
+    @FXML
+    private void initialize() {
+        LanguageManager.addLanguageChangeListener(this::onLanguageChange);
+    }
+
+    @Override
+    public void onLanguageChange() {
+        updateUI();
+    }
+
+    private void updateUI() {
+        // Update the Texts
+        LanguageManager.getTranslation("title");
+        title.setText(LanguageManager.getTranslation("registerTitle"));
+        registerButton.setText(LanguageManager.getTranslation("registerButton"));
+
+    }
 
     @FXML
     public void registerButtonEvent(ActionEvent event) {

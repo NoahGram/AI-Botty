@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
-public class LoginPageController {
+public class LoginPageController implements LanguageChangeListener {
 
      public JFXButton loginbutton;
      public Button exitButton;
@@ -17,8 +17,31 @@ public class LoginPageController {
      public JFXPasswordField passwordfield;
      public Text invalid;
      public Button theme;
-     private UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
+    public Text title;
+    public Text gebruikersnaam;
+    public Text wachtwoord;
+    private UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
 
+
+    @FXML
+    private void initialize() {
+        LanguageManager.addLanguageChangeListener(this::onLanguageChange);
+    }
+
+    @Override
+    public void onLanguageChange() {
+        updateUI();
+    }
+
+    private void updateUI() {
+        // Update the Texts
+        LanguageManager.getTranslation("title");
+        title.setText(LanguageManager.getTranslation("LoginPageTitle"));
+        gebruikersnaam.setText(LanguageManager.getTranslation("username"));
+        wachtwoord.setText(LanguageManager.getTranslation("password"));
+        loginbutton.setText(LanguageManager.getTranslation("loginButton"));
+
+    }
     @FXML
     public void loginButtonEvent(ActionEvent event) {
         String username = usernamefield.getText();

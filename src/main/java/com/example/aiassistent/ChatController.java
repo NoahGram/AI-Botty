@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ChatController {
+public class ChatController implements LanguageChangeListener {
     @FXML
     private JFXButton askButton;
     @FXML
@@ -45,6 +45,7 @@ public class ChatController {
 
     @FXML
     private void initialize() {
+        LanguageManager.addLanguageChangeListener(this::onLanguageChange);
         askButton.setDisable(true);
         newChatButton.setOnAction(event -> addNewChatButton());
         addNewChatButton();
@@ -53,6 +54,17 @@ public class ChatController {
 
         Button initialChatButton = chatButtons.get(0);
         switchChat(initialChatButton);
+    }
+
+    public void onLanguageChange() {
+        updateUI();
+    }
+
+    private void updateUI() {
+        // Update the Texts
+        LanguageManager.getTranslation("title");
+        newChatButton.setText(LanguageManager.getTranslation("newChatButton"));
+
     }
 
     private void switchChat(Button chatButton) {

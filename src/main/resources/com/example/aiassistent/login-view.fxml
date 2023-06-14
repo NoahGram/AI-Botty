@@ -160,7 +160,7 @@
                         <DropShadow color="#0000000d" offsetY="5.0" />
                      </effect>
                   </JFXPasswordField>
-                  <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Gebruikersnaam" GridPane.halignment="LEFT" GridPane.rowIndex="3">
+                  <Text fx:id="gebruikersnaam" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Gebruikersnaam" GridPane.halignment="LEFT" GridPane.rowIndex="3">
                      <font>
                         <Font name="Plus Jakarta Sans Regular" size="11.0" />
                      </font>
@@ -168,7 +168,7 @@
                         <Insets bottom="5.0" left="20.0" />
                      </GridPane.margin>
                   </Text>
-                  <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Wachtwoord" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                  <Text fx:id="wachtwoord" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Wachtwoord" GridPane.halignment="LEFT" GridPane.rowIndex="5">
                      <font>
                         <Font name="Plus Jakarta Sans Regular" size="11.0" />
                      </font>

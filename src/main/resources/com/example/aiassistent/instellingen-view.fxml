@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="border" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.InstellingenController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="border" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.InstellingenController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -66,7 +60,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
                      </rowConstraints>
                      <children>
-                        <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Update uw e-mailadres" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <Text fx:id="email" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Update uw e-mailadres" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <font>
                               <Font name="Plus Jakarta Sans Regular" size="14.0" />
                            </font>
@@ -93,7 +87,7 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXButton fx:id="changeEmail" focusTraversable="false" onAction="#editEmail" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <JFXButton fx:id="btnEnglish" focusTraversable="false" onAction="#changeLanguageEN" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <font>
                               <Font name="Gilroy-ExtraBold" size="14.0" />
                            </font>
@@ -120,7 +114,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Update uw gebruikersnaam" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <Text fx:id="username" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Update uw gebruikersnaam" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <font>
                               <Font name="Plus Jakarta Sans Regular" size="14.0" />
                            </font>
@@ -147,7 +141,7 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXButton fx:id="changeUsername" focusTraversable="false" onAction="#editUsername" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <JFXButton fx:id="btnDutch" focusTraversable="false" onAction="#changeLanguageNL" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <font>
                               <Font name="Gilroy-ExtraBold" size="14.0" />
                            </font>
@@ -174,7 +168,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Update uw wachtwoord" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <Text fx:id="password" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Update uw wachtwoord" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <font>
                               <Font name="Plus Jakarta Sans Regular" size="14.0" />
                            </font>

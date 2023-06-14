@@ -52,7 +52,7 @@
                   <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Text fx:id="title" fill="#363c40" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Maak je account aan" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                  <Text fx:id="title" fill="#363c40" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Maak jouw account aan" GridPane.halignment="LEFT" GridPane.valignment="TOP">
                      <font>
                         <Font name="Gilroy-ExtraBold" size="36.0" />
                      </font>
@@ -74,7 +74,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXTextField fx:id="emailField" focusColor="#776cc9" minHeight="40.0" onAction="#onEnter" promptText="Voer hier uw emailadres in" style="-fx-background-radius: 5;" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                  <JFXTextField fx:id="emailField" focusColor="#776cc9" minHeight="40.0" onAction="#onEnter" promptText="Voer hier uw e-mailadres in" style="-fx-background-radius: 5;" GridPane.halignment="LEFT" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets bottom="12.0" left="20.0" right="20.0" />
                      </GridPane.margin>
@@ -116,7 +116,7 @@
                         <DropShadow color="#0000000d" offsetY="5.0" />
                      </effect>
                   </JFXPasswordField>
-                  <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Emailadres" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                  <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="E-mailadres" GridPane.halignment="LEFT" GridPane.rowIndex="1">
                      <font>
                         <Font name="Plus Jakarta Sans Regular" size="11.0" />
                      </font>
@@ -124,7 +124,7 @@
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Text>
-                  <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Wachtwoord" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                  <Text fx:id="password" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Wachtwoord" GridPane.halignment="LEFT" GridPane.rowIndex="5">
                      <font>
                         <Font name="Plus Jakarta Sans Regular" size="11.0" />
                      </font>
@@ -132,7 +132,7 @@
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Text>
-                  <Button contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#loginPage" style="-fx-background-color: transparent;" styleClass="nav" text="Keer terug" textFill="#8177c7e5" underline="true" GridPane.halignment="LEFT" GridPane.rowIndex="9" GridPane.valignment="TOP">
+                  <Button fx:id="back" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#loginPage" style="-fx-background-color: transparent;" styleClass="nav" text="Terug" textFill="#8177c7e5" underline="true" GridPane.halignment="LEFT" GridPane.rowIndex="9" GridPane.valignment="TOP">
                      <GridPane.margin>
                         <Insets bottom="32.0" left="11.0" right="11.0" />
                      </GridPane.margin>
@@ -151,7 +151,7 @@
                         <Insets right="20.0" />
                      </GridPane.margin>
                   </Text>
-                  <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Gebruikersnaam" GridPane.halignment="LEFT" GridPane.rowIndex="3">
+                  <Text fx:id="username" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Gebruikersnaam" GridPane.halignment="LEFT" GridPane.rowIndex="3">
                      <font>
                         <Font name="Plus Jakarta Sans Regular" size="11.0" />
                      </font>

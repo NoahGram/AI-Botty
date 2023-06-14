@@ -110,7 +110,7 @@
                   <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Text fx:id="title" fill="#ffffffe5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Log in met je account" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                  <Text fx:id="title" fill="#ffffffe5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Log in met jouw account" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                      <font>
                         <Font name="Gilroy-ExtraBold" size="36.0" />
                      </font>
@@ -195,7 +195,7 @@
                         <Insets bottom="10.0" left="20.0" right="20.0" />
                      </GridPane.margin>
                   </Text>
-                  <Text fill="#6f6f6f" strokeType="OUTSIDE" strokeWidth="0.0" text="WELKOM TERUG" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                  <Text fx:id="welkom" fill="#6f6f6f" strokeType="OUTSIDE" strokeWidth="0.0" text="Welkom terug!" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
                      <GridPane.margin>
                         <Insets left="20.0" top="32.0" />
                      </GridPane.margin>

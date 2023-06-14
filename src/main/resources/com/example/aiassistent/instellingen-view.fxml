@@ -60,7 +60,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" />
                      </rowConstraints>
                      <children>
-                        <Text fx:id="email" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Update uw e-mailadres" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <Text fx:id="email" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Verander uw e-mailadres" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <font>
                               <Font name="Plus Jakarta Sans Regular" size="14.0" />
                            </font>
@@ -76,7 +76,7 @@
                               <ColorAdjust brightness="1.0" />
                            </effect>
                         </ImageView>
-                        <JFXTextField fx:id="emailField" focusColor="#766bc7" text="Email" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <JFXTextField fx:id="emailField" focusColor="#766bc7" promptText="E-mail" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <GridPane.margin>
                               <Insets bottom="15.0" left="30.0" right="15.0" top="15.0" />
                            </GridPane.margin>
@@ -87,7 +87,7 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXButton fx:id="btnEnglish" focusTraversable="false" onAction="#changeLanguageEN" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <JFXButton fx:id="changeEmail" focusTraversable="false" onAction="#editEmail" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <font>
                               <Font name="Gilroy-ExtraBold" size="14.0" />
                            </font>
@@ -114,7 +114,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Text fx:id="username" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Update uw gebruikersnaam" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <Text fx:id="username" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Verander uw gebruikersnaam" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <font>
                               <Font name="Plus Jakarta Sans Regular" size="14.0" />
                            </font>
@@ -130,7 +130,7 @@
                               <ColorAdjust brightness="1.0" />
                            </effect>
                         </ImageView>
-                        <JFXTextField fx:id="usernameField" focusColor="#766bc7" text="Gebruikersnaam" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <JFXTextField fx:id="usernameField" focusColor="#766bc7" promptText="Gebruikersnaam" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <GridPane.margin>
                               <Insets bottom="15.0" left="30.0" right="15.0" top="15.0" />
                            </GridPane.margin>
@@ -141,7 +141,7 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </JFXTextField>
-                        <JFXButton fx:id="btnDutch" focusTraversable="false" onAction="#changeLanguageNL" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <JFXButton fx:id="changeUsername" focusTraversable="false" onAction="#editUsername" style="-fx-background-color: #776cc9;" text="Wijzig" textFill="#ffffffe5" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <font>
                               <Font name="Gilroy-ExtraBold" size="14.0" />
                            </font>
@@ -168,7 +168,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Text fx:id="password" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Update uw wachtwoord" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <Text fx:id="password" fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="Verander uw wachtwoord" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <font>
                               <Font name="Plus Jakarta Sans Regular" size="14.0" />
                            </font>
@@ -184,7 +184,7 @@
                               <ColorAdjust brightness="1.0" />
                            </effect>
                         </ImageView>
-                        <JFXPasswordField fx:id="passwordField" focusColor="#776cc9" text="Wachtwoord" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.vgrow="ALWAYS">
+                        <JFXPasswordField fx:id="passwordField" focusColor="#776cc9" promptText="Wachtwoord" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.vgrow="ALWAYS">
                            <GridPane.margin>
                               <Insets bottom="15.0" left="30.0" right="15.0" top="15.0" />
                            </GridPane.margin>

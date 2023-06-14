@@ -1,5 +1,6 @@
 package com.example.aiassistent;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -23,11 +24,13 @@ public class InstellingenController implements LanguageChangeListener {
     @FXML
     private Text email;
     public Text title;
-    @FXML
-    private Button btnEnglish;
+    public Text password;
+    public  Text username;
+    public JFXButton back;
+    public JFXButton changePassword;
+    public JFXButton changeEmail;
+    public JFXButton changeUsername;
 
-    @FXML
-    private Button btnDutch;
 
     @FXML
     private void initialize() {
@@ -41,17 +44,17 @@ public class InstellingenController implements LanguageChangeListener {
 
     private void updateUI() {
         // Update the Texts
-        LanguageManager.getTranslation("title");
-        String emailTranslate = LanguageManager.getTranslation("email");
-        String emailTranslate1 = LanguageManager.getTranslation("email2");
-        emailField.setPromptText(emailTranslate1);
-        usernameField.setPromptText(LanguageManager.getTranslation("username"));
-        email.setText(emailTranslate);
         title.setText(LanguageManager.getTranslation("settingsTitle"));
+        email.setText(LanguageManager.getTranslation("emailU"));
+        changePassword.setText(LanguageManager.getTranslation("change"));
+        password.setText(LanguageManager.getTranslation("passwordU"));
+        passwordField.setPromptText(LanguageManager.getTranslation("password"));
+        username.setText(LanguageManager.getTranslation("usernameU"));
+        back.setText(LanguageManager.getTranslation("back"));
+        usernameField.setPromptText(LanguageManager.getTranslation("username"));
+        changeEmail.setText(LanguageManager.getTranslation("change"));
+        changeUsername.setText(LanguageManager.getTranslation("change"));
 
-        // Update the language buttons' text
-        btnEnglish.setText(LanguageManager.getTranslation("english"));
-        btnDutch.setText(LanguageManager.getTranslation("dutch"));
     }
 
     @FXML

@@ -20,7 +20,6 @@ public class AssistentApplication extends Application {
     private static Scene settingsScene;
 
     public static String currentTheme = "dark.css";
-    public static boolean isEngels = true;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -83,7 +82,6 @@ public class AssistentApplication extends Application {
         }
         System.out.println("Current theme: " + currentTheme);
     }
-    public static void setLang(boolean switchToEnglish){if(switchToEnglish){isEngels = true;}else {isEngels = false;}}
 
 
     private static void setTheme(String theme) {

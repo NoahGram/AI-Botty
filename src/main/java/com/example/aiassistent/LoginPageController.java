@@ -12,6 +12,7 @@ public class LoginPageController implements LanguageChangeListener {
 
      public JFXButton loginbutton;
      public Button exitButton;
+     public Text welkom;
      public Button registerButton;
      public JFXTextField usernamefield;
      public JFXPasswordField passwordfield;
@@ -37,9 +38,14 @@ public class LoginPageController implements LanguageChangeListener {
         // Update the Texts
         LanguageManager.getTranslation("title");
         title.setText(LanguageManager.getTranslation("LoginPageTitle"));
+        welkom.setText(LanguageManager.getTranslation("welkom"));
         gebruikersnaam.setText(LanguageManager.getTranslation("username"));
         wachtwoord.setText(LanguageManager.getTranslation("password"));
         loginbutton.setText(LanguageManager.getTranslation("loginButton"));
+        usernamefield.setPromptText(LanguageManager.getTranslation("usernameE"));
+        passwordfield.setPromptText(LanguageManager.getTranslation("passwordE"));
+        registerButton.setText(LanguageManager.getTranslation("createAccount"));
+
 
     }
     @FXML
@@ -48,7 +54,7 @@ public class LoginPageController implements LanguageChangeListener {
         String password = passwordfield.getText();
 
 
-        if (AssistentApplication.isEngels){
+        if (LanguageManager.getTranslation("change").equals("Change")){
             if (userAccounts.UserPasswordCorrect(username, password)) {
                 userAccounts.setCurrentUser(userAccounts.getUser(username));
                 invalid.setText("");
@@ -56,11 +62,11 @@ public class LoginPageController implements LanguageChangeListener {
                 passwordfield.setText("");
                 AssistentApplication.showChatScene();
             } else if (username.isEmpty() || password.isEmpty()) {
-                invalid.setText("Please fill in all fields.");
+                invalid.setText("Please fill in all fields");
             } else {
                 invalid.setText("");
                 passwordfield.setText("");
-                invalid.setText("The password or username is incorrect.");
+                invalid.setText("The password or username is incorrect");
             }
         }
         else {
@@ -72,7 +78,7 @@ public class LoginPageController implements LanguageChangeListener {
             passwordfield.setText("");
             AssistentApplication.showChatScene();
         } else if (username.isEmpty() || password.isEmpty()) {
-            invalid.setText("Voer alstublieft alle velden in.");
+            invalid.setText("Voer alstublieft alle velden in");
         } else {
             invalid.setText("");
             passwordfield.setText("");
@@ -100,7 +106,7 @@ public class LoginPageController implements LanguageChangeListener {
     @FXML
     private void NL(ActionEvent event) {
         System.out.println("NL knop");
-        AssistentApplication.setLang(false);
+        LanguageManager.changeLanguage("nl");
     }
     @FXML
     private void EN(ActionEvent event) {

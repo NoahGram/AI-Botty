@@ -92,9 +92,7 @@
 }
 
 .editButton {
-    -fx-background-image: url("images/pencilwhite.png");
     -fx-background-repeat: stretch;
-    -fx-background-size: 20 20;
     -fx-border-radius: 5;
 }
 

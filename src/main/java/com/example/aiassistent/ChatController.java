@@ -5,8 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.ColorAdjust;
@@ -22,10 +20,12 @@ import javafx.scene.text.Text;
 import javafx.application.Platform;
 import javafx.scene.layout.HBox ;
 import javafx.scene.layout.StackPane;
-import javafx.geometry.Pos;
+import javafx.scene.control.TextFormatter;
+import javafx.scene.control.TextFormatter.Change;
 
 import java.io.InputStream;
 import java.util.*;
+import java.util.function.UnaryOperator;
 
 public class ChatController {
     @FXML
@@ -194,19 +194,19 @@ public class ChatController {
         chatButton.setPadding(new Insets(10));
         chatButton.getStyleClass().add("chatButton");
         chatButton.setTextFill(Paint.valueOf("#ffffff"));
+        chatButton.setStyle("-fx-padding: 0 0 0 15; -fx-alignment: baseline-left;");
+
         chatButton.setMinWidth(100);
         chatButton.setPrefWidth(200);
 
         Button editButton = addNewEditButton(chatButton);
         Button removeButton = addNewRemoveButton(chatButton);
 
-        HBox buttonContainer = new HBox(removeButton, editButton);
-        buttonContainer.setAlignment(Pos.TOP_RIGHT);
-        buttonContainer.setSpacing(10);
-
-        StackPane chatButtonStack = new StackPane(chatButton, buttonContainer);
+        StackPane chatButtonStack = new StackPane(chatButton, removeButton, editButton);
         StackPane.setAlignment(chatButton, Pos.CENTER_LEFT);
-        StackPane.setAlignment(buttonContainer, Pos.TOP_RIGHT);
+        StackPane.setAlignment(removeButton, Pos.TOP_RIGHT);
+        StackPane.setAlignment(editButton, Pos.TOP_RIGHT);
+        StackPane.setMargin(editButton, new Insets(0, 40, 0, 0));
 
         Insets buttonMargin = new Insets(0, 0, 20, 0);
         HBox.setMargin(chatButton, buttonMargin);
@@ -270,6 +270,17 @@ public class ChatController {
         dialog.setTitle("Titel chat");
         dialog.setHeaderText(null);
         dialog.setContentText("Voer nieuwe titel in: ");
+
+        // Set the maximum character limit to 10
+        UnaryOperator<Change> characterFilter = change -> {
+            int maxLength = 13;
+            if (change.getControlNewText().length() <= maxLength) {
+                return change;
+            }
+            return null;
+        };
+
+        dialog.getEditor().setTextFormatter(new TextFormatter<>(characterFilter));
 
         Optional<String> result = dialog.showAndWait();
         result.ifPresent(newTitle -> {

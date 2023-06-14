@@ -192,6 +192,7 @@ public class ChatController {
         Button chatButton = new JFXButton("Chat");
 
         chatButton.setPadding(new Insets(10));
+        chatButton.setPadding(new Insets(10));
         chatButton.getStyleClass().add("chatButton");
         chatButton.setTextFill(Paint.valueOf("#ffffff"));
         chatButton.setStyle("-fx-padding: 0 0 0 15; -fx-alignment: baseline-left;");
@@ -204,12 +205,12 @@ public class ChatController {
 
         StackPane chatButtonStack = new StackPane(chatButton, removeButton, editButton);
         StackPane.setAlignment(chatButton, Pos.CENTER_LEFT);
-        StackPane.setAlignment(removeButton, Pos.TOP_RIGHT);
-        StackPane.setAlignment(editButton, Pos.TOP_RIGHT);
+        StackPane.setAlignment(removeButton, Pos.CENTER_RIGHT);
+        StackPane.setAlignment(editButton, Pos.CENTER_RIGHT);
         StackPane.setMargin(editButton, new Insets(0, 40, 0, 0));
 
-        Insets buttonMargin = new Insets(0, 0, 20, 0);
-        HBox.setMargin(chatButton, buttonMargin);
+        Insets buttonMargin = new Insets(5, 0, 5, 0);
+        StackPane.setMargin(chatButton, buttonMargin);
 
         VBox conversationBox = new VBox();
         conversationBox.setPadding(new Insets(10));

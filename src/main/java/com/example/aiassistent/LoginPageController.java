@@ -105,7 +105,7 @@ public class LoginPageController implements LanguageChangeListener {
     @FXML
     private void EN(ActionEvent event) {
         System.out.println("EN button");
-        AssistentApplication.setLang(true);
+        LanguageManager.changeLanguage("en");
     }
 }
 

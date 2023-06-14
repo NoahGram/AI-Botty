@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6123da3f-b637-488c-a628-338ef5d00637" name="Changes" comment="nieuwste versio">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/en_flag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/images/nl_flag.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AssistentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/AssistentApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/InstellingenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/InstellingenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/LoginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/RegisterPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/RegisterPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserAccountSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/aiassistent/UserAccountSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/chat-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/chat-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/instellingen-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/instellingen-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/register-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/aiassistent/register-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/languages/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/languages/messages_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/languages/messages_nl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/languages/messages_nl.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +62,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "chat__functionality__and__style",
-    "last_opened_file_path": "C:/Users/negee/Documents/GitHub/AI-Botty/src/main/resources/com/example/aiassistent/images"
+    "last_opened_file_path": "C:/Users/negee/Documents/GitHub/AI-Botty"
   }
 }]]></component>
   <component name="RecentsManager">

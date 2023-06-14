@@ -44,7 +44,8 @@ public class InstellingenController implements LanguageChangeListener {
         LanguageManager.getTranslation("title");
         String emailTranslate = LanguageManager.getTranslation("email");
         String emailTranslate1 = LanguageManager.getTranslation("email2");
-        emailField.setText(emailTranslate);
+        emailField.setPromptText(emailTranslate1);
+        usernameField.setPromptText(LanguageManager.getTranslation("username"));
         email.setText(emailTranslate);
         title.setText(LanguageManager.getTranslation("settingsTitle"));
 
@@ -110,5 +111,15 @@ public class InstellingenController implements LanguageChangeListener {
 
     public void back(ActionEvent actionEvent) {
         AssistentApplication.showChatScene();
+    }
+    @FXML
+    private void NL(ActionEvent event) {
+        System.out.println("NL knop");
+        LanguageManager.changeLanguage("nl");
+    }
+    @FXML
+    private void EN(ActionEvent event) {
+        System.out.println("EN button");
+        LanguageManager.changeLanguage("en");
     }
 }

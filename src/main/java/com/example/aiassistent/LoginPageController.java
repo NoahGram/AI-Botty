@@ -9,15 +9,32 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
 public class LoginPageController {
+    @FXML
+    private JFXButton loginbutton;
+    @FXML
+    private Button exitButton;
+    @FXML
+    private Button registerButton;
+    @FXML
+    private JFXTextField usernamefield;
+    @FXML
+    private JFXPasswordField passwordfield;
 
-     public JFXButton loginbutton;
-     public Button exitButton;
-     public Button registerButton;
-     public JFXTextField usernamefield;
-     public JFXPasswordField passwordfield;
-     public Text invalid;
-     public Button theme;
-     private UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
+    public void setUsernamefield(String usernamefield) {
+        this.usernamefield.setText(usernamefield);
+    }
+
+    public void setPasswordfield(String passwordfield) {
+        this.passwordfield.setText(passwordfield);
+    }
+
+    @FXML
+    public Text invalid;
+    @FXML
+    private Button theme;
+
+    private UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
+
 
     @FXML
     public void loginButtonEvent(ActionEvent event) {

@@ -11,13 +11,16 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
-public class InstellingenController {
+public class InstellingenController implements LanguageChangeListener {
     @FXML
     private JFXTextField emailField;
     @FXML
@@ -28,6 +31,54 @@ public class InstellingenController {
     private JFXButton changeIcon;
 
     static UserAccountSingleton userAccount = UserAccountSingleton.getInstance();
+
+    @FXML
+    private VBox vboxLanguages;
+    @FXML
+    private Text email;
+    public Text title;
+    public Text password;
+    public  Text username;
+    public JFXButton back;
+    public JFXButton changePassword;
+    public JFXButton changeEmail;
+    public JFXButton changeUsername;
+
+
+    @FXML
+    private void initialize() {
+        LanguageManager.addLanguageChangeListener(this::onLanguageChange);
+    }
+
+    @Override
+    public void onLanguageChange() {
+        updateUI();
+    }
+
+    private void updateUI() {
+        // Update the Texts
+        title.setText(LanguageManager.getTranslation("settingsTitle"));
+        email.setText(LanguageManager.getTranslation("emailU"));
+        changePassword.setText(LanguageManager.getTranslation("change"));
+        password.setText(LanguageManager.getTranslation("passwordU"));
+        passwordField.setPromptText(LanguageManager.getTranslation("password"));
+        username.setText(LanguageManager.getTranslation("usernameU"));
+        back.setText(LanguageManager.getTranslation("back"));
+        usernameField.setPromptText(LanguageManager.getTranslation("username"));
+        changeEmail.setText(LanguageManager.getTranslation("change"));
+        changeUsername.setText(LanguageManager.getTranslation("change"));
+
+    }
+
+    @FXML
+    private void changeLanguageEN() {
+        LanguageManager.changeLanguage("en");
+    }
+
+    @FXML
+    private void changeLanguageNL() {
+        LanguageManager.changeLanguage("nl");
+    }
 
     public InstellingenController() {
         AssistentApplication.showSettingsScene();
@@ -116,5 +167,15 @@ public class InstellingenController {
 
     public void back(ActionEvent actionEvent) {
         AssistentApplication.showChatScene();
+    }
+    @FXML
+    private void NL(ActionEvent event) {
+        System.out.println("NL knop");
+        LanguageManager.changeLanguage("nl");
+    }
+    @FXML
+    private void EN(ActionEvent event) {
+        System.out.println("EN button");
+        LanguageManager.changeLanguage("en");
     }
 }

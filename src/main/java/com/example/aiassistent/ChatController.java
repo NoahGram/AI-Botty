@@ -23,9 +23,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ChatController {
+public class ChatController implements LanguageChangeListener {
     @FXML
     private JFXButton askButton;
+    public String version = "1.0.2023";
     @FXML
     private List<Button> chatButtons = new ArrayList<>();
     @FXML
@@ -40,12 +41,14 @@ public class ChatController {
     private VBox chatButtonsContainer;
     @FXML
     private TextField questionField;
+    public Text build;
 
     private final IQuestionAsker chatEngine = new OfflineChatStrategy();
     private VBox activeConversationBox;
 
     @FXML
     private void initialize() {
+        LanguageManager.addLanguageChangeListener(this::onLanguageChange);
         askButton.setDisable(true);
         newChatButton.setOnAction(event -> addNewChatButton());
         addNewChatButton();
@@ -54,6 +57,19 @@ public class ChatController {
 
         Button initialChatButton = chatButtons.get(0);
         switchChat(initialChatButton);
+    }
+
+    public void onLanguageChange() {
+        updateUI();
+    }
+
+    private void updateUI() {
+        // Update the Texts
+        LanguageManager.getTranslation("title");
+        newChatButton.setText(LanguageManager.getTranslation("newChatButton"));
+        questionField.setPromptText(LanguageManager.getTranslation("questionField"));
+        build.setText(LanguageManager.getTranslation("build") + " " + version);
+
     }
 
     private void switchChat(Button chatButton) {

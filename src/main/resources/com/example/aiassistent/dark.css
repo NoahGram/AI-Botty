@@ -86,3 +86,28 @@
     -fx-background-color: #3a3c42;
 }
 
+.editButton {
+    -fx-background-repeat: stretch;
+    -fx-border-radius: 5;
+}
+
+.removeButton {
+    -fx-background-repeat: stretch;
+    -fx-border-radius: 5;
+}
+
+.confirmEditButton {
+    -fx-background-image: url("images/vinkje.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-position: center center;
+    -fx-border-radius: 5;
+}
+
+.cancelEditButton {
+    -fx-background-image: url("images/cross-button.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-position: center center;
+    -fx-border-radius: 5;
+}

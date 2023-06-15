@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="border" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.LoginPageController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="border" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aiassistent.LoginPageController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" />
   </columnConstraints>
@@ -215,7 +215,7 @@
             </GridPane>
          </children>
       </GridPane>
-      <Button fx:id="NL" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#NL" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT">
+      <Button fx:id="NL" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#NL" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
          <font>
             <Font size="14.0" />
          </font>
@@ -223,7 +223,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <graphic>
-            <ImageView blendMode="DIFFERENCE" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/nl_flag.png" />
                </image>
@@ -233,7 +233,7 @@
             <Insets right="90.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="EN" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#EN" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT">
+      <Button fx:id="EN" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#EN" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
          <font>
             <Font size="14.0" />
          </font>
@@ -241,7 +241,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <graphic>
-            <ImageView blendMode="DIFFERENCE" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/en_flag.png" />
                </image>

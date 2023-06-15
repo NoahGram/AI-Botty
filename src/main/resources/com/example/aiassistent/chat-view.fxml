@@ -218,41 +218,5 @@
                 </GridPane>
             </children>
         </GridPane>
-        <Button fx:id="NL" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#NL" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT">
-            <font>
-                <Font size="14.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-            <graphic>
-                <ImageView blendMode="DIFFERENCE" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@images/nl_flag.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-            <GridPane.margin>
-                <Insets right="90.0" />
-            </GridPane.margin>
-        </Button>
-        <Button fx:id="EN" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#EN" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT">
-            <font>
-                <Font size="14.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-            <graphic>
-                <ImageView blendMode="DIFFERENCE" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@images/en_flag.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-            <GridPane.margin>
-                <Insets right="60.0" />
-            </GridPane.margin>
-        </Button>
     </children>
 </GridPane>

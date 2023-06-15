@@ -83,6 +83,7 @@ public class AssistentApplication extends Application {
         System.out.println("Current theme: " + currentTheme);
     }
 
+
     private static void setTheme(String theme) {
         loadCSS(loginScene, theme);
         loadCSS(registerScene, theme);

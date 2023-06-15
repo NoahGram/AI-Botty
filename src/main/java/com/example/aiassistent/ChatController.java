@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.effect.ColorAdjust;
@@ -27,9 +28,10 @@ import java.io.InputStream;
 import java.util.*;
 import java.util.function.UnaryOperator;
 
-public class ChatController {
+public class ChatController implements LanguageChangeListener {
     @FXML
     private JFXButton askButton;
+    public String version = "1.0.2023";
     @FXML
     private List<Button> chatButtons = new ArrayList<>();
     @FXML
@@ -44,12 +46,14 @@ public class ChatController {
     private VBox chatButtonsContainer;
     @FXML
     private TextField questionField;
+    public Text build;
 
     private final IQuestionAsker chatEngine = new OfflineChatStrategy();
     private VBox activeConversationBox;
 
     @FXML
     private void initialize() {
+        LanguageManager.addLanguageChangeListener(this::onLanguageChange);
         askButton.setDisable(true);
         newChatButton.setOnAction(event -> addNewChatButton());
         addNewChatButton();
@@ -58,6 +62,19 @@ public class ChatController {
 
         Button initialChatButton = chatButtons.get(0);
         switchChat(initialChatButton);
+    }
+
+    public void onLanguageChange() {
+        updateUI();
+    }
+
+    private void updateUI() {
+        // Update the Texts
+        LanguageManager.getTranslation("title");
+        newChatButton.setText(LanguageManager.getTranslation("newChatButton"));
+        questionField.setPromptText(LanguageManager.getTranslation("questionField"));
+        build.setText(LanguageManager.getTranslation("build") + " " + version);
+
     }
 
     private void switchChat(Button chatButton) {
@@ -305,7 +322,21 @@ public class ChatController {
 
     @FXML
     private void openSettings(ActionEvent actionEvent) {
-        AssistentApplication.showSettingsScene();
+        Scene settingsScene = AssistentApplication.showSettingsScene();
+        toggleAdminPanels(settingsScene);
+    }
+
+    private void toggleAdminPanels(Scene settingsScene) {
+        // Hide the GridPane with ID "adminPanel"
+        GridPane adminPanel = (GridPane) settingsScene.lookup("#adminPanel");
+        assert adminPanel != null;
+
+        if (UserAccountSingleton.getInstance().getCurrentUser().getAdmin()) {
+            adminPanel.setVisible(true);
+            return;
+        }
+
+        adminPanel.setVisible(false);
     }
 
     @FXML

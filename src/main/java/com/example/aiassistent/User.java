@@ -7,12 +7,14 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private boolean admin;
     private List<String> chats;
 
-    public User(String username, String password, String email) {
+    public User(String username, String password, String email, boolean admin) {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.admin = admin;
         this.chats = new ArrayList<>();
     }
 
@@ -38,6 +40,14 @@ public class User {
 
     public void setEmail(String newEmail) {
         this.email = newEmail;
+    }
+
+    public boolean getAdmin() {
+        return this.admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 
     public List<String> getChats() {

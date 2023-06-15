@@ -24,7 +24,7 @@
     <RowConstraints valignment="BASELINE" vgrow="ALWAYS" />
   </rowConstraints>
    <children>
-      <Button fx:id="theme" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#changeTheme" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT" GridPane.valignment="BASELINE">
+      <Button fx:id="theme" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#changeTheme" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
          <font>
             <Font size="14.0" />
          </font>
@@ -45,7 +45,7 @@
             <Insets right="30.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="exitButton" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT" GridPane.valignment="BASELINE">
+      <Button fx:id="exitButton" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: transparent;" textFill="#ffffffe5" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
          <font>
             <Font size="14.0" />
          </font>
@@ -66,14 +66,19 @@
             </ImageView>
          </graphic>
       </Button>
-      <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="42  ·  AI-assistent" GridPane.halignment="LEFT" GridPane.valignment="BASELINE">
+      <Text fill="#363c40e5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtext" text="AI-assistent" GridPane.halignment="LEFT" GridPane.valignment="TOP">
          <font>
             <Font name="Plus Jakarta Sans Regular" size="11.0" />
          </font>
          <GridPane.margin>
-            <Insets left="10.0" />
+            <Insets left="35.0" top="8.0" />
          </GridPane.margin>
       </Text>
+      <ImageView fx:id="logo" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logoa.png" />
+         </image>
+      </ImageView>
       <GridPane prefHeight="600.0" prefWidth="800.0" styleClass="background" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -132,12 +137,12 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXTextField fx:id="usernamefield" focusColor="#766bc700" minHeight="42.0" onAction="#onEnter" promptText="Voer hier uw gebruikersnaam in" unFocusColor="#4d4d4d00" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+                  <JFXTextField fx:id="usernamefield" focusColor="#766bc700" minHeight="42.0" onAction="#onEnter" promptText="Voer hier uw gebruikersnaam in" styleClass="jfx-text-field" unFocusColor="#4d4d4d00" GridPane.halignment="LEFT" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets bottom="12.0" left="20.0" right="20.0" />
                      </GridPane.margin>
                      <font>
-                        <Font name="Plus Jakarta Sans Regular" size="14.0" />
+                        <Font name="Plus Jakarta Sans Regular" size="12.0" />
                      </font>
                      <padding>
                         <Insets left="10.0" right="10.0" />
@@ -146,7 +151,7 @@
                         <DropShadow color="#0000000d" offsetY="5.0" />
                      </effect>
                   </JFXTextField>
-                  <JFXPasswordField fx:id="passwordfield" focusColor="#766bc700" minHeight="42.0" onAction="#onEnter" promptText="Voer hier uw wachtwoord in" unFocusColor="#4d4d4d00" GridPane.halignment="LEFT" GridPane.rowIndex="6">
+                  <JFXPasswordField fx:id="passwordfield" focusColor="#766bc700" minHeight="42.0" onAction="#onEnter" promptText="Voer hier uw wachtwoord in" styleClass="jfx-password-field" unFocusColor="#4d4d4d00" GridPane.halignment="LEFT" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets bottom="32.0" left="20.0" right="20.0" />
                      </GridPane.margin>
@@ -154,7 +159,7 @@
                         <Insets left="10.0" right="10.0" />
                      </padding>
                      <font>
-                        <Font name="Plus Jakarta Sans Regular" size="14.0" />
+                        <Font name="Plus Jakarta Sans Regular" size="12.0" />
                      </font>
                      <effect>
                         <DropShadow color="#0000000d" offsetY="5.0" />

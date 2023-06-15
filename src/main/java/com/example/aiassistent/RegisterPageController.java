@@ -78,7 +78,7 @@ public class RegisterPageController implements LanguageChangeListener {
         } else if (!InputValidator.isValidEmail(email)) {
             invalid.setText("Ongeldige e-mail");
         } else {
-            userAccounts.addUser(new User(username, password, email));
+            userAccounts.addUser(new User(username, password, email, false));
             System.out.printf("Nieuw geregistreerde gebruiker:%nGebruikersnaam - %s%nE-mail - %s%nWachtwoord - %s", username, email, password);
             AssistentApplication.showLoginScene();
         }}

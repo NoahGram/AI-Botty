@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
 public class LoginPageController implements LanguageChangeListener {
@@ -18,6 +19,7 @@ public class LoginPageController implements LanguageChangeListener {
      public JFXPasswordField passwordfield;
      public Text invalid;
      public Button theme;
+     public ImageView logo;
     public Text title;
     public Text gebruikersnaam;
     public Text wachtwoord;

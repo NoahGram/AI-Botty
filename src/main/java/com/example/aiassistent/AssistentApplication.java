@@ -83,6 +83,7 @@ public class AssistentApplication extends Application {
         System.out.println("Current theme: " + currentTheme);
     }
 
+
     private static void setTheme(String theme) {
         loadCSS(loginScene, theme);
         loadCSS(registerScene, theme);
@@ -99,8 +100,14 @@ public class AssistentApplication extends Application {
         primaryStage.setScene(registerScene);
     }
 
-    public static void showSettingsScene() {
+    public static Scene showSettingsScene() {
         primaryStage.setScene(settingsScene);
+        return settingsScene;
+    }
+
+    public static void setLoginScene(Scene newLoginScene) {
+        loginScene = newLoginScene;
+        loadCSS(loginScene, currentTheme);
     }
 
     public static void showChatScene() { primaryStage.setScene(chatScene);  primaryStage.setMaximized(true); }

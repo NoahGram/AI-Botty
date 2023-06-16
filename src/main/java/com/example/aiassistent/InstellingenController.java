@@ -3,22 +3,19 @@ package com.example.aiassistent;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 
 public class InstellingenController extends BaseController  {
     @FXML
@@ -27,13 +24,9 @@ public class InstellingenController extends BaseController  {
     private JFXTextField usernameField;
     @FXML
     private JFXPasswordField passwordField;
-    @FXML
-    private JFXButton changeIcon;
 
     static UserAccountSingleton userAccount = UserAccountSingleton.getInstance();
 
-    @FXML
-    private VBox vboxLanguages;
     @FXML
     private Text email;
     public Text title;
@@ -62,7 +55,7 @@ public class InstellingenController extends BaseController  {
     }
 
     @FXML
-    private void editUsername(ActionEvent event) {
+    private void editUsername() {
         if (!usernameField.getText().isEmpty()) {
             String newUsername = usernameField.getText();
 
@@ -74,7 +67,7 @@ public class InstellingenController extends BaseController  {
     }
 
     @FXML
-    private void editEmail(ActionEvent event) {
+    private void editEmail() {
         if (!emailField.getText().isEmpty()) {
             String username = userAccount.getCurrentUser().getUsername();
             String newEmail = emailField.getText();
@@ -86,7 +79,7 @@ public class InstellingenController extends BaseController  {
     }
 
     @FXML
-    private void editPassword(ActionEvent event) {
+    private void editPassword() {
         if (!passwordField.getText().isEmpty()) {
             String username = userAccount.getCurrentUser().getUsername();
             String newPassword = passwordField.getText();
@@ -98,7 +91,7 @@ public class InstellingenController extends BaseController  {
     }
 
     @FXML
-    private void editIcon(ActionEvent event) throws IOException {
+    private void editIcon() throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.png"));
 
@@ -138,7 +131,7 @@ public class InstellingenController extends BaseController  {
         }
     }
 
-    public void back(ActionEvent actionEvent) {
+    public void back() {
         AssistentApplication.showChatScene();
     }
 }

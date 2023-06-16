@@ -28,12 +28,13 @@ public class UserAccountSingleton {
         return userMap.containsKey(username);
     }
 
-    public void addUser(User user) {
+    public boolean addUser(User user) {
         if (UserExists(user.getUsername())) {
-            return;
+            return false;
         }
 
         userMap.put(user.getUsername(), user);
+        return true;
     }
 
 
@@ -58,14 +59,17 @@ public class UserAccountSingleton {
         return userMap.get(username);
     }
 
-    public void editUsername(String newUsername) {
+    public boolean editUsername(String newUsername) {
         User user = getUser(getCurrentUser().getUsername());
         if (user != null) {
             User updatedUser = new User(newUsername, user.getPassword(), user.getEmail());
             userMap.remove(user.getUsername());
             userMap.put(newUsername, updatedUser);
             setCurrentUser(updatedUser);
+            return true;
         }
+
+        return false;
     }
 
     public void editEmail(String username, String newEmail) {

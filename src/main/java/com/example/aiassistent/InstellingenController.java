@@ -20,7 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-public class InstellingenController implements LanguageChangeListener {
+public class InstellingenController extends BaseController  {
     @FXML
     private JFXTextField emailField;
     @FXML
@@ -45,17 +45,8 @@ public class InstellingenController implements LanguageChangeListener {
     public JFXButton changeUsername;
 
 
-    @FXML
-    private void initialize() {
-        LanguageManager.addLanguageChangeListener(this::onLanguageChange);
-    }
-
     @Override
-    public void onLanguageChange() {
-        updateUI();
-    }
-
-    private void updateUI() {
+    protected void updateUI() {
         // Update the Texts
         title.setText(LanguageManager.getTranslation("settingsTitle"));
         email.setText(LanguageManager.getTranslation("emailU"));

@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
-public class LoginPageController implements LanguageChangeListener {
+public class LoginPageController extends BaseController {
 
      public JFXButton loginbutton;
      public Button exitButton;
@@ -25,18 +25,8 @@ public class LoginPageController implements LanguageChangeListener {
     public Text wachtwoord;
     private UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
 
-
-    @FXML
-    private void initialize() {
-        LanguageManager.addLanguageChangeListener(this::onLanguageChange);
-    }
-
     @Override
-    public void onLanguageChange() {
-        updateUI();
-    }
-
-    private void updateUI() {
+    protected void updateUI() {
         // Update the Texts
         LanguageManager.getTranslation("title");
         title.setText(LanguageManager.getTranslation("LoginPageTitle"));

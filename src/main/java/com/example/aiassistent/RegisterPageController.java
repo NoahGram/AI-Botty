@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-public class RegisterPageController implements LanguageChangeListener {
+public class RegisterPageController extends BaseController {
     public TextField usernamefield;
     public TextField passwordfield;
     public TextField emailField;
@@ -20,17 +20,8 @@ public class RegisterPageController implements LanguageChangeListener {
 
     UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
 
-    @FXML
-    private void initialize() {
-        LanguageManager.addLanguageChangeListener(this::onLanguageChange);
-    }
-
     @Override
-    public void onLanguageChange() {
-        updateUI();
-    }
-
-    private void updateUI() {
+    protected void updateUI() {
         // Update the Texts
         LanguageManager.getTranslation("title");
         title.setText(LanguageManager.getTranslation("registerTitle"));

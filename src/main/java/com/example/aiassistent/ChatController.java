@@ -28,7 +28,7 @@ import java.io.InputStream;
 import java.util.*;
 import java.util.function.UnaryOperator;
 
-public class ChatController implements LanguageChangeListener {
+public class ChatController extends BaseController {
     @FXML
     private JFXButton askButton;
     public String version = "1.0.2023";
@@ -53,7 +53,6 @@ public class ChatController implements LanguageChangeListener {
 
     @FXML
     private void initialize() {
-        LanguageManager.addLanguageChangeListener(this::onLanguageChange);
         askButton.setDisable(true);
         newChatButton.setOnAction(event -> addNewChatButton());
         addNewChatButton();
@@ -64,11 +63,8 @@ public class ChatController implements LanguageChangeListener {
         switchChat(initialChatButton);
     }
 
-    public void onLanguageChange() {
-        updateUI();
-    }
-
-    private void updateUI() {
+    @Override
+    protected void updateUI() {
         // Update the Texts
         LanguageManager.getTranslation("title");
         newChatButton.setText(LanguageManager.getTranslation("newChatButton"));

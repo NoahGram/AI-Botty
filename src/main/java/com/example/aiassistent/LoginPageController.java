@@ -91,20 +91,7 @@ public class LoginPageController extends BaseController {
         loginButtonEvent(event);
     }
 
-    @FXML
-    private void changeTheme(ActionEvent event) {
-        AssistentApplication.changeTheme();
-    }
-    @FXML
-    private void NL(ActionEvent event) {
-        System.out.println("NL knop");
-        LanguageManager.changeLanguage("nl");
-    }
-    @FXML
-    private void EN(ActionEvent event) {
-        System.out.println("EN button");
-        LanguageManager.changeLanguage("en");
-    }
+
 }
 
 

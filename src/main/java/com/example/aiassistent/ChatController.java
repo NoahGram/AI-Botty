@@ -312,11 +312,6 @@ public class ChatController extends BaseController {
     }
 
     @FXML
-    private void changeTheme(ActionEvent actionEvent) {
-        AssistentApplication.changeTheme();
-    }
-
-    @FXML
     private void openSettings(ActionEvent actionEvent) {
         Scene settingsScene = AssistentApplication.showSettingsScene();
         toggleAdminPanels(settingsScene);

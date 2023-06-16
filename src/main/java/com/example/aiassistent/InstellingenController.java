@@ -62,25 +62,6 @@ public class InstellingenController extends BaseController  {
     }
 
     @FXML
-    private void changeLanguageEN() {
-        LanguageManager.changeLanguage("en");
-    }
-
-    @FXML
-    private void changeLanguageNL() {
-        LanguageManager.changeLanguage("nl");
-    }
-
-    public InstellingenController() {
-        AssistentApplication.showSettingsScene();
-    }
-
-    @FXML
-    private void changeTheme(ActionEvent event) {
-        AssistentApplication.changeTheme();
-    }
-
-    @FXML
     private void editUsername(ActionEvent event) {
         if (!usernameField.getText().isEmpty()) {
             String newUsername = usernameField.getText();
@@ -123,6 +104,7 @@ public class InstellingenController extends BaseController  {
 
         // Create a File object for the source image file
         File uploadedImageFile = fileChooser.showOpenDialog(null);
+        if (uploadedImageFile == null) return;
 
         // Create a File object for the target image file
         File oldImageFile = new File("src/main/resources/com/example/aiassistent/images", "logoa.png");
@@ -158,15 +140,5 @@ public class InstellingenController extends BaseController  {
 
     public void back(ActionEvent actionEvent) {
         AssistentApplication.showChatScene();
-    }
-    @FXML
-    private void NL(ActionEvent event) {
-        System.out.println("NL knop");
-        LanguageManager.changeLanguage("nl");
-    }
-    @FXML
-    private void EN(ActionEvent event) {
-        System.out.println("EN button");
-        LanguageManager.changeLanguage("en");
     }
 }

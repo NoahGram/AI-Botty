@@ -1,12 +1,11 @@
 package com.example.aiassistent;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public abstract class BaseController implements LanguageChangeListener {
     @FXML
     private void initialize() {
-        LanguageManager.addLanguageChangeListener(this::onLanguageChange);
+        LanguageManager.addLanguageChangeListener(this);
     }
 
     @Override
@@ -17,17 +16,17 @@ public abstract class BaseController implements LanguageChangeListener {
     protected abstract void updateUI();
 
     @FXML
-    protected void changeTheme(ActionEvent actionEvent) {
+    protected void changeTheme() {
         AssistentApplication.changeTheme();
     }
 
     @FXML
-    private void NL(ActionEvent event) {
+    private void NL() {
         System.out.println("NL knop");
         LanguageManager.changeLanguage("nl");
     }
     @FXML
-    private void EN(ActionEvent event) {
+    private void EN() {
         System.out.println("EN button");
         LanguageManager.changeLanguage("en");
     }

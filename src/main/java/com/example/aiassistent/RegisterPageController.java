@@ -37,7 +37,7 @@ public class RegisterPageController extends BaseController {
     }
 
     @FXML
-    public void registerButtonEvent(ActionEvent event) {
+    public void registerButtonEvent() {
         String username = usernamefield.getText();
         String password = passwordfield.getText();
         String email = emailField.getText();
@@ -77,12 +77,12 @@ public class RegisterPageController extends BaseController {
 
 
     @FXML
-    private void onEnter(ActionEvent event) {
-        registerButtonEvent(event);
+    private void onEnter() {
+        registerButtonEvent();
     }
 
     @FXML
-    private void loginPage(ActionEvent event) {
+    private void loginPage() {
         AssistentApplication.showLoginScene();
         invalid.setText("");
         emailField.setText("");
@@ -91,7 +91,7 @@ public class RegisterPageController extends BaseController {
     }
 
     @FXML
-    private void exit(ActionEvent event) {
+    private void exit() {
         System.exit(0);
     }
 }

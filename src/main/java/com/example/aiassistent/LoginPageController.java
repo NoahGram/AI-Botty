@@ -41,7 +41,7 @@ public class LoginPageController extends BaseController {
 
     }
     @FXML
-    public void loginButtonEvent(ActionEvent event) {
+    public void loginButtonEvent() {
         String username = usernamefield.getText();
         String password = passwordfield.getText();
 
@@ -79,7 +79,7 @@ public class LoginPageController extends BaseController {
     }
 
     @FXML
-    private void registerPage(ActionEvent event) {
+    private void registerPage() {
         AssistentApplication.showRegisterScene();
         invalid.setText("");
         usernamefield.setText("");
@@ -87,8 +87,8 @@ public class LoginPageController extends BaseController {
     }
 
     @FXML
-    private void onEnter(ActionEvent event) {
-        loginButtonEvent(event);
+    private void onEnter() {
+        loginButtonEvent();
     }
 
 

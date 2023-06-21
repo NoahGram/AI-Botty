@@ -9,7 +9,7 @@ public class UserAccountSingletonTest {
 
     @Before
     public void setUp() {
-        User testuser = new User("testuser", "testpass", "tesmail@test.nl");
+        User testuser = new User("testuser", "testpass", "tesmail@test.nl", true);
         userAccount.addUser(testuser);
         userAccount.setCurrentUser(testuser);
     }
@@ -22,10 +22,10 @@ public class UserAccountSingletonTest {
 
     @Test
     public void testAddUser() {
-        boolean accountMadeTrue = userAccount.addUser(new User("john", "password4", "john@outlook.com"));
+        boolean accountMadeTrue = userAccount.addUser(new User("john", "password4", "john@outlook.com", true));
         Assert.assertTrue(accountMadeTrue);
 
-        boolean accountMadeFalse = userAccount.addUser(new User("testuser", "password5", "testuser2@outlook.com"));
+        boolean accountMadeFalse = userAccount.addUser(new User("testuser", "password5", "testuser2@outlook.com", true));
         Assert.assertFalse(accountMadeFalse);
     }
 
@@ -68,5 +68,12 @@ public class UserAccountSingletonTest {
 
         userAccount.editPassword("john", "newpassword2");
         Assert.assertNull(userAccount.getUser("john"));
+    }
+
+    @Test
+    public void testUserAdmin() {
+        Assert.assertTrue(userAccount.getCurrentUser().getAdmin());
+        userAccount.getCurrentUser().setAdmin(false);
+        Assert.assertFalse(userAccount.getCurrentUser().getAdmin());
     }
 }

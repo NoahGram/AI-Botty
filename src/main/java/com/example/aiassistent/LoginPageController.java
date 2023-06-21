@@ -11,19 +11,27 @@ import javafx.scene.text.Text;
 
 public class LoginPageController extends BaseController {
 
-     public JFXButton loginbutton;
-     public Button exitButton;
-     public Text welkom;
-     public Button registerButton;
-     public JFXTextField usernamefield;
-     public JFXPasswordField passwordfield;
-     public Text invalid;
-     public Button theme;
-     public ImageView logo;
+    public JFXButton loginbutton;
+    public Button exitButton;
+    public Text welkom;
+    public Button registerButton;
+    public JFXTextField usernamefield;
+    public JFXPasswordField passwordfield;
+    public Text invalid;
+    public Button theme;
+    public ImageView logo;
     public Text title;
     public Text gebruikersnaam;
     public Text wachtwoord;
     private UserAccountSingleton userAccounts = UserAccountSingleton.getInstance();
+    
+    public void setUsernamefield(String usernamefield) {
+        this.usernamefield.setText(usernamefield);
+    }
+
+    public void setPasswordfield(String passwordfield) {
+        this.passwordfield.setText(passwordfield);
+    }
 
     @Override
     protected void updateUI() {

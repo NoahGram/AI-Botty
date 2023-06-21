@@ -6,7 +6,7 @@ public class UserAccountSingleton {
     private User currentUser;
     private HashMap<String, User> userMap = new HashMap<>();
 
-    private UserAccountSingleton() {
+    public UserAccountSingleton() {
         CreateInitialAccounts();
     }
 
@@ -74,6 +74,9 @@ public class UserAccountSingleton {
         if (user != null) {
             User updatedUser = new User(user.getUsername(), user.getPassword(), newEmail, user.getAdmin());
             userMap.put(username, updatedUser);
+            if (currentUser != null && currentUser.getUsername().equals(username)) {
+                setCurrentUser(updatedUser);
+            }
         }
     }
 
@@ -82,6 +85,9 @@ public class UserAccountSingleton {
         if (user != null) {
             User updatedUser = new User(user.getUsername(), newPassword, user.getEmail(), user.getAdmin());
             userMap.put(username, updatedUser);
+            if (currentUser != null && currentUser.getUsername().equals(username)) {
+                setCurrentUser(updatedUser);
+            }
         }
     }
 

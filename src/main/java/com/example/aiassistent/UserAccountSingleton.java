@@ -11,9 +11,10 @@ public class UserAccountSingleton {
     }
 
     private void CreateInitialAccounts() {
-        addUser(new User("noah", "password1", "noah@outlook.com"));
-        addUser(new User("tim", "password2", "tim@outlook.com"));
-        addUser(new User("anita", "password3", "anita@outlook.com"));
+        addUser(new User("noah", "password1", "noah@outlook.com", true));
+        addUser(new User("tim", "password2", "tim@outlook.com", true));
+        addUser(new User("anita", "password3", "anita@outlook.com", true));
+        addUser(new User("bob", "password4", "bob@outlook.com", false));
     }
 
     public static synchronized UserAccountSingleton getInstance() {
@@ -61,7 +62,7 @@ public class UserAccountSingleton {
     public void editUsername(String newUsername) {
         User user = getUser(getCurrentUser().getUsername());
         if (user != null) {
-            User updatedUser = new User(newUsername, user.getPassword(), user.getEmail());
+            User updatedUser = new User(newUsername, user.getPassword(), user.getEmail(), user.getAdmin());
             userMap.remove(user.getUsername());
             userMap.put(newUsername, updatedUser);
             setCurrentUser(updatedUser);
@@ -71,7 +72,7 @@ public class UserAccountSingleton {
     public void editEmail(String username, String newEmail) {
         User user = getUser(username);
         if (user != null) {
-            User updatedUser = new User(user.getUsername(), user.getPassword(), newEmail);
+            User updatedUser = new User(user.getUsername(), user.getPassword(), newEmail, user.getAdmin());
             userMap.put(username, updatedUser);
             if (currentUser != null && currentUser.getUsername().equals(username)) {
                 setCurrentUser(updatedUser);
@@ -82,7 +83,7 @@ public class UserAccountSingleton {
     public void editPassword(String username, String newPassword) {
         User user = getUser(username);
         if (user != null) {
-            User updatedUser = new User(user.getUsername(), newPassword, user.getEmail());
+            User updatedUser = new User(user.getUsername(), newPassword, user.getEmail(), user.getAdmin());
             userMap.put(username, updatedUser);
             if (currentUser != null && currentUser.getUsername().equals(username)) {
                 setCurrentUser(updatedUser);
